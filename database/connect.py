@@ -4,4 +4,11 @@ import getpass as gp
 
 class Connect:
     def __init__(self) -> None:
-        pass
+        self.server = 'regulus.cotuca.unicamp.br'
+        self.username = None
+        self.password = None
+        self.database = self.username
+
+    def Login(self) -> None:
+        self.username = str(input('Username: '))
+        self.password = str(input('Senha: '))
