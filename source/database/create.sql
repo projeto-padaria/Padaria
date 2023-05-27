@@ -1,7 +1,7 @@
 -- Está em ordem de criação das tabelas e relacionamentos
 -- Caso algum cabaço faça merda. NÃO ALTERE A ORDEM DAS TABELAS
 
--- create schema padaria já foi criado
+create schema padaria
 
 create table padaria.endereco
 (
