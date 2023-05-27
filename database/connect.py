@@ -1,6 +1,6 @@
 import pyodbc as bd
 import os
-import getpass as gp
+from getpass import getpass
 
 class Connect:
     def __init__(self) -> None:
@@ -11,4 +11,10 @@ class Connect:
 
     def Login(self) -> None:
         self.username = str(input('Username: '))
-        self.password = str(input('Senha: '))
+        self.password = getpass('Password: ')
+
+        bd.connect(
+            f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={self.server};DATABASE={self.database};UID={self.username};PWD={self.password}')
+
+
+Connect().Login()
