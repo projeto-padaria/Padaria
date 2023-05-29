@@ -1,83 +1,84 @@
 -- Está em ordem de criação das tabelas e relacionamentos
 -- Caso algum cabaço faça merda. NÃO ALTERE A ORDEM DAS TABELAS
 
-create schema padaria
+create schema padaria;
 
 create table padaria.endereco
 (
     idEndereco int identity(1,1),
-
     estado char(2),
-    cidade varchar(45),
-    bairro varchar(50),
-    rua varchar(25),
+    cidade varchar(50),
+    bairro varchar(100),
+    rua varchar(100),
     numero int,
-    cep int null,
-
+    cep char(8) null,
     PRIMARY KEY (idEndereco)
-)
+);
 
 create table padaria.fornecedor
 (
     idFornecedor int identity(1,1),
 
-    cnpj int,
+    cnpj char(14),
     status varchar(50),
     nome varchar(50),
-    nomefantasia varchar(50),
-    telefone int,
+    telefone char(11),
     idEndereco int,
+    UNIQUE(cnpj),
     PRIMARY KEY (idFornecedor),
 
-    FOREIGN KEY (idEndereco) REFERENCES padaria.endereco(idEndereco)
-)
+    FOREIGN KEY (idEndereco) REFERENCES padaria.endereco(idEndereco) on update CASCADE
+);
 
 create table padaria.cliente
 (
     idCliente int identity(1,1),
 
-    nome varchar(25) null,
-    sobrenome varchar(35) null,
-    cpf int null,
+    nome varchar(50) null,
+    sobrenome varchar(50) null,
+    cpf char(11) null,
     idEndereco int null,
+    UNIQUE(cpf),
     PRIMARY KEY (idCliente),
 
-    FOREIGN KEY (idEndereco) REFERENCES padaria.endereco(idEndereco)
-)
+    FOREIGN KEY (idEndereco) REFERENCES padaria.endereco(idEndereco) on update CASCADE
+);
 
 create table padaria.funcionario
 (
     idFuncionario int identity(1,1),
 
-    nome varchar(25),
-    sobrenome varchar(35),
+    nome varchar(50),
+    sobrenome varchar(50),
     cargo varchar(50),
-    telefone int,
+    telefone char(11),
     salario decimal(10,2),
-    cpf int,
+    cpf char(11),
     idEndereco int,
+    UNIQUE(cpf),
 
     PRIMARY KEY (idFuncionario),
 
-    FOREIGN KEY (idEndereco) REFERENCES padaria.endereco(idEndereco)
-)
+    FOREIGN KEY (idEndereco) REFERENCES padaria.endereco(idEndereco) on update CASCADE
+);
 
 create table padaria.produto
 (
     idProduto int identity(1,1),
     idFornecedor int ,
 
-    nome varchar(25),
-    marca varchar(25),
+    nome varchar(50),
+    marca varchar(50),
     preco decimal(10,2),
     quantidade int,
     datadeemissao date,
     datadevalidade date,
+    UNIQUE(marca),
 
     PRIMARY KEY (idProduto),
 
-    FOREIGN KEY (idFornecedor) REFERENCES padaria.fornecedor(idFornecedor)
-)
+    FOREIGN KEY (idFornecedor) REFERENCES padaria.fornecedor(idFornecedor) on update CASCADE
+);
 
 create table padaria.venda
 (
@@ -94,8 +95,11 @@ create table padaria.venda
 
     PRIMARY KEY (idVenda, idCliente, idFuncionario, idProduto),
 
-    FOREIGN KEY (idCliente) REFERENCES padaria.cliente(idCliente),
-    FOREIGN KEY (idFuncionario) REFERENCES padaria.funcionario(idFuncionario),
-    FOREIGN KEY (idProduto) REFERENCES padaria.produto(idProduto),
-    FOREIGN KEY (idFornecedor) REFERENCES padaria.fornecedor(idFornecedor)
+    FOREIGN KEY (idCliente) REFERENCES padaria.cliente(idCliente) on update CASCADE,
+
+    FOREIGN KEY (idFuncionario) REFERENCES padaria.funcionario(idFuncionario) on update CASCADE,
+    
+    FOREIGN KEY (idProduto) REFERENCES padaria.produto(idProduto) on update CASCADE,
+
+    FOREIGN KEY (idFornecedor) REFERENCES padaria.fornecedor(idFornecedor) on update CASCADE
 )

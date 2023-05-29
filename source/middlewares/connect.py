@@ -57,12 +57,13 @@ class Connect:
         clearTerminal('cls')
         self.printTitle('Login')
         self.username = input('Usuário: ')
-        self.database = input('Banco de Dados: ')
+        self.database = self.username
         self.password = getpass('Senha: ')
         try:
             cursor = bd.connect(
                 f'DRIVER={self.driver};SERVER={self.server};UID={self.username};PWD={self.password};DATABASE={self.database}').cursor()
             self.printSuccess('Login feito com sucesso!')
+            wait(5)
             self.selectTable(cursor)
         except Exception as error:
             print('Login falha\n')
@@ -114,6 +115,7 @@ class Connect:
                 print(query.column_name)
             self.query = input('Qual coluna você quer acessar? ').lower()
             self.printSuccess('Coluna selecionada com sucesso!')
+            wait(2)
             self.execute(cursor)
         except Exception as error:
             self.printError(error)
