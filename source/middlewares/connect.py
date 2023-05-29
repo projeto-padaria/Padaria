@@ -46,20 +46,32 @@ class Connect:
         user_choice = input('Você quer tentar novamente? [S/N] ').lower()
         if user_choice == 's' or user_choice == 'sim':
             wait(5)
+            self.table = None
+            self.query = None
             return function()
         elif user_choice == 'n' or user_choice == 'não' or user_choice == 'nao':
             print('Finalizando...')
             return wait(5)
         else:
-            self.printError('Opção inválida')
+            self.printError('Opção inexperada encontrada')
             return self.tryAgain(function)
 
     def Login(self) -> None:
         clearTerminal('cls')
         self.printTitle('Login')
-        self.username = input('Usuário: ')
-        self.database = self.username
-        self.password = getpass('Senha: ')
+        self.printInfo('Para fazer login, você precisa de uma conta no banco de dados')
+        choice_user = input('Você quer iniciar com a conta padrão? [S/N] ').lower()
+        if choice_user == 's' or choice_user == 'sim':
+            self.username = 'BD23600'
+            self.password = 'BD23600'
+            self.database = self.username
+        elif choice_user == 'n' or choice_user == 'não' or choice_user == 'nao':
+            self.username = input('Digite seu usuário: ')
+            self.password = getpass('Digite sua senha: ')
+            self.database = self.username
+        else:
+            self.printError('Opção inválida')
+            self.tryAgain(lambda: self.Login())
         try:
             cursor = bd.connect(
                 f'DRIVER={self.driver};SERVER={self.server};UID={self.username};PWD={self.password};DATABASE={self.database}').cursor()
