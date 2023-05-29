@@ -10,6 +10,7 @@ class Connect:
         self.username = None
         self.password = None
         self.database = None
+        self.schema = 'padaria'
         self.table = None
         self.query = None
         self.RED   = '\033[1;31m'  
@@ -63,8 +64,8 @@ class Connect:
             cursor = bd.connect(
                 f'DRIVER={self.driver};SERVER={self.server};UID={self.username};PWD={self.password};DATABASE={self.database}').cursor()
             self.printSuccess('Login feito com sucesso!')
-            wait(5)
-            self.selectTable(cursor)
+            wait(2)
+            self.menu(cursor)
         except Exception as error:
             print('Login falha\n')
             self.printError(error)
@@ -73,19 +74,13 @@ class Connect:
     def menu(self, cursor) -> None:
         clearTerminal('cls')
         self.printTitle('Menu')
-        print('1 - Selecionar tabela')
-        print('2 - Selecionar coluna')
-        print('3 - Executar consulta')
-        print('4 - Sair')
+        print('1 - Executar consulta')
+        print('0 - Sair')
         user_choice = input('O que você quer fazer? ')
         match user_choice:
             case '1':
-                self.selectTable(cursor)
-            case '2':
-                self.selectQuery(cursor)
-            case '3':
-                self.execute(cursor)
-            case '4':
+                return self.selectTable(cursor)
+            case '0':
                 print('Finalizando...')
                 wait(5)
             case _:
@@ -97,7 +92,7 @@ class Connect:
         try:
             self.printTitle('Tabelas disponíveis')
             for table in cursor.tables():
-                if table.table_schem == 'padaria':
+                if table.table_schem == self.schema:
                     print(table.table_name)
             self.table = input('Qual tabela você quer acessar? ').lower()
             self.printSuccess('Tabela selecionada com sucesso!')
@@ -105,7 +100,7 @@ class Connect:
            
         except Exception as error:
             self.printError(error)
-            self.tryAgain(lambda: self.selectTable(cursor))
+            self.tryAgain(lambda: self.menu(cursor))
 
     def selectQuery(self, cursor) -> None:
         clearTerminal('cls')
@@ -119,20 +114,21 @@ class Connect:
             self.execute(cursor)
         except Exception as error:
             self.printError(error)
-            self.tryAgain(lambda: self.selectQuery(cursor))
+            self.tryAgain(lambda: self.menu(cursor))
 
 
     def execute(self, cursor) -> None:
         clearTerminal('cls')
+        wait(2)
         try:
             self.printTitle('Resultado')
-            for row in cursor.execute(f'SELECT {self.query} FROM {self.table}'):
+            for row in cursor.execute(f'SELECT {self.query} FROM {self.schema}.{self.table}'):
                 print(row)
             self.printSuccess('Consulta feita com sucesso!')
             self.tryAgain(lambda: self.menu(cursor))
         except Exception as error:
             self.printError(error)
-            self.tryAgain(lambda: self.execute(cursor))
+            self.tryAgain(lambda: self.menu(cursor))
 
 if __name__ == '__main__':
     Connect().Login()
