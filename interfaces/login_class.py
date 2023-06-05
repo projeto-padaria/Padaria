@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Interface login.ui'
+## Form generated from reading UI file 'login.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.1
 ##
@@ -54,6 +54,7 @@ class Ui_window_login(object):
 "	padding: 3px;\n"
 "	border-radius: 3px;\n"
 "}")
+        self.le_login.setFrame(True)
 
         self.verticalLayout_4.addWidget(self.le_login, 0, Qt.AlignHCenter)
 
@@ -71,7 +72,7 @@ class Ui_window_login(object):
         self.l_senha.setObjectName(u"l_senha")
         self.l_senha.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout.addWidget(self.l_senha, 0, Qt.AlignHCenter|Qt.AlignVCenter)
+        self.verticalLayout.addWidget(self.l_senha)
 
         self.le_Senha = QLineEdit(self.frame_frame)
         self.le_Senha.setObjectName(u"le_Senha")
@@ -107,41 +108,32 @@ class Ui_window_login(object):
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"	cursor: pointer;\n"
+"	background-color:grey;\n"
 "}")
         self.btn_cadastrar.setCheckable(False)
 
         self.horizontalLayout.addWidget(self.btn_cadastrar)
 
-        self.btn_cancelar = QPushButton(self.frame_btn)
-        self.btn_cancelar.setObjectName(u"btn_cancelar")
-        self.btn_cancelar.setMaximumSize(QSize(300, 35))
-        self.btn_cancelar.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_cancelar.setStyleSheet(u"QPushButton {\n"
-"	padding: 8px;\n"
-"	border-radius: 3px;\n"
-"	background-color: rgb(42, 99, 255);\n"
-"	color: white;\n"
-"}")
-        self.btn_cancelar.setCheckable(False)
-
-        self.horizontalLayout.addWidget(self.btn_cancelar)
-
         self.btn_entrar = QPushButton(self.frame_btn)
         self.btn_entrar.setObjectName(u"btn_entrar")
         self.btn_entrar.setMaximumSize(QSize(300, 35))
         self.btn_entrar.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_entrar.setMouseTracking(True)
         self.btn_entrar.setStyleSheet(u"QPushButton {\n"
 "	padding: 8px;\n"
 "	border-radius: 3px;\n"
 "	background-color: rgb(97, 200, 255);\n"
 "	color: white;\n"
+"	transition: 0.3s ease-in-out;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	background-color:grey;\n"
 "}")
         self.btn_entrar.setCheckable(False)
 
         self.horizontalLayout.addWidget(self.btn_entrar)
 
-        self.btn_cancelar.raise_()
         self.btn_entrar.raise_()
         self.btn_cadastrar.raise_()
 
@@ -158,11 +150,13 @@ class Ui_window_login(object):
     # setupUi
 
     def retranslateUi(self, window_login):
-        window_login.setWindowTitle(QCoreApplication.translate("window_login", u"MainWindow", None))
+        window_login.setWindowTitle(QCoreApplication.translate("window_login", u"Login", None))
         self.l_login.setText(QCoreApplication.translate("window_login", u"Login", None))
+        self.le_login.setPlaceholderText(QCoreApplication.translate("window_login", u"Digite seu CPF", None))
         self.l_senha.setText(QCoreApplication.translate("window_login", u"Senha", None))
         self.le_Senha.setText("")
+        self.le_Senha.setPlaceholderText(QCoreApplication.translate("window_login", u"Digite sua senha", None))
         self.btn_cadastrar.setText(QCoreApplication.translate("window_login", u"Cadastrar", None))
-        self.btn_cancelar.setText(QCoreApplication.translate("window_login", u"Cancelar", None))
         self.btn_entrar.setText(QCoreApplication.translate("window_login", u"Entrar", None))
     # retranslateUi
+
