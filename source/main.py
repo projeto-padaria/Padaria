@@ -1,1 +1,0 @@
-# vai precisar o qt designer para criar a interface grafica e o pyuic5 para converter o arquivo .ui para .py

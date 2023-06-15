@@ -31,3 +31,30 @@ ALTER TABLE padaria.funcionario WITH CHECK CHECK CONSTRAINT ALL;
 ALTER TABLE padaria.cliente WITH CHECK CHECK CONSTRAINT ALL;
 ALTER TABLE padaria.fornecedor WITH CHECK CHECK CONSTRAINT ALL;
 ALTER TABLE padaria.endereco WITH CHECK CHECK CONSTRAINT ALL;
+
+
+-- Excluir todas as Tabelas
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[padaria].[produto]') AND type in (N'U'))
+DROP TABLE [padaria].[produto]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[padaria].[venda]') AND type in (N'U'))
+DROP TABLE [padaria].[venda]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[padaria].[funcionario]') AND type in (N'U'))
+DROP TABLE [padaria].[funcionario]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[padaria].[cliente]') AND type in (N'U'))
+DROP TABLE [padaria].[cliente]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[padaria].[fornecedor]') AND type in (N'U'))
+DROP TABLE [padaria].[fornecedor]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[padaria].[endereco]') AND type in (N'U'))
+DROP TABLE [padaria].[endereco]
+GO
+

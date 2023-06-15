@@ -1,33 +1,19 @@
 -- Endereços
 
-insert into padaria.endereco VALUES 
-('BA','Jaguaquara','Rua Doutor Gilberto Rebouças','Muritiba',156,'45345000'),
-('SP','Campinas','Vida Boa','Rua Alcides Nogueira'
-,88,'45345000'),
-('SP','Vinhedo','Capela','Rua do Café',96,'75846958'),
-('SP','Campinas','Centro','Rua Culto à Ciência',45,'13020060'),
-('SP','Campinas','Centro','Praca Comendador Soares',141,'13015030'),
-('SP','Vinhedo','Capela','Rua Nossa Sra. de Lourdes',87,'13280000'),
-('SP','Campinas','Jardim Chapadão','Av. Andrade Neves',448,'13070000');
+insert into padaria.endereco
+VALUES
+('Copacabana', 'Avenida B', 456, 'Rio de Janeiro', 'RJ', '12345678'),
+('Savassi', 'Rua C', 789, 'Belo Horizonte', 'MG', '98765432'),
+('Moinhos de Vento', 'Avenida D', 101, 'Porto Alegre', 'RS', '54321876'),
+('Batel', 'Rua E', 222, 'Curitiba', 'PR', '76543210'); 
 
-INSERT INTO padaria.endereco
-VALUES 
-('SP', 'São Paulo', 'Centro', 'Rua A', 123, '01234547'),
-('RJ', 'Rio de Janeiro', 'Copacabana', 'Avenida B', 456, '12345678'),
-('MG', 'Belo Horizonte', 'Savassi', 'Rua C', 789, '98765432'),
-('RS', 'Porto Alegre', 'Moinhos de Vento', 'Avenida D', 101, '54321876'),
-('PR', 'Curitiba', 'Batel', 'Rua E', 222, '76543210'),
-('SC', 'Florianópolis', 'Centro', 'Avenida F', 333, '45678901'),
-('BA', 'Salvador', 'Barra', 'Rua G', 444, '23456789'),
-('PE', 'Recife', 'Boa Viagem', 'Avenida H', 555, '65432109'),
-('CE', 'Fortaleza', 'Meireles', 'Rua I', 666, '34567890'),
-('AM', 'Manaus', 'Adrianópolis', 'Avenida J', 777, '87654321'),
-('GO', 'Goiânia', 'Setor Bueno', 'Rua K', 888, '56789012'),
-('MT', 'Cuiabá', 'Centro Sul', 'Avenida L', 999, '54321098'),
-('ES', 'Vitória', 'Jardim Camburi', 'Rua M', 111, NULL),
-('BA', 'Salvador', 'Pelourinho', 'Rua N', 222, NULL);
+SELECT * from padaria.funcionario F, padaria.endereco E where F.idEndereco = E.idEndereco;
+SELECT F.cpf,F.nome,F.sobrenome,F.senha,F.cargo,F.salario,F.telefone,E.bairro,E.rua,E.numero,E.cidade,E.UF,E.cep FROM padaria.funcionario F,padaria.endereco E WHERE F.idEndereco = E.idEndereco;
 
-select * from padaria.endereco
+
+select * from padaria.endereco;
+select max(idEndereco) from padaria.endereco;
+
 
 -- Fornecdor
 insert into padaria.fornecedor VALUES
@@ -53,13 +39,16 @@ insert into padaria.cliente VALUES
 -- Funcionario
 
 insert into padaria.funcionario values
-('João', 'Silva', 'Gerente', '1234567890', 5000.00, '12345678901',15),
-('Maria', 'Santos', 'Analista', '2345678901', 3500.00, '23456789012',16),
-('Pedro', 'Ferreira', 'Desenvolvedor', '3456789012', 4000.00, '34567890123',17),
-('Ana', 'Oliveira', 'Secretária', '4567890123', 2500.00, '45678901234',18),
-('Carlos', 'Souza', 'Vendedor', '5678901234', 3000.00, '56789012345',19),
-('Julia', 'Costa', 'Assistente', '6789012345', 2800.00, '67890123456',20),
-('Lucas', 'Gomes', 'Estagiário', '7890123456', 2000.00, '78901234567',21);
+('23456789012', 'Maria', 'Santos', 'senha456', 'Analista', 3500.00, '2345678901', NULL),
+('34567890123', 'Pedro', 'Ferreira', 'senha789', 'Desenvolvedor', 4000.00, '3456789012', NULL),
+('45678901234', 'Ana', 'Oliveira', 'senhaabc', 'Secretária', 2500.00, '4567890123', NULL),
+('56789012345', 'Carlos', 'Souza', 'senhaxyz', 'Vendedor', 3000.00, '5678901234', NULL);
+
+SELECT cpf,senha from padaria.funcionario
+
+SELECT cpf,senha from padaria.funcionario where cpf = '12345678901' and senha = 'senha1243'
+
+select F.cpf+F.idEndereco from padaria.Funcionario F where nome = 'João'
  
 -- Produto
 
@@ -76,7 +65,6 @@ insert into padaria.produto VALUES
 
 insert into padaria.venda VALUES
 (),
-
 
 
 

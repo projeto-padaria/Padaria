@@ -6,12 +6,12 @@ create schema padaria;
 create table padaria.endereco
 (
     idEndereco int identity(1,1),
-    estado char(2),
-    cidade varchar(50),
-    bairro varchar(100),
-    rua varchar(100),
-    numero int,
-    cep char(8) null,
+    bairro varchar(100)  null,
+    rua varchar(100)  null,
+    numero int  null,
+    cidade varchar(50)  null,
+    UF char(2)  null,
+    cep char(8)  null,
     PRIMARY KEY (idEndereco)
 );
 
@@ -23,7 +23,7 @@ create table padaria.fornecedor
     status varchar(50),
     nome varchar(50),
     telefone char(11),
-    idEndereco int,
+    idEndereco int null,
     UNIQUE(cnpj),
     PRIMARY KEY (idFornecedor),
 
@@ -34,10 +34,10 @@ create table padaria.cliente
 (
     idCliente int identity(1,1),
 
-    nome varchar(50) null,
-    sobrenome varchar(50) null,
-    cpf char(11) null,
-    idEndereco int null,
+    nome varchar(50),
+    sobrenome varchar(50),
+    cpf char(11),
+    idEndereco int  null,
     UNIQUE(cpf),
     PRIMARY KEY (idCliente),
 
@@ -48,19 +48,38 @@ create table padaria.funcionario
 (
     idFuncionario int identity(1,1),
 
+    cpf char(11),
     nome varchar(50),
     sobrenome varchar(50),
+    senha varchar(40),
     cargo varchar(50),
-    telefone char(11),
     salario decimal(10,2),
-    cpf char(11),
-    idEndereco int,
+    telefone char(11),
+    idEndereco int null,
     UNIQUE(cpf),
 
     PRIMARY KEY (idFuncionario),
 
     FOREIGN KEY (idEndereco) REFERENCES padaria.endereco(idEndereco) on update CASCADE
 );
+
+-- Sempre que um valor for adicionado na Tabela funcionario, o seu endereço será linkado com o último endereço registrado na tabela endereço.
+CREATE TRIGGER padaria.AtualizarUltimoValorEndereco
+ON padaria.funcionario
+AFTER INSERT
+AS
+BEGIN
+    DECLARE @UltimoValor VARCHAR(50);
+    
+    SELECT @UltimoValor = idEndereco
+    FROM padaria.endereco
+    WHERE idEndereco = (SELECT MAX(idEndereco) FROM padaria.endereco);
+    
+    UPDATE padaria.funcionario
+    SET idEndereco = @UltimoValor
+    FROM inserted
+    WHERE padaria.funcionario.idFuncionario = inserted.idFuncionario;
+END;
 
 create table padaria.produto
 (
@@ -86,7 +105,6 @@ create table padaria.venda
     idCliente int,
     idProduto int,
     idFuncionario int,
-    idFornecedor int,
 
     data date,
     entrega_tipo varchar(50) null,
@@ -97,9 +115,8 @@ create table padaria.venda
 
     FOREIGN KEY (idCliente) REFERENCES padaria.cliente(idCliente) on update CASCADE,
 
-    FOREIGN KEY (idFuncionario) REFERENCES padaria.funcionario(idFuncionario) on update CASCADE,
+    FOREIGN KEY (idFuncionario) REFERENCES padaria.funcionario(idFuncionario) on update NO ACTION,
     
-    FOREIGN KEY (idProduto) REFERENCES padaria.produto(idProduto) on update CASCADE,
+    FOREIGN KEY (idProduto) REFERENCES padaria.produto(idProduto) on update NO ACTION,
 
-    FOREIGN KEY (idFornecedor) REFERENCES padaria.fornecedor(idFornecedor) on update CASCADE
 )
