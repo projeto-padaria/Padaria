@@ -1,7 +1,7 @@
 -- Está em ordem de criação das tabelas e relacionamentos
 -- Caso algum cabaço faça merda. NÃO ALTERE A ORDEM DAS TABELAS
 
-create schema padaria
+-- create schema padaria
 
 create table padaria.endereco
 (
@@ -54,8 +54,10 @@ create table padaria.funcionario
     cargo varchar(50),
     telefone int,
     salario decimal(10,2),
-    cpf int,
+    cpf int UNIQUE,
+    senha varchar(50),
     idEndereco int,
+    senha varchar(50),
 
     PRIMARY KEY (idFuncionario),
 
@@ -99,3 +101,5 @@ create table padaria.venda
     FOREIGN KEY (idProduto) REFERENCES padaria.produto(idProduto),
     FOREIGN KEY (idFornecedor) REFERENCES padaria.fornecedor(idFornecedor)
 )
+
+SELECT CPF FROM padaria.funcionario WHERE CPF = 12345678901
