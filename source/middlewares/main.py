@@ -149,6 +149,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.cep = self.txtCEP.setText("")
         except Exception as error:
             self.printError(error)
+            QMessageBox.warning(login,"ALERTA","Preencha os Campos Obrigatórios Adequadamente!")
 
     def refreshTable(self):
         self.db.showTableFun(self.tableWidget)

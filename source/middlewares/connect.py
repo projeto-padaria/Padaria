@@ -68,26 +68,26 @@ class Connect:
 
         valores = [cpf, nome, sobrenome, senha, cargo, salario, telefone, rua, numero, bairro, cidade, uf, cep]
         aux = 0
-        for i,v in enumerate(valores):
-            if v == '':
-                valores.pop(i)
-                valores.insert(i,None)
+        for indice,valor in enumerate(valores):
+            if indice in (0,1,2,3,4,5,6) and valor == '':
                 aux += 1
-        #  VER ORM
-        try:
-            if aux <= 7:
-                self.cursor.execute(
-                    "INSERT INTO padaria.endereco VALUES (?,?,?,?,?,?)",(valores[9],valores[7],valores[8],valores[10],valores[11],valores[12])
-                )
-                self.cursor.execute(
-                    "INSERT INTO padaria.funcionario VALUES (?,?,?,?,?,?,?, NULL)",(valores[0],valores[1],valores[2],valores[3],valores[4],valores[5],valores[6])
-                )
-                self.cursor.commit()
-                print("Funcionário Cadastrado!!!!")
             else:
-                exit()
-        except Exception as error:
-            self.printError(error)
+                if valor == '':
+                    valores.pop(indice)
+                    valores.insert(indice,None)
+        #  VER ORM
+        if aux == 0:
+            self.cursor.execute(
+                "INSERT INTO padaria.endereco VALUES (?,?,?,?,?,?)",(valores[9],valores[7],valores[8],valores[10],valores[11],valores[12])
+            )
+            self.cursor.execute(
+                "INSERT INTO padaria.funcionario VALUES (?,?,?,?,?,?,?, NULL)",(valores[0],valores[1],valores[2],valores[3],valores[4],valores[5],valores[6])
+            )
+            self.cursor.commit()
+            print("Funcionário Cadastrado!!!!")
+        else:
+            raise Exception("Prencha os campos obrigatórios!!")
+        
 
     def showTableFun(self, tableWidget):
         comando_SQL = "SELECT F.cpf,F.nome,F.sobrenome,F.senha,F.cargo,F.salario,F.telefone,E.bairro,E.rua,E.numero,E.cidade,E.UF,E.cep FROM padaria.funcionario F,padaria.endereco E WHERE F.idEndereco = E.idEndereco;"

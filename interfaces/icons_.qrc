@@ -1,9 +1,7 @@
 <RCC>
   <qresource prefix="icons">
-    <file>icons/qtDesigner.png</file>
-    <file>icons/python-original.svg</file>
+    <file>icons/python.png</file>
     <file>icons/padaria.png</file>
-    <file>icons/email.png</file>
     <file>icons/menu.png</file>
     <file>icons/grupo.png</file>
     <file>icons/menu2.png</file>

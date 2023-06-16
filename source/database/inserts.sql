@@ -39,7 +39,7 @@ insert into padaria.cliente VALUES
 -- Funcionario
 
 insert into padaria.funcionario values
-('09082711583', 'Rafael', 'Moreira', '123', 'Sênior', 1000.00, '19984586252', NULL),
+('0', 'Rafael', 'Moreira', '321', 'Sênior', 1000.00, '19984586252', NULL),
 ('34567890123', 'Pedro', 'Ferreira', 'senha789', 'Desenvolvedor', 4000.00, '3456789012', NULL),
 ('45678901234', 'Ana', 'Oliveira', 'senhaabc', 'Secretária', 2500.00, '4567890123', NULL),
 ('56789012345', 'Carlos', 'Souza', 'senhaxyz', 'Vendedor', 3000.00, '5678901234', NULL);
