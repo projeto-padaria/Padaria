@@ -2,7 +2,7 @@ import sys
 
 sys.path.append("interfaces")
 from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PySide6.QtWidgets import QApplication, QMainWindow
 from cadastro_ui import Ui_MainWindow
 from tela_login_New_ui import Ui_MainWindowLogin
 from PySide6 import QtCore
@@ -19,18 +19,10 @@ class MainWindowLogin(QMainWindow, Ui_MainWindowLogin):
         self.btnLogin.clicked.connect(self.TelaPrincipal)
 
     def TelaPrincipal(self):
-        self.login = self.txtLogin.text()
-        self.senha = self.txtSenha.text()
-        db = Connect('BD23333','BD23333')  # TROCAR
-        db.Login()
-        auth = db.LoginAuthentication(self.login, self.senha)
-        if auth == True:
-            login.close()
-            window = MainWindow()
-            window.show()
-        else:
-            QMessageBox.warning(login,"ALERTA","Login ou Senha Incorretos")
-
+        login.close()
+        window = MainWindow()
+        window.show()
+        
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -49,9 +41,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btnVenda.clicked.connect(self.pgBancoDeDados)
         self.btnCadastrar.clicked.connect(self.pgBancoDeDados)
         self.btnSobre.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgSobre))
-        self.btnContatos.clicked.connect(
-            lambda: self.Pages.setCurrentWidget(self.pgContatos)
-        )
+        self.btnContatos.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgContatos))
         self.btnCadastrarFun.clicked.connect(self.cadastroFuncionario)
         self.btnAtualizar.clicked.connect(self.refreshTable)
         # self.btnLoginBD.clicked.connect(self.ConnectDatabase)
@@ -79,14 +69,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def pgBancoDeDados(self):
         self.sender1 = self.sender()
+        self.lblAviso.setText("  Aguardando Entrada... ")
         self.Pages.setCurrentWidget(self.pgBanco)
         self.btnLoginBD.clicked.connect(self.connectDatabase)
 
     def connectDatabase(self):
-        self.login = self.txtLoginDB.text()
-        self.password = self.txtSenhaDB.text()
         try:
-            self.db = Connect(self.login, self.password)
+            self.db = Connect('BD23333', 'BD23333')
             self.db.Login()
             if self.sender1 == self.btnVenda:
                 self.txtLoginDB.setText("")
@@ -98,7 +87,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.db.showTableFun(self.tableWidget)
                 self.Pages.setCurrentWidget(self.pgCadastrar)
         except Exception as error:
-            QMessageBox.warning(login,"ALERTA","Login ou Senha Incorretos")
             self.printError(error)
             self.txtLoginDB.setText("")
             self.txtSenhaDB.setText("")
@@ -134,19 +122,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.uf,
                 self.cep,
             )
-            self.cpf = self.txtCPF.setText("")
-            self.nome = self.txtNome.setText("")
-            self.sobrenome = self.txtSobrenome.setText("")
-            self.senha = self.txtSenha.setText("")
-            self.cargo = self.txtCargo.setText("")
-            self.salario = self.txtSalario.setText("")
-            self.telefone = self.txtTelefone.setText("")
-            self.rua = self.txtLogradouro.setText("")
-            self.numero = self.txtNumero.setText("")
-            self.bairro = self.txtBairro.setText("")
-            self.cidade = self.txtMunicipio.setText("")
-            self.uf = self.txtUF.setText("")
-            self.cep = self.txtCEP.setText("")
+            self.cpf = self.txtCPF.setText('')
+            self.nome = self.txtNome.setText('')
+            self.sobrenome = self.txtSobrenome.setText('')
+            self.senha = self.txtSenha.setText('')
+            self.cargo = self.txtCargo.setText('')
+            self.salario = self.txtSalario.setText('')
+            self.telefone = self.txtTelefone.setText('')
+            self.rua = self.txtLogradouro.setText('')
+            self.numero = self.txtNumero.setText('')
+            self.bairro = self.txtBairro.setText('')
+            self.cidade = self.txtMunicipio.setText('')
+            self.uf = self.txtUF.setText('')
+            self.cep = self.txtCEP.setText('')
+            
         except Exception as error:
             self.printError(error)
 
@@ -159,4 +148,3 @@ if __name__ == "__main__":
     login = MainWindowLogin()
     login.show()
     sys.exit(app.exec())
-

@@ -61,36 +61,31 @@ class Connect:
                 self.printSuccess("Usuário encontrado!!")
                 return True
         except Exception as error:
-            self.printError(error)
             self.printError("Usuário Não Encontrado!")
             return False
 
-    def insertTableFun(
-        self,
-        cpf,
-        nome,
-        sobrenome,
-        senha,
-        cargo,
-        salario,
-        telefone,
-        rua,
-        numero,
-        bairro,
-        cidade,
-        uf,
-        cep,
-    ) -> None:
-        # colocar tudo numa variavel, passar por ela vendo quem é vazio e deixar NULL, VER ORM
+    def insertTableFun(self, cpf, nome, sobrenome, senha, cargo, salario, telefone,rua, numero, bairro, cidade, uf, cep) -> None:
+
+        valores = [cpf, nome, sobrenome, senha, cargo, salario, telefone, rua, numero, bairro, cidade, uf, cep]
+        aux = 0
+        for i,v in enumerate(valores):
+            if v == '':
+                valores.pop(i)
+                valores.insert(i,None)
+                aux += 1
+        #  VER ORM
         try:
-            self.cursor.execute(
-                f"""INSERT INTO padaria.endereco VALUES ('{bairro}','{rua}',{numero},'{cidade}','{uf}','{cep}');"""
-            )
-            self.cursor.execute(
-                f"""INSERT INTO padaria.funcionario VALUES ('{cpf}','{nome}','{sobrenome}','{senha}','{cargo}',{salario},'{telefone}', NULL);"""
-            )
-            self.cursor.commit()
-            print("Funcionário Cadastrado!!!!")
+            if aux <= 7:
+                self.cursor.execute(
+                    "INSERT INTO padaria.endereco VALUES (?,?,?,?,?,?)",(valores[9],valores[7],valores[8],valores[10],valores[11],valores[12])
+                )
+                self.cursor.execute(
+                    "INSERT INTO padaria.funcionario VALUES (?,?,?,?,?,?,?, NULL)",(valores[0],valores[1],valores[2],valores[3],valores[4],valores[5],valores[6])
+                )
+                self.cursor.commit()
+                print("Funcionário Cadastrado!!!!")
+            else:
+                exit()
         except Exception as error:
             self.printError(error)
 
