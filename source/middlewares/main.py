@@ -13,7 +13,7 @@ class MainWindowLogin(QMainWindow, Ui_MainWindowLogin):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.setWindowTitle("Padaria - Sistema de Gestão")
+        self.setWindowTitle("Imperador dos Pães - Login")
         appIcon = QIcon("")
         self.setWindowIcon(appIcon)
         self.btnLogin.clicked.connect(self.TelaPrincipal)
@@ -21,7 +21,7 @@ class MainWindowLogin(QMainWindow, Ui_MainWindowLogin):
     def TelaPrincipal(self):
         self.login = self.txtLogin.text()
         self.senha = self.txtSenha.text()
-        db = Connect('BD23333','BD23333')  # TROCAR
+        db = Connect('BD23333','BD23333')  
         db.Login()
         auth = db.LoginAuthentication(self.login, self.senha)
         if auth == True:
@@ -36,7 +36,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.setWindowTitle("Padaria - Sistema de Gestão")
+        self.setWindowTitle("Imperador dos Pães - Sistema de Gestão")
         appIcon = QIcon("")
         self.setWindowIcon(appIcon)
 
@@ -49,12 +49,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btnVenda.clicked.connect(self.pgBancoDeDados)
         self.btnCadastrar.clicked.connect(self.pgBancoDeDados)
         self.btnSobre.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgSobre))
-        self.btnContatos.clicked.connect(
-            lambda: self.Pages.setCurrentWidget(self.pgContatos)
-        )
+        self.btnContatos.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgContatos))
         self.btnCadastrarFun.clicked.connect(self.cadastroFuncionario)
         self.btnAtualizar.clicked.connect(self.refreshTable)
-        # self.btnLoginBD.clicked.connect(self.ConnectDatabase)
+        self.btnLoginBD.clicked.connect(self.ConnectDatabase)
         ######################################################################
 
     def printError(self, error) -> None:
@@ -80,7 +78,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def pgBancoDeDados(self):
         self.sender1 = self.sender()
         self.Pages.setCurrentWidget(self.pgBanco)
-        self.btnLoginBD.clicked.connect(self.connectDatabase)
 
     def connectDatabase(self):
         self.login = self.txtLoginDB.text()
