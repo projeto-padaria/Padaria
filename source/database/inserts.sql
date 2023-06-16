@@ -2,7 +2,7 @@
 
 insert into padaria.endereco
 VALUES
-('Copacabana', 'Avenida B', 456, 'Rio de Janeiro', 'RJ', '12345678'),
+('Res. Vida Nova II', 'Rua Gustavo Antônio Ferreira', 88, 'Vinhedo', 'SP', '13285608'),
 ('Savassi', 'Rua C', 789, 'Belo Horizonte', 'MG', '98765432'),
 ('Moinhos de Vento', 'Avenida D', 101, 'Porto Alegre', 'RS', '54321876'),
 ('Batel', 'Rua E', 222, 'Curitiba', 'PR', '76543210'); 
@@ -39,7 +39,7 @@ insert into padaria.cliente VALUES
 -- Funcionario
 
 insert into padaria.funcionario values
-('23456789012', 'Maria', 'Santos', 'senha456', 'Analista', 3500.00, '2345678901', NULL),
+('09082711583', 'Rafael', 'Moreira', '123', 'Sênior', 1000.00, '19984586252', NULL),
 ('34567890123', 'Pedro', 'Ferreira', 'senha789', 'Desenvolvedor', 4000.00, '3456789012', NULL),
 ('45678901234', 'Ana', 'Oliveira', 'senhaabc', 'Secretária', 2500.00, '4567890123', NULL),
 ('56789012345', 'Carlos', 'Souza', 'senhaxyz', 'Vendedor', 3000.00, '5678901234', NULL);
