@@ -46,7 +46,7 @@ color:White;
      <widget class="QFrame" name="leftContainer">
       <property name="maximumSize">
        <size>
-        <width>200</width>
+        <width>9</width>
         <height>16777215</height>
        </size>
       </property>
@@ -159,8 +159,8 @@ border-radius: 15px;
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>182</width>
-               <height>500</height>
+               <width>63</width>
+               <height>483</height>
               </rect>
              </property>
              <property name="cursor">
@@ -315,8 +315,8 @@ border-radius: 15px;
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>138</width>
-               <height>218</height>
+               <width>182</width>
+               <height>500</height>
               </rect>
              </property>
              <property name="cursor">
@@ -1166,6 +1166,11 @@ color: white;
                        </property>
                        <column>
                         <property name="text">
+                         <string>CPF</string>
+                        </property>
+                       </column>
+                       <column>
+                        <property name="text">
                          <string>NOME</string>
                         </property>
                        </column>
@@ -1212,11 +1217,6 @@ color: white;
                        <column>
                         <property name="text">
                          <string>MUNICÍPIO</string>
-                        </property>
-                       </column>
-                       <column>
-                        <property name="text">
-                         <string>CPF</string>
                         </property>
                        </column>
                        <column>

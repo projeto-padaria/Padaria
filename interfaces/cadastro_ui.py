@@ -46,7 +46,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setContentsMargins(0, -1, 0, 0)
         self.leftContainer = QFrame(self.centralwidget)
         self.leftContainer.setObjectName(u"leftContainer")
-        self.leftContainer.setMaximumSize(QSize(200, 16777215))
+        self.leftContainer.setMaximumSize(QSize(9, 16777215))
         self.leftContainer.setFrameShape(QFrame.StyledPanel)
         self.leftContainer.setFrameShadow(QFrame.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.leftContainer)
@@ -106,7 +106,7 @@ class Ui_MainWindow(object):
 "")
         self.page = QWidget()
         self.page.setObjectName(u"page")
-        self.page.setGeometry(QRect(0, 0, 182, 500))
+        self.page.setGeometry(QRect(0, 0, 63, 483))
         self.page.setCursor(QCursor(Qt.ArrowCursor))
         self.verticalLayout_3 = QVBoxLayout(self.page)
         self.verticalLayout_3.setSpacing(6)
@@ -167,7 +167,7 @@ class Ui_MainWindow(object):
         self.toolBox.addItem(self.page, u"MENU")
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
-        self.page_2.setGeometry(QRect(0, 0, 138, 218))
+        self.page_2.setGeometry(QRect(0, 0, 182, 500))
         self.page_2.setCursor(QCursor(Qt.ArrowCursor))
         self.verticalLayout_13 = QVBoxLayout(self.page_2)
         self.verticalLayout_13.setSpacing(0)
@@ -863,27 +863,27 @@ class Ui_MainWindow(object):
         self.btnCadastrarFun.setText(QCoreApplication.translate("MainWindow", u"Cadastrar Funcion\u00e1rio", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Realizar Cadastro ", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"NOME", None));
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"CPF", None));
         ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"SOBRENOME", None));
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"NOME", None));
         ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"SENHA", None));
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"SOBRENOME", None));
         ___qtablewidgetitem3 = self.tableWidget.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"CARGO", None));
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"SENHA", None));
         ___qtablewidgetitem4 = self.tableWidget.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"SAL\u00c1RIO", None));
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"CARGO", None));
         ___qtablewidgetitem5 = self.tableWidget.horizontalHeaderItem(5)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"TELEFONE", None));
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"SAL\u00c1RIO", None));
         ___qtablewidgetitem6 = self.tableWidget.horizontalHeaderItem(6)
-        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"LOGRADOURO", None));
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"TELEFONE", None));
         ___qtablewidgetitem7 = self.tableWidget.horizontalHeaderItem(7)
-        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"BAIRRO", None));
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"LOGRADOURO", None));
         ___qtablewidgetitem8 = self.tableWidget.horizontalHeaderItem(8)
-        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"NUMERO", None));
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"BAIRRO", None));
         ___qtablewidgetitem9 = self.tableWidget.horizontalHeaderItem(9)
-        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"MUNIC\u00cdPIO", None));
+        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"NUMERO", None));
         ___qtablewidgetitem10 = self.tableWidget.horizontalHeaderItem(10)
-        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"CPF", None));
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"MUNIC\u00cdPIO", None));
         ___qtablewidgetitem11 = self.tableWidget.horizontalHeaderItem(11)
         ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"UF", None));
         ___qtablewidgetitem12 = self.tableWidget.horizontalHeaderItem(12)
