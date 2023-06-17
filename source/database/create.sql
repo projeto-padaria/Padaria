@@ -63,24 +63,6 @@ create table padaria.funcionario
     FOREIGN KEY (idEndereco) REFERENCES padaria.endereco(idEndereco) on update CASCADE
 );
 
--- Sempre que um valor for adicionado na Tabela funcionario, o seu endereço será linkado com o último endereço registrado na tabela endereço.
-CREATE TRIGGER padaria.AtualizarUltimoValorEndereco
-ON padaria.funcionario
-AFTER INSERT
-AS
-BEGIN
-    DECLARE @UltimoValor VARCHAR(50);
-    
-    SELECT @UltimoValor = idEndereco
-    FROM padaria.endereco
-    WHERE idEndereco = (SELECT MAX(idEndereco) FROM padaria.endereco);
-    
-    UPDATE padaria.funcionario
-    SET idEndereco = @UltimoValor
-    FROM inserted
-    WHERE padaria.funcionario.idFuncionario = inserted.idFuncionario;
-END;
-
 create table padaria.produto
 (
     idProduto int identity(1,1),
@@ -120,3 +102,20 @@ create table padaria.venda
     FOREIGN KEY (idProduto) REFERENCES padaria.produto(idProduto) on update NO ACTION,
 
 )
+
+-- Sempre que um valor for adicionado na Tabela funcionario, o seu endereço será linkado com o último endereço registrado na tabela endereço. Dever ser criado após a criação das outras tabelas.
+CREATE TRIGGER padaria.AtualizarUltimoValorEndereco ON padaria.funcionario
+AFTER INSERT
+AS
+BEGIN
+    DECLARE @UltimoValor VARCHAR(50);
+    
+    SELECT @UltimoValor = idEndereco
+    FROM padaria.endereco
+    WHERE idEndereco = (SELECT MAX(idEndereco) FROM padaria.endereco);
+    
+    UPDATE padaria.funcionario
+    SET idEndereco = @UltimoValor
+    FROM inserted
+    WHERE padaria.funcionario.idFuncionario = inserted.idFuncionario;
+END

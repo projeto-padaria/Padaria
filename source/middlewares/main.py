@@ -2,17 +2,20 @@ import sys
 sys.path.append("interfaces")
 
 # Importação de libs
-
+from PyQt5.QtGui import QIcon
 from PySide6.QtWidgets import QMainWindow, QMessageBox
-from cadastro_ui import Ui_MainWindow
 from PySide6 import QtCore
+
+# Importação da Interface de Cadastro
+from tela_Principal_ui import Ui_MainWindow
+
 # Importação da Classe de Conexão com o Banco de Dados
 from module import Connect
+
 # Importação da Classe debug e Criação da Instância
 from debug import libDebug
 debug = libDebug()
 
-# Importação de Classe Principal
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -20,10 +23,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.setWindowTitle("Imperador dos Pães - Sistema de Gestão")
 
-        ######################################################################
         # TOGGLE BUTTON
         self.btinToggle.clicked.connect(self.left_Container)
-        #####################################################################
         # Paginas do Sistema
         self.btnHome.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgHome))
         self.btnVenda.clicked.connect(self.pgBancoDeDados)
@@ -34,14 +35,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         )
         self.btnCadastrarFun.clicked.connect(self.cadastroFuncionario)
         self.btnAtualizar.clicked.connect(self.refreshTable)
-        self.btnLoginBD.clicked.connect(self.ConnectDatabase)
-        ######################################################################
-
-    def printError(self, error) -> None:
-        return print(f"ERROR: {error}")
+        self.btnLoginBD.clicked.connect(self.connectDatabase)
+        self.btnAlterar.clicked.connect(self.updateTable)
+        self.btnExcluir.clicked.connect(self.deletarFun)
 
     def left_Container(self):
-        width = self.leftContainer.width()  # tamanho do container
+        width = self.leftContainer.width()
 
         if width == 9:
             newWidth = 200
@@ -49,12 +48,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             newWidth = 9
 
         self.animation = QtCore.QPropertyAnimation(self.leftContainer, b"maximumWidth")
-        self.animation.setDuration(500)  # Duração da animação
-        self.animation.setStartValue(width)  # Incio da animacao
-        self.animation.setEndValue(newWidth)  # Término da animação
-        self.animation.setEasingCurve(
-            QtCore.QEasingCurve.InOutQuart
-        )  # Tipo de animação
+        self.animation.setDuration(500)
+        self.animation.setStartValue(width)
+        self.animation.setEndValue(newWidth)
+        self.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
         self.animation.start()
 
     def pgBancoDeDados(self):
@@ -126,9 +123,61 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.cidade = self.txtMunicipio.setText("")
             self.uf = self.txtUF.setText("")
             self.cep = self.txtCEP.setText("")
+            QMessageBox.about(None, "ALERTA", "Funcionário Cadastrado com Sucesso!")
         except Exception as error:
             debug.printError(error)
-            QMessageBox.warning(self,"ALERTA","Preencha os Campos Obrigatórios Adequadamente!")
+            QMessageBox.warning(
+                None, "ALERTA", "Preencha os Campos Obrigatórios Adequadamente!"
+            )
+
+    def deletarFun(self):
+        self.db.Login()
+        msg = QMessageBox()
+        msg.setWindowTitle("Excluir")
+        msg.setText("Este registro será excluído.")
+        msg.setInformativeText("Você tem certeza que deseja excluir?")
+        msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        resp = msg.exec()
+        if resp == QMessageBox.Yes:
+            try:
+                cpf = (
+                    self.tableWidget.selectionModel()
+                    .currentIndex()
+                    .siblingAtColumn(0)
+                    .data()
+                )
+                result = self.db.deleteFun(cpf)
+                self.refreshTable()
+
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Imperador dos Pães")
+                msg.setText(result)
+                msg.exec()
+            except Exception as error:
+                debug.printError(error)
+
+    def updateTable(self):
+        dados = []
+        update_dados = []
+
+        for row in range(self.tableWidget.rowCount()):
+            for column in range(self.tableWidget.columnCount()):
+                dados.append(self.tableWidget.item(row, column).text())
+            update_dados.append(dados)
+            dados = []
+
+        try:
+            self.db.Login()
+            for dados in update_dados:
+                self.db.updateTable(tuple(dados))
+            QMessageBox.about(
+                None, "Atualização de Dados", "Dados atualizados com sucesso!"
+            )
+
+            self.refreshTable()
+        except Exception as error:
+            debug.printError(error)
 
     def refreshTable(self):
         self.db.showTableFun(self.tableWidget)

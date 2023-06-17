@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'tela_login_New.ui'
+## Form generated from reading UI file 'tela_Login.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.1
 ##

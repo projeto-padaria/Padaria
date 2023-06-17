@@ -1,15 +1,12 @@
 # Importação de libs
-
 import pyodbc as bd
 from PySide6.QtWidgets import QTableWidgetItem
 from os import system as clearTerminal
-from debug import libDebug
 
 # Importação da Classe debug
-
+from debug import libDebug
 debug = libDebug()
 
-# Classe de Conexão com o Banco de Dados
 
 class Connect:
     def __init__(self, login, senha) -> None:
@@ -47,13 +44,13 @@ class Connect:
                 exit()
             else:
                 debug.printSuccess("Usuário encontrado!!")
+                self.cursor.close()
                 return True
         except Exception as error:
             debug.printError(error)
             return False
 
     def insertTableFun(self, cpf, nome, sobrenome, senha, cargo, salario, telefone,rua, numero, bairro, cidade, uf, cep) -> None:
-
         valores = [cpf, nome, sobrenome, senha, cargo, salario, telefone, rua, numero, bairro, cidade, uf, cep]
         aux = 0
         for indice,valor in enumerate(valores):
@@ -63,7 +60,6 @@ class Connect:
                 if valor == '':
                     valores.pop(indice)
                     valores.insert(indice,None)
-        #  VER ORM
         if aux == 0:
             self.cursor.execute(
                 "INSERT INTO padaria.endereco VALUES (?,?,?,?,?,?)",(valores[9],valores[7],valores[8],valores[10],valores[11],valores[12])
@@ -81,7 +77,6 @@ class Connect:
         comando_SQL = "SELECT F.cpf,F.nome,F.sobrenome,F.senha,F.cargo,F.salario,F.telefone,E.bairro,E.rua,E.numero,E.cidade,E.UF,E.cep FROM padaria.funcionario F,padaria.endereco E WHERE F.idEndereco = E.idEndereco;"
         self.cursor.execute(comando_SQL)
         dados_lidos = self.cursor.fetchall()
-        print(dados_lidos)
         table = tableWidget
         try:
             table.setRowCount(len(dados_lidos))
@@ -90,7 +85,38 @@ class Connect:
                 for j in range(0, 13):
                     table.setItem(i, j, QTableWidgetItem(str(dados_lidos[i][j])))
         except Exception as error:
-            self.printError(error)
+            debug.printError(error)
+
+    def deleteFun(self, cpf):
+        self.cursor.execute(f"DELETE FROM padaria.funcionario WHERE cpf = '{cpf}' ")
+        self.cursor.commit()
+        return "Cadastro de Funcionário excluido com sucesso!"
+        
+    def updateTable(self,fullDataSet):
+        self.cursor.execute(f"""
+        UPDATE padaria.endereco 
+        SET
+            bairro = '{fullDataSet[7]}',
+            rua = '{fullDataSet[8]}',
+            numero = {fullDataSet[9]},
+            cidade = '{fullDataSet[10]}',
+            uf ='{fullDataSet[11]}',
+            cep = '{fullDataSet[12]}'
+        FROM padaria.endereco AS E
+        INNER JOIN padaria.funcionario AS F ON E.idEndereco = F.idEndereco
+        WHERE F.cpf = '{fullDataSet[0]}'""")
+        self.cursor.execute(f""" UPDATE padaria.funcionario SET
+
+            cpf = '{fullDataSet[0]}',
+            nome = '{fullDataSet[1]}',
+            sobrenome = '{fullDataSet[2]}',
+            senha = '{fullDataSet[3]}',
+            cargo = '{fullDataSet[4]}',
+            salario = {fullDataSet[5]},
+            telefone = {fullDataSet[6]}
+            WHERE cpf = '{fullDataSet[0]}'""")
+        self.cursor.commit()
+
 
 
 if __name__ == "__main__":

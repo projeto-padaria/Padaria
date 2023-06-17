@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'cadastro.ui'
+## Form generated from reading UI file 'tela_Principal.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.1
 ##
@@ -27,7 +27,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1019, 613)
+        MainWindow.resize(1147, 670)
         MainWindow.setStyleSheet(u"background-color: rgb(0, 0, 0);")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -92,6 +92,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setContentsMargins(9, 0, 0, -1)
         self.toolBox = QToolBox(self.frame_2)
         self.toolBox.setObjectName(u"toolBox")
+        self.toolBox.setMinimumSize(QSize(180, 0))
         font = QFont()
         font.setBold(True)
         self.toolBox.setFont(font)
@@ -107,7 +108,7 @@ class Ui_MainWindow(object):
 "")
         self.page = QWidget()
         self.page.setObjectName(u"page")
-        self.page.setGeometry(QRect(0, 0, 63, 483))
+        self.page.setGeometry(QRect(0, 0, 180, 557))
         self.page.setCursor(QCursor(Qt.ArrowCursor))
         self.verticalLayout_3 = QVBoxLayout(self.page)
         self.verticalLayout_3.setSpacing(6)
@@ -168,7 +169,7 @@ class Ui_MainWindow(object):
         self.toolBox.addItem(self.page, u"MENU")
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
-        self.page_2.setGeometry(QRect(0, 0, 138, 483))
+        self.page_2.setGeometry(QRect(0, 0, 180, 399))
         self.page_2.setCursor(QCursor(Qt.ArrowCursor))
         self.verticalLayout_13 = QVBoxLayout(self.page_2)
         self.verticalLayout_13.setSpacing(0)
@@ -283,8 +284,8 @@ class Ui_MainWindow(object):
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.frame_9.sizePolicy().hasHeightForWidth())
         self.frame_9.setSizePolicy(sizePolicy1)
-        self.frame_9.setMinimumSize(QSize(330, 300))
-        self.frame_9.setMaximumSize(QSize(330, 300))
+        self.frame_9.setMinimumSize(QSize(300, 300))
+        self.frame_9.setMaximumSize(QSize(450, 450))
         self.frame_9.setStyleSheet(u"background-color:rgb(49, 49, 49)")
         self.frame_9.setFrameShape(QFrame.StyledPanel)
         self.frame_9.setFrameShadow(QFrame.Raised)
@@ -293,7 +294,7 @@ class Ui_MainWindow(object):
         self.frame_10 = QFrame(self.frame_9)
         self.frame_10.setObjectName(u"frame_10")
         self.frame_10.setMinimumSize(QSize(215, 100))
-        self.frame_10.setMaximumSize(QSize(315, 100))
+        self.frame_10.setMaximumSize(QSize(16777215, 16777215))
         self.frame_10.setStyleSheet(u"QLabel{\n"
 "color:white;\n"
 "}\n"
@@ -315,7 +316,7 @@ class Ui_MainWindow(object):
         self.lbl_Usuario = QLabel(self.frame_10)
         self.lbl_Usuario.setObjectName(u"lbl_Usuario")
         self.lbl_Usuario.setMinimumSize(QSize(280, 25))
-        self.lbl_Usuario.setMaximumSize(QSize(300, 25))
+        self.lbl_Usuario.setMaximumSize(QSize(16777215, 16777215))
         font3 = QFont()
         font3.setPointSize(10)
         self.lbl_Usuario.setFont(font3)
@@ -326,7 +327,7 @@ class Ui_MainWindow(object):
         self.txtLoginDB = QLineEdit(self.frame_10)
         self.txtLoginDB.setObjectName(u"txtLoginDB")
         self.txtLoginDB.setMinimumSize(QSize(280, 25))
-        self.txtLoginDB.setMaximumSize(QSize(300, 25))
+        self.txtLoginDB.setMaximumSize(QSize(16777215, 16777215))
         font4 = QFont()
         font4.setFamilies([u"MS SHel Dlg 2"])
         font4.setPointSize(10)
@@ -344,7 +345,7 @@ class Ui_MainWindow(object):
         self.frame_11 = QFrame(self.frame_9)
         self.frame_11.setObjectName(u"frame_11")
         self.frame_11.setMinimumSize(QSize(215, 100))
-        self.frame_11.setMaximumSize(QSize(315, 100))
+        self.frame_11.setMaximumSize(QSize(16777215, 16777215))
         self.frame_11.setStyleSheet(u"QLabel{\n"
 "color:white;\n"
 "}\n"
@@ -366,7 +367,7 @@ class Ui_MainWindow(object):
         self.lbl_Senha = QLabel(self.frame_11)
         self.lbl_Senha.setObjectName(u"lbl_Senha")
         self.lbl_Senha.setMinimumSize(QSize(280, 25))
-        self.lbl_Senha.setMaximumSize(QSize(300, 25))
+        self.lbl_Senha.setMaximumSize(QSize(16777215, 16777215))
         self.lbl_Senha.setFont(font3)
 
         self.verticalLayout_20.addWidget(self.lbl_Senha)
@@ -374,7 +375,7 @@ class Ui_MainWindow(object):
         self.txtSenhaDB = QLineEdit(self.frame_11)
         self.txtSenhaDB.setObjectName(u"txtSenhaDB")
         self.txtSenhaDB.setMinimumSize(QSize(280, 25))
-        self.txtSenhaDB.setMaximumSize(QSize(300, 25))
+        self.txtSenhaDB.setMaximumSize(QSize(16777215, 16777215))
         self.txtSenhaDB.setFont(font4)
         self.txtSenhaDB.setStyleSheet(u"")
         self.txtSenhaDB.setEchoMode(QLineEdit.Password)
@@ -388,14 +389,14 @@ class Ui_MainWindow(object):
         self.frame_12 = QFrame(self.frame_9)
         self.frame_12.setObjectName(u"frame_12")
         self.frame_12.setMinimumSize(QSize(215, 50))
-        self.frame_12.setMaximumSize(QSize(315, 100))
+        self.frame_12.setMaximumSize(QSize(16777215, 16777215))
         self.frame_12.setFrameShape(QFrame.StyledPanel)
         self.frame_12.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_7 = QHBoxLayout(self.frame_12)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
         self.btnLoginBD = QPushButton(self.frame_12)
         self.btnLoginBD.setObjectName(u"btnLoginBD")
-        self.btnLoginBD.setMaximumSize(QSize(200, 100))
+        self.btnLoginBD.setMaximumSize(QSize(200, 50))
         font5 = QFont()
         font5.setPointSize(12)
         self.btnLoginBD.setFont(font5)
@@ -421,7 +422,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_18.addWidget(self.frame_12)
 
 
-        self.horizontalLayout_11.addWidget(self.frame_9)
+        self.horizontalLayout_11.addWidget(self.frame_9, 0, Qt.AlignHCenter|Qt.AlignVCenter)
 
         self.Pages.addWidget(self.pgBanco)
         self.pgVenda = QWidget()
@@ -549,7 +550,13 @@ class Ui_MainWindow(object):
         self.tabWidget.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.tabWidget.setLayoutDirection(Qt.LeftToRight)
         self.tabWidget.setAutoFillBackground(False)
-        self.tabWidget.setStyleSheet(u"")
+        self.tabWidget.setStyleSheet(u"QTabWidget::pane { background-color: rgb(49, 49, 49) }\n"
+"\n"
+"QTabBar::tab { background-color: white; }\n"
+"\n"
+"QTabBar::tab:selected {background-color:rgb(49, 49, 49); color:white }\n"
+"\n"
+"QTabWidget{background-color: black; border: none}")
         self.tabWidget.setUsesScrollButtons(True)
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
@@ -558,6 +565,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.frame_4 = QFrame(self.tab)
         self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setMaximumSize(QSize(16777215, 16777215))
         self.frame_4.setStyleSheet(u"QLineEdit{\n"
 "color: white;\n"
 "background-color: rgb(0, 0, 0);\n"
@@ -573,96 +581,111 @@ class Ui_MainWindow(object):
         self.frame_4.setFrameShadow(QFrame.Raised)
         self.gridLayout = QGridLayout(self.frame_4)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.txtUF = QLineEdit(self.frame_4)
-        self.txtUF.setObjectName(u"txtUF")
-        self.txtUF.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.txtUF, 7, 0, 1, 1)
-
-        self.txtCEP = QLineEdit(self.frame_4)
-        self.txtCEP.setObjectName(u"txtCEP")
-        self.txtCEP.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.txtCEP, 7, 1, 1, 1)
-
         self.txtNome = QLineEdit(self.frame_4)
         self.txtNome.setObjectName(u"txtNome")
+        self.txtNome.setMinimumSize(QSize(0, 40))
         self.txtNome.setAlignment(Qt.AlignCenter)
 
         self.gridLayout.addWidget(self.txtNome, 1, 1, 1, 1)
 
-        self.lblCadastroFun = QLabel(self.frame_4)
-        self.lblCadastroFun.setObjectName(u"lblCadastroFun")
-
-        self.gridLayout.addWidget(self.lblCadastroFun, 0, 0, 1, 3)
-
         self.txtSobrenome = QLineEdit(self.frame_4)
         self.txtSobrenome.setObjectName(u"txtSobrenome")
+        self.txtSobrenome.setMinimumSize(QSize(0, 40))
         self.txtSobrenome.setAlignment(Qt.AlignCenter)
 
         self.gridLayout.addWidget(self.txtSobrenome, 1, 2, 1, 1)
 
+        self.txtSenha = QLineEdit(self.frame_4)
+        self.txtSenha.setObjectName(u"txtSenha")
+        self.txtSenha.setMinimumSize(QSize(0, 40))
+        self.txtSenha.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.txtSenha, 2, 0, 1, 1)
+
+        self.lblCadastroFun = QLabel(self.frame_4)
+        self.lblCadastroFun.setObjectName(u"lblCadastroFun")
+        self.lblCadastroFun.setMinimumSize(QSize(0, 0))
+        self.lblCadastroFun.setMaximumSize(QSize(16777215, 200))
+
+        self.gridLayout.addWidget(self.lblCadastroFun, 0, 0, 1, 3)
+
         self.txtCPF = QLineEdit(self.frame_4)
         self.txtCPF.setObjectName(u"txtCPF")
+        self.txtCPF.setMinimumSize(QSize(0, 40))
         self.txtCPF.setAlignment(Qt.AlignCenter)
 
         self.gridLayout.addWidget(self.txtCPF, 1, 0, 1, 1)
 
+        self.txtNumero = QLineEdit(self.frame_4)
+        self.txtNumero.setObjectName(u"txtNumero")
+        self.txtNumero.setMinimumSize(QSize(0, 40))
+        self.txtNumero.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.txtNumero, 6, 0, 1, 1)
+
+        self.txtLogradouro = QLineEdit(self.frame_4)
+        self.txtLogradouro.setObjectName(u"txtLogradouro")
+        self.txtLogradouro.setMinimumSize(QSize(0, 40))
+        self.txtLogradouro.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.txtLogradouro, 4, 1, 1, 2)
+
+        self.txtCargo = QLineEdit(self.frame_4)
+        self.txtCargo.setObjectName(u"txtCargo")
+        self.txtCargo.setMinimumSize(QSize(0, 40))
+        self.txtCargo.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.txtCargo, 2, 1, 1, 1)
+
         self.txtSalario = QLineEdit(self.frame_4)
         self.txtSalario.setObjectName(u"txtSalario")
+        self.txtSalario.setMinimumSize(QSize(0, 40))
         self.txtSalario.setAlignment(Qt.AlignCenter)
         self.txtSalario.setPlaceholderText(u"SAL\u00c1RIO*")
 
         self.gridLayout.addWidget(self.txtSalario, 2, 2, 1, 1)
 
-        self.txtSenha = QLineEdit(self.frame_4)
-        self.txtSenha.setObjectName(u"txtSenha")
-        self.txtSenha.setAlignment(Qt.AlignCenter)
+        self.txtBairro = QLineEdit(self.frame_4)
+        self.txtBairro.setObjectName(u"txtBairro")
+        self.txtBairro.setMinimumSize(QSize(0, 40))
+        self.txtBairro.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout.addWidget(self.txtSenha, 2, 0, 1, 1)
-
-        self.txtTelefone = QLineEdit(self.frame_4)
-        self.txtTelefone.setObjectName(u"txtTelefone")
-        self.txtTelefone.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.txtTelefone, 4, 0, 1, 1)
-
-        self.txtCargo = QLineEdit(self.frame_4)
-        self.txtCargo.setObjectName(u"txtCargo")
-        self.txtCargo.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.txtCargo, 2, 1, 1, 1)
+        self.gridLayout.addWidget(self.txtBairro, 6, 1, 1, 1)
 
         self.txtMunicipio = QLineEdit(self.frame_4)
         self.txtMunicipio.setObjectName(u"txtMunicipio")
+        self.txtMunicipio.setMinimumSize(QSize(0, 40))
         self.txtMunicipio.setAlignment(Qt.AlignCenter)
 
         self.gridLayout.addWidget(self.txtMunicipio, 6, 2, 1, 1)
 
-        self.txtLogradouro = QLineEdit(self.frame_4)
-        self.txtLogradouro.setObjectName(u"txtLogradouro")
-        self.txtLogradouro.setAlignment(Qt.AlignCenter)
+        self.txtUF = QLineEdit(self.frame_4)
+        self.txtUF.setObjectName(u"txtUF")
+        self.txtUF.setMinimumSize(QSize(0, 40))
+        self.txtUF.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout.addWidget(self.txtLogradouro, 4, 1, 1, 2)
+        self.gridLayout.addWidget(self.txtUF, 7, 0, 1, 1)
 
-        self.txtNumero = QLineEdit(self.frame_4)
-        self.txtNumero.setObjectName(u"txtNumero")
-        self.txtNumero.setAlignment(Qt.AlignCenter)
+        self.txtTelefone = QLineEdit(self.frame_4)
+        self.txtTelefone.setObjectName(u"txtTelefone")
+        self.txtTelefone.setMinimumSize(QSize(0, 40))
+        self.txtTelefone.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout.addWidget(self.txtNumero, 6, 0, 1, 1)
+        self.gridLayout.addWidget(self.txtTelefone, 4, 0, 1, 1)
 
-        self.txtBairro = QLineEdit(self.frame_4)
-        self.txtBairro.setObjectName(u"txtBairro")
-        self.txtBairro.setAlignment(Qt.AlignCenter)
+        self.txtCEP = QLineEdit(self.frame_4)
+        self.txtCEP.setObjectName(u"txtCEP")
+        self.txtCEP.setMinimumSize(QSize(0, 40))
+        self.txtCEP.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout.addWidget(self.txtBairro, 6, 1, 1, 1)
+        self.gridLayout.addWidget(self.txtCEP, 7, 1, 1, 2)
 
 
         self.verticalLayout_9.addWidget(self.frame_4)
 
         self.btnCadastrarFun = QPushButton(self.tab)
         self.btnCadastrarFun.setObjectName(u"btnCadastrarFun")
-        self.btnCadastrarFun.setMinimumSize(QSize(160, 20))
+        self.btnCadastrarFun.setMinimumSize(QSize(160, 30))
         self.btnCadastrarFun.setFont(font3)
         self.btnCadastrarFun.setCursor(QCursor(Qt.PointingHandCursor))
         self.btnCadastrarFun.setStyleSheet(u"QPushButton:hover{\n"
@@ -725,7 +748,11 @@ class Ui_MainWindow(object):
         __qtablewidgetitem12 = QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(12, __qtablewidgetitem12)
         self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setStyleSheet(u"QHeaderView::section{\n"
+        self.tableWidget.setStyleSheet(u"\n"
+"QTableWidget QHeaderView::section { \n"
+"background-color: rgb(148,148,148); color: black; }\n"
+"\n"
+"QHeaderView::section{\n"
 "background-color: rgb(148,148,148);\n"
 "color: black;\n"
 "font: 10pt \"MS SHell Slg 2\";\n"
@@ -734,9 +761,13 @@ class Ui_MainWindow(object):
 "QTableWidget{\n"
 "background-color:rgb(49, 49, 49);\n"
 "color: white;\n"
-"\n"
-"\n"
 "}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
 "")
 
         self.horizontalLayout_6.addWidget(self.tableWidget)
@@ -759,16 +790,6 @@ class Ui_MainWindow(object):
         self.frame_8.setFrameShadow(QFrame.Raised)
         self.verticalLayout_7 = QVBoxLayout(self.frame_8)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.btn_excel = QPushButton(self.frame_8)
-        self.btn_excel.setObjectName(u"btn_excel")
-        self.btn_excel.setMinimumSize(QSize(120, 30))
-        self.btn_excel.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_excel.setStyleSheet(u"QPushButton:hover{\n"
-"	background-color: rgb(0, 141, 0);\n"
-"}")
-
-        self.verticalLayout_7.addWidget(self.btn_excel)
-
         self.btnAtualizar = QPushButton(self.frame_8)
         self.btnAtualizar.setObjectName(u"btnAtualizar")
         self.btnAtualizar.setMinimumSize(QSize(120, 30))
@@ -905,21 +926,21 @@ class Ui_MainWindow(object):
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:9pt;\">Imperador dos P\u00e3es </span></p></body></html>", None))
         self.btnHome.setText(QCoreApplication.translate("MainWindow", u"Home", None))
         self.btnVenda.setText(QCoreApplication.translate("MainWindow", u"Venda", None))
-        self.btnCadastrar.setText(QCoreApplication.translate("MainWindow", u"Cadastrar", None))
-        self.btnContatos.setText(QCoreApplication.translate("MainWindow", u"Contatos", None))
+        self.btnCadastrar.setText(QCoreApplication.translate("MainWindow", u"Cadastrar Funcion\u00e1rio", None))
+        self.btnContatos.setText(QCoreApplication.translate("MainWindow", u"Contato", None))
         self.btnSobre.setText(QCoreApplication.translate("MainWindow", u"Sobre", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page), QCoreApplication.translate("MainWindow", u"MENU", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:600;\">Usu\u00e1rio: </span>Funcion\u00e1rio</p></body></html>", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:600;\">Sistema:</span> Cadastro Funcion\u00e1rio</p></body></html>", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:600;\">Sistema: </span>Gest\u00e3o Comercial</p></body></html>", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:600;\">Status:</span> Ativo </p></body></html>", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:600;\">Vencimento:</span> 18/80/5260</p></body></html>", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page_2), QCoreApplication.translate("MainWindow", u"SISTEMA", None))
         self.btinToggle.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"right\"><span style=\" font-size:12pt;\">Sistema Gest\u00e3o</span><br/></p></body></html>", None))
         self.lblLogo.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><img src=\":/icons/icons/padaria.png\"/></p></body></html>", None))
-        self.lbl_Usuario.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">Banco de Dados</span></p><p align=\"center\"><span style=\" font-weight:600;\"><br/></span></p></body></html>", None))
+        self.lbl_Usuario.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:600;\">Banco de Dados</span></p></body></html>", None))
         self.txtLoginDB.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
-        self.lbl_Senha.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">Senha</span></p></body></html>", None))
+        self.lbl_Senha.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:600;\">Senha</span></p></body></html>", None))
         self.txtSenhaDB.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Senha", None))
         self.btnLoginBD.setText(QCoreApplication.translate("MainWindow", u"LOGIN", None))
         self.gb_pesquisa_2.setTitle(QCoreApplication.translate("MainWindow", u"VENDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", None))
@@ -933,21 +954,21 @@ class Ui_MainWindow(object):
         ___qtreewidgetitem.setText(2, QCoreApplication.translate("MainWindow", u"Marca do Produto", None));
         ___qtreewidgetitem.setText(1, QCoreApplication.translate("MainWindow", u"Nome do Produto", None));
         ___qtreewidgetitem.setText(0, QCoreApplication.translate("MainWindow", u"idVenda", None));
-        self.txtUF.setPlaceholderText(QCoreApplication.translate("MainWindow", u"UF", None))
-        self.txtCEP.setPlaceholderText(QCoreApplication.translate("MainWindow", u"CEP", None))
         self.txtNome.setText("")
         self.txtNome.setPlaceholderText(QCoreApplication.translate("MainWindow", u"NOME*", None))
-        self.lblCadastroFun.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">CADASTRO</span></p><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">FUNCION\u00c1RIO</span></p><p align=\"center\"><br/></p></body></html>", None))
         self.txtSobrenome.setPlaceholderText(QCoreApplication.translate("MainWindow", u"SOBRENOME*", None))
-        self.txtCPF.setPlaceholderText(QCoreApplication.translate("MainWindow", u"CPF*", None))
         self.txtSenha.setPlaceholderText(QCoreApplication.translate("MainWindow", u"SENHA*", None))
-        self.txtTelefone.setPlaceholderText(QCoreApplication.translate("MainWindow", u"TELEFONE*", None))
-        self.txtCargo.setPlaceholderText(QCoreApplication.translate("MainWindow", u"CARGO*", None))
-        self.txtMunicipio.setPlaceholderText(QCoreApplication.translate("MainWindow", u"MUNIC\u00cdPIO", None))
+        self.lblCadastroFun.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">CADASTRO</span></p><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">FUNCION\u00c1RIO</span><br/></p></body></html>", None))
+        self.txtCPF.setPlaceholderText(QCoreApplication.translate("MainWindow", u"CPF*", None))
+        self.txtNumero.setPlaceholderText(QCoreApplication.translate("MainWindow", u"N\u00daMERO", None))
         self.txtLogradouro.setText("")
         self.txtLogradouro.setPlaceholderText(QCoreApplication.translate("MainWindow", u"LOGRADOURO", None))
-        self.txtNumero.setPlaceholderText(QCoreApplication.translate("MainWindow", u"N\u00daMERO", None))
+        self.txtCargo.setPlaceholderText(QCoreApplication.translate("MainWindow", u"CARGO*", None))
         self.txtBairro.setPlaceholderText(QCoreApplication.translate("MainWindow", u"BAIRRO", None))
+        self.txtMunicipio.setPlaceholderText(QCoreApplication.translate("MainWindow", u"MUNIC\u00cdPIO", None))
+        self.txtUF.setPlaceholderText(QCoreApplication.translate("MainWindow", u"UF", None))
+        self.txtTelefone.setPlaceholderText(QCoreApplication.translate("MainWindow", u"TELEFONE*", None))
+        self.txtCEP.setPlaceholderText(QCoreApplication.translate("MainWindow", u"CEP", None))
         self.btnCadastrarFun.setText(QCoreApplication.translate("MainWindow", u"Cadastrar Funcion\u00e1rio", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Realizar Cadastro ", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
@@ -976,7 +997,6 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"UF", None));
         ___qtablewidgetitem12 = self.tableWidget.horizontalHeaderItem(12)
         ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"CEP", None));
-        self.btn_excel.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
         self.btnAtualizar.setText(QCoreApplication.translate("MainWindow", u"Atualizar", None))
         self.btnAlterar.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btnExcluir.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
@@ -1000,7 +1020,7 @@ class Ui_MainWindow(object):
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">Este \u00e9 um Sistema de Cadastro de Funcion\u00e1rios e Controle de Vendas, desenvolvido por alunos do Col\u00e9gio T\u00e9cnico de Campinas - COTUCA, com o objetivo de cumprir com os instrumentos avaliativos da m\u00e1teria de Pr\u00e1tica Profissional I. </span></p>\n"
 "<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">O Sistema foi constru\u00eddo a partir da utiliza\u00e7\u00e3"
-                        "o conjunta da Lingaguem de Programa\u00e7\u00e3o Python, suas bibliotecas e do QtDesigner.</span><br /></p>\n"
+                        "o conjunta da Lingaguem de Programa\u00e7\u00e3o Python, suas bibliotecas e do QtDesigner.</span></p>\n"
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/icons/icons/python.png\" /></p></body></html>", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
