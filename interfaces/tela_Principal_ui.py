@@ -170,7 +170,7 @@ class Ui_MainWindow(object):
         self.toolBox.addItem(self.page, u"MENU")
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
-        self.page_2.setGeometry(QRect(0, 0, 182, 553))
+        self.page_2.setGeometry(QRect(0, 0, 180, 553))
         self.page_2.setCursor(QCursor(Qt.ArrowCursor))
         self.verticalLayout_13 = QVBoxLayout(self.page_2)
         self.verticalLayout_13.setSpacing(0)
@@ -236,10 +236,37 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.btinToggle, 0, Qt.AlignLeft|Qt.AlignVCenter)
 
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_2.addItem(self.horizontalSpacer_2)
+
         self.label = QLabel(self.topFrame)
         self.label.setObjectName(u"label")
 
         self.horizontalLayout_2.addWidget(self.label)
+
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_2.addItem(self.horizontalSpacer)
+
+        self.btnSair = QPushButton(self.topFrame)
+        self.btnSair.setObjectName(u"btnSair")
+        self.btnSair.setMinimumSize(QSize(80, 15))
+        self.btnSair.setMaximumSize(QSize(80, 30))
+        self.btnSair.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnSair.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(71,71,71);\n"
+"border: solid black;\n"
+"border-radius: 5px;\n"
+"color: white;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color:red;\n"
+"}\n"
+"")
+
+        self.horizontalLayout_2.addWidget(self.btnSair)
 
 
         self.verticalLayout.addWidget(self.topFrame)
@@ -943,7 +970,12 @@ class Ui_MainWindow(object):
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:600;\">Vencimento:</span> 18/80/5260</p></body></html>", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page_2), QCoreApplication.translate("MainWindow", u"SISTEMA", None))
         self.btinToggle.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"right\"><span style=\" font-size:12pt;\">Sistema De Gest\u00e3o</span><br/></p></body></html>", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">Sistema De Gest\u00e3o</span><br /></p></body></html>", None))
+        self.btnSair.setText(QCoreApplication.translate("MainWindow", u"SAIR", None))
         self.lblLogo.setText(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"

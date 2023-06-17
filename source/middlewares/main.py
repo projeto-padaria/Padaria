@@ -2,7 +2,6 @@ import sys
 sys.path.append("interfaces")
 
 # Importação de libs
-from PyQt5.QtGui import QIcon
 from PySide6.QtWidgets import QApplication,QMainWindow, QMessageBox
 from PySide6 import QtCore
 
@@ -33,11 +32,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btnContatos.clicked.connect(
             lambda: self.Pages.setCurrentWidget(self.pgContatos)
         )
-        self.btnCadastrarFun.clicked.connect(self.cadastroFuncionario)
+        self.btnCadastrarFun.clicked.connect(self.employeeRegistration)
         self.btnAtualizar.clicked.connect(self.refreshTable)
         self.btnLoginBD.clicked.connect(self.connectDatabase)
         self.btnAlterar.clicked.connect(self.updateTable)
         self.btnExcluir.clicked.connect(self.deleteFun)
+        self.btnSair.clicked.connect(self.closeWindow)
 
     def left_Container(self):
         width = self.leftContainer.width()
@@ -68,18 +68,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.txtLoginDB.setText("")
                 self.txtSenhaDB.setText("")
                 self.Pages.setCurrentWidget(self.pgVenda)
+                
             elif self.sender1 == self.btnCadastrar:
                 self.txtLoginDB.setText("")
                 self.txtSenhaDB.setText("")
                 self.db.showTableFun(self.tableWidget)
                 self.Pages.setCurrentWidget(self.pgCadastrar)
+                
         except Exception as error:
             QMessageBox.warning(self, "ALERTA", "Login ou Senha Incorretos")
             debug.printError(error)
             self.txtLoginDB.setText("")
             self.txtSenhaDB.setText("")
 
-    def cadastroFuncionario(self):
+    def employeeRegistration(self):
         self.cpf = self.txtCPF.text()
         self.nome = self.txtNome.text()
         self.sobrenome = self.txtSobrenome.text()
@@ -93,10 +95,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.cidade = self.txtMunicipio.text()
         self.uf = self.txtUF.text()
         self.cep = self.txtCEP.text()
-        try:
-            self.db.Login()
-            self.db.insertTableFun(
-                self.cpf,
+        valores = [self.cpf,
                 self.nome,
                 self.sobrenome,
                 self.senha,
@@ -108,7 +107,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.bairro,
                 self.cidade,
                 self.uf,
-                self.cep,
+                self.cep]
+        try:
+            self.db.Login()
+            self.db.insertTableFun(
+                valores
             )
             self.cpf = self.txtCPF.setText("")
             self.nome = self.txtNome.setText("")
@@ -131,7 +134,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             )
 
     def deleteFun(self):
-        self.db.Login()
         msg = QMessageBox()
         msg.setWindowTitle("Excluir")
         msg.setText("Este registro será excluído.")
@@ -146,15 +148,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     .siblingAtColumn(0)
                     .data()
                 )
+                self.db.Login()
                 result = self.db.deleteFun(cpf)
                 self.refreshTable()
-
+                
                 QMessageBox.Information(None,"Imperador dos Pães",result)
-                # msg = QMessageBox()
-                # msg.setIcon(QMessageBox.Information)
-                # msg.setWindowTitle("Imperador dos Pães")
-                # msg.setText(result)
-                # msg.exec()
             except Exception as error:
                 debug.printError(error)
 
@@ -175,20 +173,23 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             QMessageBox.about(
                 None, "Alteração de Dados", "Dados alterados com sucesso!"
             )
-
             self.refreshTable()
+            
         except Exception as error:
             debug.printError(error)
 
     def refreshTable(self):
         self.db.showTableFun(self.tableWidget)
 
+    def closeWindow(self):
+        sys.exit()
+
 
 
 #DEBUG
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = MainWindow()
-    window.show()
-    sys.exit(app.exec())
+# if __name__ == "__main__":
+#     app = QApplication(sys.argv)
+#     window = MainWindow()
+#     window.show()
+#     sys.exit(app.exec())
 

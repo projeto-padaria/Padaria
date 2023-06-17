@@ -31,6 +31,9 @@ class Connect:
         ).cursor()
         debug.printSuccess("Conexão com o Banco de Dados Estabelecida!")
 
+    def closeConnection(self):
+        self.cursor.close()
+
     def LoginAuthentication(self, login, senha):
         self.usuario = "cpf"
         self.senha = "senha"
@@ -50,8 +53,7 @@ class Connect:
             debug.printError(error)
             return False
 
-    def insertTableFun(self, cpf, nome, sobrenome, senha, cargo, salario, telefone,rua, numero, bairro, cidade, uf, cep) -> None:
-        valores = [cpf, nome, sobrenome, senha, cargo, salario, telefone, rua, numero, bairro, cidade, uf, cep]
+    def insertTableFun(self, valores) -> None:
         aux = 0
         for indice,valor in enumerate(valores):
             if indice in (0,1,2,3,4,5,6) and valor == '':
@@ -70,7 +72,7 @@ class Connect:
             self.cursor.commit()
             debug.printSuccess("Funcionário cadastrado com sucesso!!")
         else:
-            raise Exception("Prencha os campos obrigatórios!!")
+            raise Exception("Prencha os campos Obrigatórios Adequadamente!!")
         
 
     def showTableFun(self, tableWidget):
@@ -117,8 +119,6 @@ class Connect:
             WHERE cpf = '{fullDataSet[0]}'""")
         self.cursor.commit()
 
-
-
-if __name__ == "__main__":
-    a = Connect("BD23333", "BD23333")
-    a.Login()
+# if __name__ == "__main__":
+#     a = Connect("BD23333", "BD23333")
+#     a.Login()

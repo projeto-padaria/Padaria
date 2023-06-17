@@ -12,17 +12,20 @@
 
 ## 💻 Funcionalidades
 
-- Conexão com o banco de dados
 - Criar um login para funcionario
-- Cadastrar novo Funcionário
-- Acesso aos Funcionários Existentes
-- Alterar e Excluir informações de Funcionários Existentes
+- Conexão com o banco de dados
 - Metodos para calculos de vendas
-- Finalizar a venda do cliente
+- finalizar a venda do cliente
 
 ## 📫 Ideias de novo projeto
 
-- Criar um sistema de cadastro de Funcionários
+- Criar um sistema de cadastro de clientes
+
+## 🖼 Logotipo
+<div>
+  <img src="interfaces\icons\IMPERADOR DOS PÂES.png" width="200px;" >
+</div>
+
 
 ## 🤝 Colaboradores
 

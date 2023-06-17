@@ -1,9 +1,7 @@
 # Importação de libs
 import sys
-
 sys.path.append("interfaces")
 
-from PyQt5.QtGui import QIcon
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
 
 # Importação de Interfaces
@@ -20,7 +18,8 @@ class MainWindowLogin(QMainWindow, Ui_MainWindowLogin):
         self.setupUi(self)
         self.setWindowTitle("Imperador dos Pães - Login")
         self.btnLogin.clicked.connect(self.mainWindow)
-
+        self.btnSair.clicked.connect(self.closeLogin)
+        
     def mainWindow(self):
         self.login = self.txtLogin.text()
         self.password = self.txtSenha.text()
@@ -33,6 +32,9 @@ class MainWindowLogin(QMainWindow, Ui_MainWindowLogin):
             window.show()
         else:
             QMessageBox.warning(login, "ALERTA", "Login ou Senha Incorretos")
+    
+    def closeLogin(self):
+        sys.exit()
 
 
 if __name__ == "__main__":

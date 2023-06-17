@@ -159,11 +159,32 @@ class Ui_MainWindowLogin(object):
         self.frame_4.setFrameShadow(QFrame.Raised)
         self.horizontalLayout = QHBoxLayout(self.frame_4)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.btnSair = QPushButton(self.frame_4)
+        self.btnSair.setObjectName(u"btnSair")
+        self.btnSair.setMaximumSize(QSize(200, 100))
+        font2 = QFont()
+        font2.setPointSize(12)
+        self.btnSair.setFont(font2)
+        self.btnSair.setStyleSheet(u"QPushButton{\n"
+"color: white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"border-radius:5px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"color:white;\n"
+"background-color: red;\n"
+"border-radius:5px;\n"
+"}\n"
+"\n"
+"\n"
+"")
+
+        self.horizontalLayout.addWidget(self.btnSair)
+
         self.btnLogin = QPushButton(self.frame_4)
         self.btnLogin.setObjectName(u"btnLogin")
         self.btnLogin.setMaximumSize(QSize(200, 100))
-        font2 = QFont()
-        font2.setPointSize(12)
         self.btnLogin.setFont(font2)
         self.btnLogin.setCursor(QCursor(Qt.PointingHandCursor))
         self.btnLogin.setStyleSheet(u"QPushButton{\n"
@@ -206,6 +227,7 @@ class Ui_MainWindowLogin(object):
         self.txtLogin.setPlaceholderText(QCoreApplication.translate("MainWindowLogin", u"CPF", None))
         self.lbl_Senha.setText(QCoreApplication.translate("MainWindowLogin", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Senha</span></p></body></html>", None))
         self.txtSenha.setPlaceholderText(QCoreApplication.translate("MainWindowLogin", u"Senha", None))
+        self.btnSair.setText(QCoreApplication.translate("MainWindowLogin", u"SAIR", None))
         self.btnLogin.setText(QCoreApplication.translate("MainWindowLogin", u"LOGIN", None))
     # retranslateUi
 
