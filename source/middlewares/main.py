@@ -1,44 +1,24 @@
 import sys
-
 sys.path.append("interfaces")
-from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
+
+# Importação de libs
+
+from PySide6.QtWidgets import QMainWindow, QMessageBox
 from cadastro_ui import Ui_MainWindow
-from tela_login_New_ui import Ui_MainWindowLogin
 from PySide6 import QtCore
-from connect import Connect
+# Importação da Classe de Conexão com o Banco de Dados
+from module import Connect
+# Importação da Classe debug e Criação da Instância
+from debug import libDebug
+debug = libDebug()
 
-
-class MainWindowLogin(QMainWindow, Ui_MainWindowLogin):
-    def __init__(self):
-        super().__init__()
-        self.setupUi(self)
-        self.setWindowTitle("Padaria - Sistema de Gestão")
-        appIcon = QIcon("")
-        self.setWindowIcon(appIcon)
-        self.btnLogin.clicked.connect(self.TelaPrincipal)
-
-    def TelaPrincipal(self):
-        self.login = self.txtLogin.text()
-        self.senha = self.txtSenha.text()
-        db = Connect('BD23333','BD23333')  # TROCAR
-        db.Login()
-        auth = db.LoginAuthentication(self.login, self.senha)
-        if auth == True:
-            login.close()
-            window = MainWindow()
-            window.show()
-        else:
-            QMessageBox.warning(login,"ALERTA","Login ou Senha Incorretos")
-
+# Importação de Classe Principal
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
         self.setWindowTitle("Padaria - Sistema de Gestão")
-        appIcon = QIcon("")
-        self.setWindowIcon(appIcon)
 
         ######################################################################
         # TOGGLE BUTTON
@@ -49,9 +29,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btnVenda.clicked.connect(self.pgBancoDeDados)
         self.btnCadastrar.clicked.connect(self.pgBancoDeDados)
         self.btnSobre.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgSobre))
-        self.btnContatos.clicked.connect(
-            lambda: self.Pages.setCurrentWidget(self.pgContatos)
-        )
+        self.btnContatos.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgContatos))
         self.btnCadastrarFun.clicked.connect(self.cadastroFuncionario)
         self.btnAtualizar.clicked.connect(self.refreshTable)
         # self.btnLoginBD.clicked.connect(self.ConnectDatabase)
@@ -98,8 +76,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.db.showTableFun(self.tableWidget)
                 self.Pages.setCurrentWidget(self.pgCadastrar)
         except Exception as error:
-            QMessageBox.warning(login,"ALERTA","Login ou Senha Incorretos")
-            self.printError(error)
+            QMessageBox.warning(self, "ALERTA", "Login ou Senha Incorretos")
+            debug.printError(error)
             self.txtLoginDB.setText("")
             self.txtSenhaDB.setText("")
 
@@ -148,16 +126,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.uf = self.txtUF.setText("")
             self.cep = self.txtCEP.setText("")
         except Exception as error:
-            self.printError(error)
+            debug.printError(error)
             QMessageBox.warning(login,"ALERTA","Preencha os Campos Obrigatórios Adequadamente!")
 
     def refreshTable(self):
         self.db.showTableFun(self.tableWidget)
-
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    login = MainWindowLogin()
-    login.show()
-    sys.exit(app.exec())
-

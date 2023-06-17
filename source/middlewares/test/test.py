@@ -1,12 +1,11 @@
-import sys
-
-sys.path.append("interfaces")
-from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import QApplication, QMainWindow
-from cadastro_ui import Ui_MainWindow
-from tela_login_New_ui import Ui_MainWindowLogin
-from PySide6 import QtCore
 from connect import Connect
+from PySide6 import QtCore
+from tela_login_New_ui import Ui_MainWindowLogin
+from cadastro_ui import Ui_MainWindow
+from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtGui import QIcon
+import sys
+sys.path.append("interfaces")
 
 
 class MainWindowLogin(QMainWindow, Ui_MainWindowLogin):
@@ -14,34 +13,33 @@ class MainWindowLogin(QMainWindow, Ui_MainWindowLogin):
         super().__init__()
         self.setupUi(self)
         self.setWindowTitle("Padaria - Sistema de Gestão")
-        appIcon = QIcon("")
-        self.setWindowIcon(appIcon)
         self.btnLogin.clicked.connect(self.TelaPrincipal)
 
     def TelaPrincipal(self):
         login.close()
         window = MainWindow()
         window.show()
-        
+
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
         self.setWindowTitle("Padaria - Sistema de Gestão")
-        appIcon = QIcon("")
-        self.setWindowIcon(appIcon)
 
         ######################################################################
         # TOGGLE BUTTON
         self.btinToggle.clicked.connect(self.left_Container)
         #####################################################################
         # Paginas do Sistema
-        self.btnHome.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgHome))
+        self.btnHome.clicked.connect(
+            lambda: self.Pages.setCurrentWidget(self.pgHome))
         self.btnVenda.clicked.connect(self.pgBancoDeDados)
         self.btnCadastrar.clicked.connect(self.pgBancoDeDados)
-        self.btnSobre.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgSobre))
-        self.btnContatos.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgContatos))
+        self.btnSobre.clicked.connect(
+            lambda: self.Pages.setCurrentWidget(self.pgSobre))
+        self.btnContatos.clicked.connect(
+            lambda: self.Pages.setCurrentWidget(self.pgContatos))
         self.btnCadastrarFun.clicked.connect(self.cadastroFuncionario)
         self.btnAtualizar.clicked.connect(self.refreshTable)
         # self.btnLoginBD.clicked.connect(self.ConnectDatabase)
@@ -58,7 +56,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         else:
             newWidth = 9
 
-        self.animation = QtCore.QPropertyAnimation(self.leftContainer, b"maximumWidth")
+        self.animation = QtCore.QPropertyAnimation(
+            self.leftContainer, b"maximumWidth")
         self.animation.setDuration(500)  # Duração da animação
         self.animation.setStartValue(width)  # Incio da animacao
         self.animation.setEndValue(newWidth)  # Término da animação
@@ -135,10 +134,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.cidade = self.txtMunicipio.setText('')
             self.uf = self.txtUF.setText('')
             self.cep = self.txtCEP.setText('')
-            
+
         except Exception as error:
             self.printError(error)
-            QMessageBox.warning(login,"ALERTA","Preencha os Campos Obrigatórios Adequadamente")
+            QMessageBox.warning(
+                login, "ALERTA", "Preencha os Campos Obrigatórios Adequadamente")
 
     def refreshTable(self):
         self.db.showTableFun(self.tableWidget)

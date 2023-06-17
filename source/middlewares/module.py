@@ -1,7 +1,15 @@
+# Importação de libs
+
 import pyodbc as bd
 from PySide6.QtWidgets import QTableWidgetItem
 from os import system as clearTerminal
+from debug import libDebug
 
+# Importação da Classe debug
+
+debug = libDebug()
+
+# Classe de Conexão com o Banco de Dados
 
 class Connect:
     def __init__(self, login, senha) -> None:
@@ -14,37 +22,17 @@ class Connect:
         self.table = None
         self.query = None
         self.schema = "padaria"
-        self.RED = "\033[1;31m"
-        self.BLUE = "\033[1;34m"
-        self.CYAN = "\033[1;36m"
-        self.GREEN = "\033[0;32m"
-        self.RESET = "\033[0;0m"
-        self.BOLD = "\033[;1m"
-        self.REVERSE = "\033[;7m"
-        self.YELLOW = "\033[33m"
-
-    # debug functions
-
-    def printError(self, error) -> None:
-        return print(f"{self.BOLD}{self.RED}ERROR: {self.RESET}{error}")
-
-    def printSuccess(self, success) -> None:
-        return print(f"{self.BOLD}{self.GREEN}SUCCESS: {self.RESET}{success}")
-
-    def printTitle(self, title) -> None:
-        menubar = "—" * len(title)
-        return print(f"{self.BOLD}{menubar} {title} {menubar} {self.RESET}")
 
     # funções de execução
 
     def Login(self) -> None:
         clearTerminal("cls")
-        self.printTitle("Login")
+        debug.printTitle("Login")
         self.database = self.username
         self.cursor = bd.connect(
             f"DRIVER={self.driver};SERVER={self.server};UID={self.username};PWD={self.password};DATABASE={self.database}"
         ).cursor()
-        self.printSuccess("Login Feito!")
+        debug.printSuccess("Conexão com o Banco de Dados Estabelecida!")
 
     def LoginAuthentication(self, login, senha):
         self.usuario = "cpf"
@@ -58,10 +46,10 @@ class Connect:
             if conferir == []:
                 exit()
             else:
-                self.printSuccess("Usuário encontrado!!")
+                debug.printSuccess("Usuário encontrado!!")
                 return True
         except Exception as error:
-            self.printError("Usuário Não Encontrado!")
+            debug.printError(error)
             return False
 
     def insertTableFun(self, cpf, nome, sobrenome, senha, cargo, salario, telefone,rua, numero, bairro, cidade, uf, cep) -> None:
@@ -84,7 +72,7 @@ class Connect:
                 "INSERT INTO padaria.funcionario VALUES (?,?,?,?,?,?,?, NULL)",(valores[0],valores[1],valores[2],valores[3],valores[4],valores[5],valores[6])
             )
             self.cursor.commit()
-            print("Funcionário Cadastrado!!!!")
+            debug.printSuccess("Funcionário cadastrado com sucesso!!")
         else:
             raise Exception("Prencha os campos obrigatórios!!")
         
