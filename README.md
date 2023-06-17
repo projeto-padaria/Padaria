@@ -2,11 +2,11 @@
 
 <!---Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. Você pode querer incluir dependências, status do projeto e informações de licença aqui--->
 
-![GitHub repo size](https://img.shields.io/github/repo-size/Polabiel/projeto-integrador?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/Polabiel/projeto-integrador?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/Polabiel/projeto-integrador?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/Polabiel/projeto-integrador?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/Polabiel/projeto-integrador?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/https://github.com/projeto-padaria/Padaria)
+![GitHub language count](https://img.shields.io/github/languages/https://github.com/projeto-padaria/Padaria)
+![GitHub forks](https://img.shields.io/github/forks/https://github.com/projeto-padaria/Padaria)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/https://github.com/projeto-padaria/Padaria)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/https://github.com/projeto-padaria/Padaria)
 
 > Definição do time e do projeto integrador, além de utilizar algumas bases para fazer criações de um programa
 
