@@ -18,7 +18,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.setWindowTitle("Padaria - Sistema de Gestão")
+        self.setWindowTitle("Imperador dos Pães - Sistema de Gestão")
 
         ######################################################################
         # TOGGLE BUTTON
@@ -29,10 +29,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btnVenda.clicked.connect(self.pgBancoDeDados)
         self.btnCadastrar.clicked.connect(self.pgBancoDeDados)
         self.btnSobre.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgSobre))
-        self.btnContatos.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgContatos))
+        self.btnContatos.clicked.connect(
+            lambda: self.Pages.setCurrentWidget(self.pgContatos)
+        )
         self.btnCadastrarFun.clicked.connect(self.cadastroFuncionario)
         self.btnAtualizar.clicked.connect(self.refreshTable)
-        # self.btnLoginBD.clicked.connect(self.ConnectDatabase)
+        self.btnLoginBD.clicked.connect(self.ConnectDatabase)
         ######################################################################
 
     def printError(self, error) -> None:
@@ -58,7 +60,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def pgBancoDeDados(self):
         self.sender1 = self.sender()
         self.Pages.setCurrentWidget(self.pgBanco)
-        self.btnLoginBD.clicked.connect(self.connectDatabase)
 
     def connectDatabase(self):
         self.login = self.txtLoginDB.text()
@@ -127,7 +128,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.cep = self.txtCEP.setText("")
         except Exception as error:
             debug.printError(error)
-            QMessageBox.warning(login,"ALERTA","Preencha os Campos Obrigatórios Adequadamente!")
+            QMessageBox.warning(self,"ALERTA","Preencha os Campos Obrigatórios Adequadamente!")
 
     def refreshTable(self):
         self.db.showTableFun(self.tableWidget)
