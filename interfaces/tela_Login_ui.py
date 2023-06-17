@@ -18,20 +18,21 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
     QStatusBar, QVBoxLayout, QWidget)
+import icons__rc
 
 class Ui_MainWindowLogin(object):
     def setupUi(self, MainWindowLogin):
         if not MainWindowLogin.objectName():
             MainWindowLogin.setObjectName(u"MainWindowLogin")
-        MainWindowLogin.resize(350, 350)
-        MainWindowLogin.setMinimumSize(QSize(350, 350))
-        MainWindowLogin.setMaximumSize(QSize(350, 350))
+        MainWindowLogin.resize(360, 360)
+        MainWindowLogin.setMinimumSize(QSize(360, 360))
+        MainWindowLogin.setMaximumSize(QSize(360, 360))
         MainWindowLogin.setStyleSheet(u"")
         self.centralwidget = QWidget(MainWindowLogin)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.centralwidget.setMinimumSize(QSize(350, 350))
-        self.centralwidget.setMaximumSize(QSize(350, 350))
-        self.centralwidget.setStyleSheet(u"background-color: rgb(0, 0, 0);")
+        self.centralwidget.setMinimumSize(QSize(350, 360))
+        self.centralwidget.setStyleSheet(u"background-color: rgb(0, 0, 0);\n"
+"")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(-1, 9, 9, 9)
@@ -44,11 +45,17 @@ class Ui_MainWindowLogin(object):
         self.frame.setSizePolicy(sizePolicy)
         self.frame.setMinimumSize(QSize(330, 300))
         self.frame.setMaximumSize(QSize(330, 300))
-        self.frame.setStyleSheet(u"background-color:rgb(49, 49, 49)")
+        self.frame.setStyleSheet(u"background-color:rgb(49, 49, 49);\n"
+"border-radius: 5px;")
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.frame)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.label = QLabel(self.frame)
+        self.label.setObjectName(u"label")
+
+        self.verticalLayout_2.addWidget(self.label)
+
         self.frame_2 = QFrame(self.frame)
         self.frame_2.setObjectName(u"frame_2")
         self.frame_2.setMinimumSize(QSize(215, 100))
@@ -73,8 +80,8 @@ class Ui_MainWindowLogin(object):
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.lbl_Usuario = QLabel(self.frame_2)
         self.lbl_Usuario.setObjectName(u"lbl_Usuario")
-        self.lbl_Usuario.setMinimumSize(QSize(280, 25))
-        self.lbl_Usuario.setMaximumSize(QSize(300, 25))
+        self.lbl_Usuario.setMinimumSize(QSize(280, 10))
+        self.lbl_Usuario.setMaximumSize(QSize(300, 100))
         font = QFont()
         font.setPointSize(10)
         self.lbl_Usuario.setFont(font)
@@ -194,9 +201,10 @@ class Ui_MainWindowLogin(object):
 
     def retranslateUi(self, MainWindowLogin):
         MainWindowLogin.setWindowTitle(QCoreApplication.translate("MainWindowLogin", u"MainWindow", None))
-        self.lbl_Usuario.setText(QCoreApplication.translate("MainWindowLogin", u"<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">Usu\u00e1rio</span></p></body></html>", None))
+        self.label.setText(QCoreApplication.translate("MainWindowLogin", u"<html><head/><body><p align=\"center\"><img src=\":/icons/icons/login.png\"/></p></body></html>", None))
+        self.lbl_Usuario.setText(QCoreApplication.translate("MainWindowLogin", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Usu\u00e1rio</span></p></body></html>", None))
         self.txtLogin.setPlaceholderText(QCoreApplication.translate("MainWindowLogin", u"CPF", None))
-        self.lbl_Senha.setText(QCoreApplication.translate("MainWindowLogin", u"<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">Senha</span></p></body></html>", None))
+        self.lbl_Senha.setText(QCoreApplication.translate("MainWindowLogin", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Senha</span></p></body></html>", None))
         self.txtSenha.setPlaceholderText(QCoreApplication.translate("MainWindowLogin", u"Senha", None))
         self.btnLogin.setText(QCoreApplication.translate("MainWindowLogin", u"LOGIN", None))
     # retranslateUi

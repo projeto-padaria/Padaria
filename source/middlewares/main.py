@@ -3,7 +3,7 @@ sys.path.append("interfaces")
 
 # Importação de libs
 from PyQt5.QtGui import QIcon
-from PySide6.QtWidgets import QMainWindow, QMessageBox
+from PySide6.QtWidgets import QApplication,QMainWindow, QMessageBox
 from PySide6 import QtCore
 
 # Importação da Interface de Cadastro
@@ -37,7 +37,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btnAtualizar.clicked.connect(self.refreshTable)
         self.btnLoginBD.clicked.connect(self.connectDatabase)
         self.btnAlterar.clicked.connect(self.updateTable)
-        self.btnExcluir.clicked.connect(self.deletarFun)
+        self.btnExcluir.clicked.connect(self.deleteFun)
 
     def left_Container(self):
         width = self.leftContainer.width()
@@ -130,7 +130,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 None, "ALERTA", "Preencha os Campos Obrigatórios Adequadamente!"
             )
 
-    def deletarFun(self):
+    def deleteFun(self):
         self.db.Login()
         msg = QMessageBox()
         msg.setWindowTitle("Excluir")
@@ -149,11 +149,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 result = self.db.deleteFun(cpf)
                 self.refreshTable()
 
-                msg = QMessageBox()
-                msg.setIcon(QMessageBox.Information)
-                msg.setWindowTitle("Imperador dos Pães")
-                msg.setText(result)
-                msg.exec()
+                QMessageBox.Information(None,"Imperador dos Pães",result)
+                # msg = QMessageBox()
+                # msg.setIcon(QMessageBox.Information)
+                # msg.setWindowTitle("Imperador dos Pães")
+                # msg.setText(result)
+                # msg.exec()
             except Exception as error:
                 debug.printError(error)
 
@@ -172,7 +173,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             for dados in update_dados:
                 self.db.updateTable(tuple(dados))
             QMessageBox.about(
-                None, "Atualização de Dados", "Dados atualizados com sucesso!"
+                None, "Alteração de Dados", "Dados alterados com sucesso!"
             )
 
             self.refreshTable()
@@ -181,3 +182,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def refreshTable(self):
         self.db.showTableFun(self.tableWidget)
+
+
+
+#DEBUG
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec())
+

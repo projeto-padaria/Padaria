@@ -19,14 +19,14 @@ class MainWindowLogin(QMainWindow, Ui_MainWindowLogin):
         super().__init__()
         self.setupUi(self)
         self.setWindowTitle("Imperador dos Pães - Login")
-        self.btnLogin.clicked.connect(self.TelaPrincipal)
+        self.btnLogin.clicked.connect(self.mainWindow)
 
-    def TelaPrincipal(self):
+    def mainWindow(self):
         self.login = self.txtLogin.text()
-        self.senha = self.txtSenha.text()
+        self.password = self.txtSenha.text()
         db = Connect("BD23333", "BD23333")  # TROCAR
         db.Login()
-        auth = db.LoginAuthentication(self.login, self.senha)
+        auth = db.LoginAuthentication(self.login, self.password)
         if auth == True:
             login.close()
             window = MainWindow()

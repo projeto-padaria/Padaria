@@ -1,5 +1,12 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/QtDesigner.png</file>
+    <file>icons/Sobre.png</file>
+    <file>icons/Funcionario.png</file>
+    <file>icons/Contato.png</file>
+    <file>icons/IMPERADOR DOS PÂES.png</file>
+    <file>icons/BancoDeDados.png</file>
+    <file>icons/login.png</file>
     <file>icons/python.png</file>
     <file>icons/padaria.png</file>
     <file>icons/menu.png</file>

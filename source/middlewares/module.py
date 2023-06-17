@@ -41,7 +41,7 @@ class Connect:
             )
             conferir = self.cursor.fetchall()
             if conferir == []:
-                exit()
+                raise Exception("Usuário ou Senha Inválidos!")
             else:
                 debug.printSuccess("Usuário encontrado!!")
                 self.cursor.close()

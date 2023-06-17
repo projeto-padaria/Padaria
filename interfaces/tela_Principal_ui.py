@@ -28,7 +28,8 @@ class Ui_MainWindow(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(1147, 670)
-        MainWindow.setStyleSheet(u"background-color: rgb(0, 0, 0);")
+        MainWindow.setStyleSheet(u"background-color: rgb(0, 0, 0);\n"
+"")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setCursor(QCursor(Qt.ArrowCursor))
@@ -108,7 +109,7 @@ class Ui_MainWindow(object):
 "")
         self.page = QWidget()
         self.page.setObjectName(u"page")
-        self.page.setGeometry(QRect(0, 0, 180, 557))
+        self.page.setGeometry(QRect(0, 0, 180, 553))
         self.page.setCursor(QCursor(Qt.ArrowCursor))
         self.verticalLayout_3 = QVBoxLayout(self.page)
         self.verticalLayout_3.setSpacing(6)
@@ -169,7 +170,7 @@ class Ui_MainWindow(object):
         self.toolBox.addItem(self.page, u"MENU")
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
-        self.page_2.setGeometry(QRect(0, 0, 180, 399))
+        self.page_2.setGeometry(QRect(0, 0, 182, 553))
         self.page_2.setCursor(QCursor(Qt.ArrowCursor))
         self.verticalLayout_13 = QVBoxLayout(self.page_2)
         self.verticalLayout_13.setSpacing(0)
@@ -233,7 +234,7 @@ class Ui_MainWindow(object):
         self.btinToggle.setIcon(icon)
         self.btinToggle.setIconSize(QSize(30, 30))
 
-        self.horizontalLayout_2.addWidget(self.btinToggle, 0, Qt.AlignLeft)
+        self.horizontalLayout_2.addWidget(self.btinToggle, 0, Qt.AlignLeft|Qt.AlignVCenter)
 
         self.label = QLabel(self.topFrame)
         self.label.setObjectName(u"label")
@@ -286,14 +287,24 @@ class Ui_MainWindow(object):
         self.frame_9.setSizePolicy(sizePolicy1)
         self.frame_9.setMinimumSize(QSize(300, 300))
         self.frame_9.setMaximumSize(QSize(450, 450))
-        self.frame_9.setStyleSheet(u"background-color:rgb(49, 49, 49)")
+        self.frame_9.setStyleSheet(u"background-color:rgb(49, 49, 49);\n"
+"border-radius: 5px")
         self.frame_9.setFrameShape(QFrame.StyledPanel)
         self.frame_9.setFrameShadow(QFrame.Raised)
         self.verticalLayout_18 = QVBoxLayout(self.frame_9)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.verticalSpacer_3 = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_18.addItem(self.verticalSpacer_3)
+
+        self.label_9 = QLabel(self.frame_9)
+        self.label_9.setObjectName(u"label_9")
+
+        self.verticalLayout_18.addWidget(self.label_9)
+
         self.frame_10 = QFrame(self.frame_9)
         self.frame_10.setObjectName(u"frame_10")
-        self.frame_10.setMinimumSize(QSize(215, 100))
+        self.frame_10.setMinimumSize(QSize(215, 80))
         self.frame_10.setMaximumSize(QSize(16777215, 16777215))
         self.frame_10.setStyleSheet(u"QLabel{\n"
 "color:white;\n"
@@ -313,27 +324,17 @@ class Ui_MainWindow(object):
         self.frame_10.setFrameShadow(QFrame.Raised)
         self.verticalLayout_19 = QVBoxLayout(self.frame_10)
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
-        self.lbl_Usuario = QLabel(self.frame_10)
-        self.lbl_Usuario.setObjectName(u"lbl_Usuario")
-        self.lbl_Usuario.setMinimumSize(QSize(280, 25))
-        self.lbl_Usuario.setMaximumSize(QSize(16777215, 16777215))
-        font3 = QFont()
-        font3.setPointSize(10)
-        self.lbl_Usuario.setFont(font3)
-        self.lbl_Usuario.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_19.addWidget(self.lbl_Usuario, 0, Qt.AlignHCenter|Qt.AlignVCenter)
-
+        self.verticalLayout_19.setContentsMargins(-1, -1, -1, 0)
         self.txtLoginDB = QLineEdit(self.frame_10)
         self.txtLoginDB.setObjectName(u"txtLoginDB")
         self.txtLoginDB.setMinimumSize(QSize(280, 25))
         self.txtLoginDB.setMaximumSize(QSize(16777215, 16777215))
-        font4 = QFont()
-        font4.setFamilies([u"MS SHel Dlg 2"])
-        font4.setPointSize(10)
-        font4.setBold(False)
-        font4.setItalic(False)
-        self.txtLoginDB.setFont(font4)
+        font3 = QFont()
+        font3.setFamilies([u"MS SHel Dlg 2"])
+        font3.setPointSize(10)
+        font3.setBold(False)
+        font3.setItalic(False)
+        self.txtLoginDB.setFont(font3)
         self.txtLoginDB.setStyleSheet(u"")
         self.txtLoginDB.setAlignment(Qt.AlignCenter)
 
@@ -344,7 +345,7 @@ class Ui_MainWindow(object):
 
         self.frame_11 = QFrame(self.frame_9)
         self.frame_11.setObjectName(u"frame_11")
-        self.frame_11.setMinimumSize(QSize(215, 100))
+        self.frame_11.setMinimumSize(QSize(215, 80))
         self.frame_11.setMaximumSize(QSize(16777215, 16777215))
         self.frame_11.setStyleSheet(u"QLabel{\n"
 "color:white;\n"
@@ -364,19 +365,12 @@ class Ui_MainWindow(object):
         self.frame_11.setFrameShadow(QFrame.Raised)
         self.verticalLayout_20 = QVBoxLayout(self.frame_11)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
-        self.lbl_Senha = QLabel(self.frame_11)
-        self.lbl_Senha.setObjectName(u"lbl_Senha")
-        self.lbl_Senha.setMinimumSize(QSize(280, 25))
-        self.lbl_Senha.setMaximumSize(QSize(16777215, 16777215))
-        self.lbl_Senha.setFont(font3)
-
-        self.verticalLayout_20.addWidget(self.lbl_Senha)
-
+        self.verticalLayout_20.setContentsMargins(-1, 0, -1, -1)
         self.txtSenhaDB = QLineEdit(self.frame_11)
         self.txtSenhaDB.setObjectName(u"txtSenhaDB")
         self.txtSenhaDB.setMinimumSize(QSize(280, 25))
         self.txtSenhaDB.setMaximumSize(QSize(16777215, 16777215))
-        self.txtSenhaDB.setFont(font4)
+        self.txtSenhaDB.setFont(font3)
         self.txtSenhaDB.setStyleSheet(u"")
         self.txtSenhaDB.setEchoMode(QLineEdit.Password)
         self.txtSenhaDB.setAlignment(Qt.AlignCenter)
@@ -397,9 +391,9 @@ class Ui_MainWindow(object):
         self.btnLoginBD = QPushButton(self.frame_12)
         self.btnLoginBD.setObjectName(u"btnLoginBD")
         self.btnLoginBD.setMaximumSize(QSize(200, 50))
-        font5 = QFont()
-        font5.setPointSize(12)
-        self.btnLoginBD.setFont(font5)
+        font4 = QFont()
+        font4.setPointSize(12)
+        self.btnLoginBD.setFont(font4)
         self.btnLoginBD.setCursor(QCursor(Qt.PointingHandCursor))
         self.btnLoginBD.setStyleSheet(u"QPushButton{\n"
 "color: white;\n"
@@ -474,9 +468,9 @@ class Ui_MainWindow(object):
         self.l_title_2.setObjectName(u"l_title_2")
         self.l_title_2.setMinimumSize(QSize(66, 22))
         self.l_title_2.setMaximumSize(QSize(66, 22))
-        font6 = QFont()
-        font6.setPointSize(13)
-        self.l_title_2.setFont(font6)
+        font5 = QFont()
+        font5.setPointSize(13)
+        self.l_title_2.setFont(font5)
 
         self.horizontalLayout_16.addWidget(self.l_title_2)
 
@@ -542,10 +536,11 @@ class Ui_MainWindow(object):
         sizePolicy4.setVerticalStretch(0)
         sizePolicy4.setHeightForWidth(self.tabWidget.sizePolicy().hasHeightForWidth())
         self.tabWidget.setSizePolicy(sizePolicy4)
-        font7 = QFont()
-        font7.setKerning(True)
-        font7.setStyleStrategy(QFont.PreferDefault)
-        self.tabWidget.setFont(font7)
+        self.tabWidget.setMinimumSize(QSize(0, 40))
+        font6 = QFont()
+        font6.setKerning(True)
+        font6.setStyleStrategy(QFont.PreferDefault)
+        self.tabWidget.setFont(font6)
         self.tabWidget.setFocusPolicy(Qt.TabFocus)
         self.tabWidget.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.tabWidget.setLayoutDirection(Qt.LeftToRight)
@@ -686,7 +681,9 @@ class Ui_MainWindow(object):
         self.btnCadastrarFun = QPushButton(self.tab)
         self.btnCadastrarFun.setObjectName(u"btnCadastrarFun")
         self.btnCadastrarFun.setMinimumSize(QSize(160, 30))
-        self.btnCadastrarFun.setFont(font3)
+        font7 = QFont()
+        font7.setPointSize(10)
+        self.btnCadastrarFun.setFont(font7)
         self.btnCadastrarFun.setCursor(QCursor(Qt.PointingHandCursor))
         self.btnCadastrarFun.setStyleSheet(u"QPushButton:hover{\n"
 "background-color: rgb(0, 129, 0);\n"
@@ -840,6 +837,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
         self.label_7 = QLabel(self.pgContatos)
         self.label_7.setObjectName(u"label_7")
+        self.label_7.setMinimumSize(QSize(0, 100))
         self.label_7.setMaximumSize(QSize(16777215, 80))
 
         self.verticalLayout_10.addWidget(self.label_7)
@@ -854,12 +852,6 @@ class Ui_MainWindow(object):
         self.label_6.setObjectName(u"label_6")
 
         self.verticalLayout_12.addWidget(self.label_6)
-
-        self.label_8 = QLabel(self.frame_5)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setStyleSheet(u"")
-
-        self.verticalLayout_12.addWidget(self.label_8, 0, Qt.AlignHCenter)
 
 
         self.verticalLayout_10.addWidget(self.frame_5)
@@ -878,6 +870,9 @@ class Ui_MainWindow(object):
         self.label_11 = QLabel(self.pgSobre)
         self.label_11.setObjectName(u"label_11")
         self.label_11.setMinimumSize(QSize(0, 200))
+        font8 = QFont()
+        font8.setFamilies([u"Arial"])
+        self.label_11.setFont(font8)
         self.label_11.setStyleSheet(u"padding: 20px;")
         self.label_11.setWordWrap(True)
 
@@ -923,24 +918,39 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:9pt;\">Imperador dos P\u00e3es </span></p></body></html>", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:11pt;\">Imperador dos P\u00e3es </span></p></body></html>", None))
         self.btnHome.setText(QCoreApplication.translate("MainWindow", u"Home", None))
         self.btnVenda.setText(QCoreApplication.translate("MainWindow", u"Venda", None))
         self.btnCadastrar.setText(QCoreApplication.translate("MainWindow", u"Cadastrar Funcion\u00e1rio", None))
         self.btnContatos.setText(QCoreApplication.translate("MainWindow", u"Contato", None))
         self.btnSobre.setText(QCoreApplication.translate("MainWindow", u"Sobre", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page), QCoreApplication.translate("MainWindow", u"MENU", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:600;\">Usu\u00e1rio: </span>Funcion\u00e1rio</p></body></html>", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:600;\">Sistema: </span>Gest\u00e3o Comercial</p></body></html>", None))
-        self.label_12.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:600;\">Status:</span> Ativo </p></body></html>", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Usu\u00e1rio:  </span>Funcion\u00e1rio</p></body></html>", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Sistema:  </span>Gest\u00e3o Padaria</p></body></html>", None))
+        self.label_12.setText(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Status:</span>  Ativo </p></body></html>", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:600;\">Vencimento:</span> 18/80/5260</p></body></html>", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page_2), QCoreApplication.translate("MainWindow", u"SISTEMA", None))
         self.btinToggle.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"right\"><span style=\" font-size:12pt;\">Sistema Gest\u00e3o</span><br/></p></body></html>", None))
-        self.lblLogo.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><img src=\":/icons/icons/padaria.png\"/></p></body></html>", None))
-        self.lbl_Usuario.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:600;\">Banco de Dados</span></p></body></html>", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"right\"><span style=\" font-size:12pt;\">Sistema De Gest\u00e3o</span><br/></p></body></html>", None))
+        self.lblLogo.setText(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/icons/icons/IMPERADOR DOS P\u00c2ES.png\" /></p></body></html>", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><img src=\":/icons/icons/BancoDeDados.png\"/></p><p align=\"center\"><span style=\" font-size:14pt; font-weight:600;\">Banco de Dados</span></p></body></html>", None))
         self.txtLoginDB.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
-        self.lbl_Senha.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:600;\">Senha</span></p></body></html>", None))
         self.txtSenhaDB.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Senha", None))
         self.btnLoginBD.setText(QCoreApplication.translate("MainWindow", u"LOGIN", None))
         self.gb_pesquisa_2.setTitle(QCoreApplication.translate("MainWindow", u"VENDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", None))
@@ -958,7 +968,15 @@ class Ui_MainWindow(object):
         self.txtNome.setPlaceholderText(QCoreApplication.translate("MainWindow", u"NOME*", None))
         self.txtSobrenome.setPlaceholderText(QCoreApplication.translate("MainWindow", u"SOBRENOME*", None))
         self.txtSenha.setPlaceholderText(QCoreApplication.translate("MainWindow", u"SENHA*", None))
-        self.lblCadastroFun.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">CADASTRO</span></p><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">FUNCION\u00c1RIO</span><br/></p></body></html>", None))
+        self.lblCadastroFun.setText(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/icons/icons/Funcionario.png\" /></p>\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt; font-weight:600; vertical-align:super;\">CADASTRAR FUNCION\u00c1RIO</span><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:12px; marg"
+                        "in-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         self.txtCPF.setPlaceholderText(QCoreApplication.translate("MainWindow", u"CPF*", None))
         self.txtNumero.setPlaceholderText(QCoreApplication.translate("MainWindow", u"N\u00daMERO", None))
         self.txtLogradouro.setText("")
@@ -1001,27 +1019,33 @@ class Ui_MainWindow(object):
         self.btnAlterar.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btnExcluir.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Funcion\u00e1rios Cadastrados", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:18pt; font-weight:600;\">CONTATOS</span></p></body></html>", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/icons/icons/Contato.png\" />  <span style=\" font-size:18pt; font-weight:600;\">DESENVOLVEDORES</span></p></body></html>", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/icons/icons/whatsApp.png\" />   <span style=\" font-size:18pt; vertical-align:super;\">(19)98458-6252 - (19)98102-2857 - (19)991575980 - </span><span style=\" font-size:18pt; vertical-align:super;\">(19)99648-2234 </span><span style=\" font-size:11pt;\"><br /></span></p>\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/icons/icons/whatsApp.png\" />   <span style=\" font-size:18pt; vertical-align:super;\">(19)98458-6252 - (19)98102-2857 - (19)991575980 - (19)99648-2234 </span></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:18pt; vertical-align:super;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img "
+                        "src=\":/icons/icons/grupo.png\" /><span style=\" font-size:11pt;\"><br /></span></p>\n"
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/icons/icons/grupo.png\" /></p></body></html>", None))
-        self.label_10.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:18pt; font-weight:600;\">SOBRE</span></p></body></html>", None))
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/icons/icons/Sobre.png\" />   <span style=\" font-size:18pt; font-weight:600;\">SOBRE O SISTEMA</span></p></body></html>", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">Este \u00e9 um Sistema de Cadastro de Funcion\u00e1rios e Controle de Vendas, desenvolvido por alunos do Col\u00e9gio T\u00e9cnico de Campinas - COTUCA, com o objetivo de cumprir com os instrumentos avaliativos da m\u00e1teria de Pr\u00e1tica Profissional I. </span></p>\n"
-"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">O Sistema foi constru\u00eddo a partir da utiliza\u00e7\u00e3"
-                        "o conjunta da Lingaguem de Programa\u00e7\u00e3o Python, suas bibliotecas e do QtDesigner.</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/icons/icons/python.png\" /></p></body></html>", None))
+"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">Este \u00e9 um Sistema de Cadastro de Funcion\u00e1rios e Controle de Vendas de uma Padaria Fict\u00edcia, desenvolvido por alunos do Col\u00e9gio T\u00e9cnico de Campinas - COTUCA, com o objetivo de cumprir com os instrumentos avaliativos da m\u00e1teria de Pr\u00e1tica Profissional I. </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">O Sistema foi constru\u00eddo a "
+                        "partir da utiliza\u00e7\u00e3o conjunta da Lingaguem de Programa\u00e7\u00e3o Python, suas bibliotecas e do ambiente de desenvolvimento integrado de plataforma cruzada, QtDesigner.</span></p>\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/icons/icons/python.png\" />                                                        <img src=\":/icons/icons/QtDesigner.png\" /></p></body></html>", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
