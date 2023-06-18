@@ -111,7 +111,6 @@ class Connect:
     def deleteFun(self, cpf):
         self.cursor.execute(f"DELETE FROM padaria.funcionario WHERE cpf = '{cpf}' ")
         self.cursor.commit()
-        return "Cadastro de Funcionário excluido com sucesso!"
 
     def updateTable(self, fullDataSet):
         self.cursor.execute(

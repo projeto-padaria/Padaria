@@ -117,7 +117,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.cidade = self.txtMunicipio.setText("")
             self.uf = self.txtUF.setText("")
             self.cep = self.txtCEP.setText("")
-            QMessageBox.about(None, "ALERTA", "Funcionário Cadastrado com Sucesso!")
+            QMessageBox.about(None, "Imperador dos Pães", "Funcionário Cadastrado com Sucesso!")
         except Exception as error:
             debug.printError(error)
             QMessageBox.warning(
@@ -139,10 +139,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     .siblingAtColumn(0)
                     .data()
                 )
-                result = self.db.deleteFun(cpf)
+                self.db.deleteFun(cpf)
                 self.refreshTable()
-                
-                QMessageBox.Information(None,"Imperador dos Pães",result)
+                QMessageBox.about(None,"Imperador dos Pães","Cadastro de Funcionário excluido com sucesso!")
             except Exception as error:
                 debug.printError(error)
 
