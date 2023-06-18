@@ -15,11 +15,12 @@ create table padaria.endereco
     PRIMARY KEY (idEndereco)
 );
 
+
 create table padaria.fornecedor
 (
     idFornecedor int identity(1,1),
 
-    cnpj char(14),
+    cnpj varchar(14),
     status varchar(50),
     nome varchar(50),
     telefone char(11),
@@ -36,7 +37,7 @@ create table padaria.cliente
 
     nome varchar(50),
     sobrenome varchar(50),
-    cpf char(11),
+    cpf varchar(11),
     idEndereco int  null,
     UNIQUE(cpf),
     PRIMARY KEY (idCliente),
@@ -48,7 +49,7 @@ create table padaria.funcionario
 (
     idFuncionario int identity(1,1),
 
-    cpf char(11),
+    cpf varchar(11),
     nome varchar(50),
     sobrenome varchar(50),
     senha varchar(40),

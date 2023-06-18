@@ -23,6 +23,7 @@ class MainWindowLogin(QMainWindow, Ui_MainWindowLogin):
     def mainWindow(self):
         self.login = self.txtLogin.text()
         self.password = self.txtSenha.text()
+        print(self.login,self.password)
         db = Connect("BD23333", "BD23333")  # TROCAR
         db.Login()
         auth = db.LoginAuthentication(self.login, self.password)

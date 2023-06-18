@@ -40,7 +40,7 @@ class Connect:
         self.table = "funcionario"
         try:
             self.cursor.execute(
-                f"""SELECT {self.usuario},{self.senha} from {self.schema}.{self.table} where {self.usuario} = {login} and {self.senha} = '{senha}'"""
+                f"""SELECT {self.usuario},{self.senha} from {self.schema}.{self.table} where {self.usuario} = '{login}' and {self.senha} = '{senha}'"""
             )
             conferir = self.cursor.fetchall()
             if conferir == []:

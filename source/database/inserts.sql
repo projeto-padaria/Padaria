@@ -1,4 +1,4 @@
--- Endereços *Para a integridade do banco de dados, insira um endereço por vez acopanhado da inserção de um funcionário. Por enquanto não trabalharemos com a conexeão de endereços com clientes e fornecedores.
+-- Endereços *Para a integridade do banco de dados, insira um endereço por vez acompanhado da inserção de um funcionário. Por enquanto não trabalharemos com a conexeão de endereços com clientes e fornecedores.
 
 insert into padaria.endereco
 VALUES
@@ -13,9 +13,22 @@ VALUES
 
 SELECT * from padaria.funcionario F, padaria.endereco E where F.idEndereco = E.idEndereco;
 
+SELECT cpf,senha from padaria.funcionario where cpf = 'admin' and senha = 'admin'
+
 select * from padaria.endereco;
 
--- Fornecdor
+
+-- Funcionario
+
+insert into padaria.funcionario values
+('0', 'Rafael', 'Moreira', '321', 'Sênior', 1000.00, '19984586252', NULL),
+('34567890123', 'Pedro', 'Ferreira', 'senha789', 'Desenvolvedor', 4000.00, '3456789012', NULL),
+('45678901234', 'Ana', 'Oliveira', 'senhaabc', 'Secretária', 2500.00, '4567890123', NULL),
+('56789012345', 'Carlos', 'Souza', 'senhaxyz', 'Vendedor', 3000.00, '5678901234', NULL);
+
+SELECT cpf,senha from padaria.funcionario
+
+-- Fornecedor
 insert into padaria.fornecedor VALUES
 ('1234567891234','Ativo','CotucaInBunda','1234567890',NULL),
 ('4321987654321','Ativo','Nutrivan','56789101415',NULL),
@@ -35,16 +48,6 @@ insert into padaria.cliente VALUES
 ('Carlos', 'Souza', '56789012345',NULL),
 ('Julia', 'Costa', '67890123456',NULL),
 ('Lucas', 'Gomes', '78901234567',NULL);
-
--- Funcionario
-
-insert into padaria.funcionario values
-('0', 'Rafael', 'Moreira', '321', 'Sênior', 1000.00, '19984586252', NULL),
-('34567890123', 'Pedro', 'Ferreira', 'senha789', 'Desenvolvedor', 4000.00, '3456789012', NULL),
-('45678901234', 'Ana', 'Oliveira', 'senhaabc', 'Secretária', 2500.00, '4567890123', NULL),
-('56789012345', 'Carlos', 'Souza', 'senhaxyz', 'Vendedor', 3000.00, '5678901234', NULL);
-
-SELECT cpf,senha from padaria.funcionario
 
 -- Produto
 
