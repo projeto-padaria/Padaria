@@ -21,23 +21,30 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
         self.setWindowTitle("Imperador dos Pães - Sistema de Gestão")
-
+        
+        #Conexão ao Banco de Dados
+        self.db = Connect('BD23333','BD23333')
+        self.db.Login()
         # TOGGLE BUTTON
         self.btinToggle.clicked.connect(self.left_Container)
         # Paginas do Sistema
         self.btnHome.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgHome))
-        self.btnVenda.clicked.connect(self.pgBancoDeDados)
-        self.btnCadastrar.clicked.connect(self.pgBancoDeDados)
+        self.btnVenda.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgVenda))
+        self.btnCadastrar.clicked.connect(self.pgCadastro)
         self.btnSobre.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgSobre))
         self.btnContatos.clicked.connect(
             lambda: self.Pages.setCurrentWidget(self.pgContatos)
         )
         self.btnCadastrarFun.clicked.connect(self.employeeRegistration)
         self.btnAtualizar.clicked.connect(self.refreshTable)
-        self.btnLoginBD.clicked.connect(self.connectDatabase)
         self.btnAlterar.clicked.connect(self.updateTable)
         self.btnExcluir.clicked.connect(self.deleteFun)
         self.btnSair.clicked.connect(self.closeWindow)
+
+    def pgCadastro(self):
+        self.refreshTable()
+        self.Pages.setCurrentWidget(self.pgCadastrar)
+
 
     def left_Container(self):
         width = self.leftContainer.width()
@@ -54,32 +61,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
         self.animation.start()
 
-    def pgBancoDeDados(self):
-        self.sender1 = self.sender()
-        self.Pages.setCurrentWidget(self.pgBanco)
-
     def connectDatabase(self):
-        self.login = self.txtLoginDB.text()
-        self.password = self.txtSenhaDB.text()
+        self.sender1 = self.sender()
         try:
-            self.db = Connect(self.login, self.password)
-            self.db.Login()
             if self.sender1 == self.btnVenda:
-                self.txtLoginDB.setText("")
-                self.txtSenhaDB.setText("")
                 self.Pages.setCurrentWidget(self.pgVenda)
-                
             elif self.sender1 == self.btnCadastrar:
-                self.txtLoginDB.setText("")
-                self.txtSenhaDB.setText("")
                 self.db.showTableFun(self.tableWidget)
                 self.Pages.setCurrentWidget(self.pgCadastrar)
-                
         except Exception as error:
-            QMessageBox.warning(self, "ALERTA", "Login ou Senha Incorretos")
             debug.printError(error)
-            self.txtLoginDB.setText("")
-            self.txtSenhaDB.setText("")
+            
 
     def employeeRegistration(self):
         self.cpf = self.txtCPF.text()
@@ -109,7 +101,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.uf,
                 self.cep]
         try:
-            self.db.Login()
             self.db.insertTableFun(
                 valores
             )
@@ -148,7 +139,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     .siblingAtColumn(0)
                     .data()
                 )
-                self.db.Login()
                 result = self.db.deleteFun(cpf)
                 self.refreshTable()
                 
@@ -167,7 +157,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             dados = []
 
         try:
-            self.db.Login()
             for dados in update_dados:
                 self.db.updateTable(tuple(dados))
             QMessageBox.about(
@@ -182,14 +171,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.db.showTableFun(self.tableWidget)
 
     def closeWindow(self):
+        self.db.closeConnection()
         sys.exit()
 
 
 
 #DEBUG
-# if __name__ == "__main__":
-#     app = QApplication(sys.argv)
-#     window = MainWindow()
-#     window.show()
-#     sys.exit(app.exec())
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec())
 

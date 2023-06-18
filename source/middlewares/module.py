@@ -33,6 +33,7 @@ class Connect:
 
     def closeConnection(self):
         self.cursor.close()
+        debug.printSuccess("Conexão com o Banco de Dados Fechada!")
 
     def LoginAuthentication(self, login, senha):
         self.usuario = "cpf"

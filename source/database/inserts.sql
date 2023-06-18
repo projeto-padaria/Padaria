@@ -6,7 +6,7 @@ VALUES
 ('Centro', 'Avenida B', 456, 'Rio de Janeiro', 'RJ', '12345678'),
 ('Savassi', 'Rua C', 789, 'Belo Horizonte', 'MG', '98765432'),
 ('Moinhos de Vento', 'Avenida D', 101, 'Porto Alegre', 'RS', '54321876'),
-('Batel', 'Rua E', 222, 'Curitiba', 'PR', '76543210');
+('Batel', 'Rua E', 222, 'Curitiba', 'PR', '76543210'),
 ('Res. Vida Nova II', 'Rua Gustavo Antônio Ferreira', 88, 'Vinhedo', 'SP', '13285608'),
 ('Moinhos de Vento', 'Avenida D', 101, 'Porto Alegre', 'RS', '54321876'),
 ('Batel', 'Rua E', 222, 'Curitiba', 'PR', '76543210'); 

@@ -302,151 +302,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.addWidget(self.lblLogo)
 
         self.Pages.addWidget(self.pgHome)
-        self.pgBanco = QWidget()
-        self.pgBanco.setObjectName(u"pgBanco")
-        self.horizontalLayout_11 = QHBoxLayout(self.pgBanco)
-        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.frame_9 = QFrame(self.pgBanco)
-        self.frame_9.setObjectName(u"frame_9")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.frame_9.sizePolicy().hasHeightForWidth())
-        self.frame_9.setSizePolicy(sizePolicy1)
-        self.frame_9.setMinimumSize(QSize(300, 300))
-        self.frame_9.setMaximumSize(QSize(450, 450))
-        self.frame_9.setStyleSheet(u"background-color:rgb(49, 49, 49);\n"
-"border-radius: 5px")
-        self.frame_9.setFrameShape(QFrame.StyledPanel)
-        self.frame_9.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_18 = QVBoxLayout(self.frame_9)
-        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
-        self.verticalSpacer_3 = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_18.addItem(self.verticalSpacer_3)
-
-        self.label_9 = QLabel(self.frame_9)
-        self.label_9.setObjectName(u"label_9")
-
-        self.verticalLayout_18.addWidget(self.label_9)
-
-        self.frame_10 = QFrame(self.frame_9)
-        self.frame_10.setObjectName(u"frame_10")
-        self.frame_10.setMinimumSize(QSize(215, 80))
-        self.frame_10.setMaximumSize(QSize(16777215, 16777215))
-        self.frame_10.setStyleSheet(u"QLabel{\n"
-"color:white;\n"
-"}\n"
-"\n"
-"QLineEdit{\n"
-"color: white;\n"
-"border: None;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 10pt \"MS SHel Dlg 2\";\n"
-"}\n"
-"\n"
-"QFrame{\n"
-"background-color:rgb(49, 49, 49)\n"
-"}")
-        self.frame_10.setFrameShape(QFrame.StyledPanel)
-        self.frame_10.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_19 = QVBoxLayout(self.frame_10)
-        self.verticalLayout_19.setObjectName(u"verticalLayout_19")
-        self.verticalLayout_19.setContentsMargins(-1, -1, -1, 0)
-        self.txtLoginDB = QLineEdit(self.frame_10)
-        self.txtLoginDB.setObjectName(u"txtLoginDB")
-        self.txtLoginDB.setMinimumSize(QSize(280, 25))
-        self.txtLoginDB.setMaximumSize(QSize(16777215, 16777215))
-        font3 = QFont()
-        font3.setFamilies([u"MS SHel Dlg 2"])
-        font3.setPointSize(10)
-        font3.setBold(False)
-        font3.setItalic(False)
-        self.txtLoginDB.setFont(font3)
-        self.txtLoginDB.setStyleSheet(u"")
-        self.txtLoginDB.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_19.addWidget(self.txtLoginDB)
-
-
-        self.verticalLayout_18.addWidget(self.frame_10)
-
-        self.frame_11 = QFrame(self.frame_9)
-        self.frame_11.setObjectName(u"frame_11")
-        self.frame_11.setMinimumSize(QSize(215, 80))
-        self.frame_11.setMaximumSize(QSize(16777215, 16777215))
-        self.frame_11.setStyleSheet(u"QLabel{\n"
-"color:white;\n"
-"}\n"
-"\n"
-"QLineEdit{\n"
-"color: white;\n"
-"border: None;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 10pt \"MS SHel Dlg 2\";\n"
-"}\n"
-"\n"
-"QFrame{\n"
-"background-color:rgb(49, 49, 49)\n"
-"}")
-        self.frame_11.setFrameShape(QFrame.StyledPanel)
-        self.frame_11.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_20 = QVBoxLayout(self.frame_11)
-        self.verticalLayout_20.setObjectName(u"verticalLayout_20")
-        self.verticalLayout_20.setContentsMargins(-1, 0, -1, -1)
-        self.txtSenhaDB = QLineEdit(self.frame_11)
-        self.txtSenhaDB.setObjectName(u"txtSenhaDB")
-        self.txtSenhaDB.setMinimumSize(QSize(280, 25))
-        self.txtSenhaDB.setMaximumSize(QSize(16777215, 16777215))
-        self.txtSenhaDB.setFont(font3)
-        self.txtSenhaDB.setStyleSheet(u"")
-        self.txtSenhaDB.setEchoMode(QLineEdit.Password)
-        self.txtSenhaDB.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_20.addWidget(self.txtSenhaDB)
-
-
-        self.verticalLayout_18.addWidget(self.frame_11)
-
-        self.frame_12 = QFrame(self.frame_9)
-        self.frame_12.setObjectName(u"frame_12")
-        self.frame_12.setMinimumSize(QSize(215, 50))
-        self.frame_12.setMaximumSize(QSize(16777215, 16777215))
-        self.frame_12.setFrameShape(QFrame.StyledPanel)
-        self.frame_12.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_7 = QHBoxLayout(self.frame_12)
-        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.btnLoginBD = QPushButton(self.frame_12)
-        self.btnLoginBD.setObjectName(u"btnLoginBD")
-        self.btnLoginBD.setMaximumSize(QSize(200, 50))
-        font4 = QFont()
-        font4.setPointSize(12)
-        self.btnLoginBD.setFont(font4)
-        self.btnLoginBD.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btnLoginBD.setStyleSheet(u"QPushButton{\n"
-"color: white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"border-radius:5px;\n"
-"}\n"
-"\n"
-"QPushButton:hover{\n"
-"color:black;\n"
-"background-color: rgb(203, 135, 0);\n"
-"border-radius:5px;\n"
-"}\n"
-"\n"
-"\n"
-"")
-
-        self.horizontalLayout_7.addWidget(self.btnLoginBD)
-
-
-        self.verticalLayout_18.addWidget(self.frame_12)
-
-
-        self.horizontalLayout_11.addWidget(self.frame_9, 0, Qt.AlignHCenter|Qt.AlignVCenter)
-
-        self.Pages.addWidget(self.pgBanco)
         self.pgVenda = QWidget()
         self.pgVenda.setObjectName(u"pgVenda")
         self.verticalLayout_16 = QVBoxLayout(self.pgVenda)
@@ -459,11 +314,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_26.setObjectName(u"verticalLayout_26")
         self.frame_pesquisa = QFrame(self.frame_6)
         self.frame_pesquisa.setObjectName(u"frame_pesquisa")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.frame_pesquisa.sizePolicy().hasHeightForWidth())
-        self.frame_pesquisa.setSizePolicy(sizePolicy2)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.frame_pesquisa.sizePolicy().hasHeightForWidth())
+        self.frame_pesquisa.setSizePolicy(sizePolicy1)
         self.frame_pesquisa.setMinimumSize(QSize(0, 0))
         self.frame_pesquisa.setMaximumSize(QSize(800, 800))
         self.frame_pesquisa.setFrameShape(QFrame.StyledPanel)
@@ -479,15 +334,15 @@ class Ui_MainWindow(object):
 
         self.gb_pesquisa_2 = QGroupBox(self.frame_pesquisa)
         self.gb_pesquisa_2.setObjectName(u"gb_pesquisa_2")
-        sizePolicy2.setHeightForWidth(self.gb_pesquisa_2.sizePolicy().hasHeightForWidth())
-        self.gb_pesquisa_2.setSizePolicy(sizePolicy2)
+        sizePolicy1.setHeightForWidth(self.gb_pesquisa_2.sizePolicy().hasHeightForWidth())
+        self.gb_pesquisa_2.setSizePolicy(sizePolicy1)
         self.gb_pesquisa_2.setMaximumSize(QSize(800, 600))
         self.horizontalLayout_15 = QHBoxLayout(self.gb_pesquisa_2)
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
         self.frame_15 = QFrame(self.gb_pesquisa_2)
         self.frame_15.setObjectName(u"frame_15")
-        sizePolicy2.setHeightForWidth(self.frame_15.sizePolicy().hasHeightForWidth())
-        self.frame_15.setSizePolicy(sizePolicy2)
+        sizePolicy1.setHeightForWidth(self.frame_15.sizePolicy().hasHeightForWidth())
+        self.frame_15.setSizePolicy(sizePolicy1)
         self.frame_15.setFrameShape(QFrame.StyledPanel)
         self.frame_15.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_16 = QHBoxLayout(self.frame_15)
@@ -496,9 +351,9 @@ class Ui_MainWindow(object):
         self.l_title_2.setObjectName(u"l_title_2")
         self.l_title_2.setMinimumSize(QSize(66, 22))
         self.l_title_2.setMaximumSize(QSize(66, 22))
-        font5 = QFont()
-        font5.setPointSize(13)
-        self.l_title_2.setFont(font5)
+        font3 = QFont()
+        font3.setPointSize(13)
+        self.l_title_2.setFont(font3)
 
         self.horizontalLayout_16.addWidget(self.l_title_2)
 
@@ -513,11 +368,11 @@ class Ui_MainWindow(object):
 
         self.frame_carinhoCompra = QFrame(self.frame_6)
         self.frame_carinhoCompra.setObjectName(u"frame_carinhoCompra")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.frame_carinhoCompra.sizePolicy().hasHeightForWidth())
-        self.frame_carinhoCompra.setSizePolicy(sizePolicy3)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.frame_carinhoCompra.sizePolicy().hasHeightForWidth())
+        self.frame_carinhoCompra.setSizePolicy(sizePolicy2)
         self.frame_carinhoCompra.setFrameShape(QFrame.StyledPanel)
         self.frame_carinhoCompra.setFrameShadow(QFrame.Raised)
         self.verticalLayout_24 = QVBoxLayout(self.frame_carinhoCompra)
@@ -559,16 +414,16 @@ class Ui_MainWindow(object):
         self.tabWidget = QTabWidget(self.pgCadastrar)
         self.tabWidget.setObjectName(u"tabWidget")
         self.tabWidget.setEnabled(True)
-        sizePolicy4 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.tabWidget.sizePolicy().hasHeightForWidth())
-        self.tabWidget.setSizePolicy(sizePolicy4)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.tabWidget.sizePolicy().hasHeightForWidth())
+        self.tabWidget.setSizePolicy(sizePolicy3)
         self.tabWidget.setMinimumSize(QSize(0, 40))
-        font6 = QFont()
-        font6.setKerning(True)
-        font6.setStyleStrategy(QFont.PreferDefault)
-        self.tabWidget.setFont(font6)
+        font4 = QFont()
+        font4.setKerning(True)
+        font4.setStyleStrategy(QFont.PreferDefault)
+        self.tabWidget.setFont(font4)
         self.tabWidget.setFocusPolicy(Qt.TabFocus)
         self.tabWidget.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.tabWidget.setLayoutDirection(Qt.LeftToRight)
@@ -709,9 +564,9 @@ class Ui_MainWindow(object):
         self.btnCadastrarFun = QPushButton(self.tab)
         self.btnCadastrarFun.setObjectName(u"btnCadastrarFun")
         self.btnCadastrarFun.setMinimumSize(QSize(160, 30))
-        font7 = QFont()
-        font7.setPointSize(10)
-        self.btnCadastrarFun.setFont(font7)
+        font5 = QFont()
+        font5.setPointSize(10)
+        self.btnCadastrarFun.setFont(font5)
         self.btnCadastrarFun.setCursor(QCursor(Qt.PointingHandCursor))
         self.btnCadastrarFun.setStyleSheet(u"QPushButton:hover{\n"
 "background-color: rgb(0, 129, 0);\n"
@@ -734,8 +589,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.frame_3 = QFrame(self.tab_2)
         self.frame_3.setObjectName(u"frame_3")
-        sizePolicy4.setHeightForWidth(self.frame_3.sizePolicy().hasHeightForWidth())
-        self.frame_3.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.frame_3.sizePolicy().hasHeightForWidth())
+        self.frame_3.setSizePolicy(sizePolicy3)
         self.frame_3.setStyleSheet(u"border:None;\n"
 "")
         self.frame_3.setFrameShape(QFrame.StyledPanel)
@@ -898,9 +753,9 @@ class Ui_MainWindow(object):
         self.label_11 = QLabel(self.pgSobre)
         self.label_11.setObjectName(u"label_11")
         self.label_11.setMinimumSize(QSize(0, 200))
-        font8 = QFont()
-        font8.setFamilies([u"Arial"])
-        self.label_11.setFont(font8)
+        font6 = QFont()
+        font6.setFamilies([u"Arial"])
+        self.label_11.setFont(font6)
         self.label_11.setStyleSheet(u"padding: 20px;")
         self.label_11.setWordWrap(True)
 
@@ -982,10 +837,6 @@ class Ui_MainWindow(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/icons/icons/IMPERADOR DOS P\u00c2ES.png\" /></p></body></html>", None))
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><img src=\":/icons/icons/BancoDeDados.png\"/></p><p align=\"center\"><span style=\" font-size:14pt; font-weight:600;\">Banco de Dados</span></p></body></html>", None))
-        self.txtLoginDB.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
-        self.txtSenhaDB.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Senha", None))
-        self.btnLoginBD.setText(QCoreApplication.translate("MainWindow", u"LOGIN", None))
         self.gb_pesquisa_2.setTitle(QCoreApplication.translate("MainWindow", u"VENDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", None))
         self.l_title_2.setText(QCoreApplication.translate("MainWindow", u"Produto:", None))
         self.gb_carrinhoCompra_2.setTitle(QCoreApplication.translate("MainWindow", u"Carrinho de compra", None))

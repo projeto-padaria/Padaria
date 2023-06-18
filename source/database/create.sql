@@ -20,7 +20,7 @@ create table padaria.fornecedor
 (
     idFornecedor int identity(1,1),
 
-    cnpj varchar(14),
+    cnpj char(14),
     status varchar(50),
     nome varchar(50),
     telefone char(11),
@@ -49,7 +49,7 @@ create table padaria.funcionario
 (
     idFuncionario int identity(1,1),
 
-    cpf varchar(11),
+    cpf char(11),
     nome varchar(50),
     sobrenome varchar(50),
     senha varchar(40),
