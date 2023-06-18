@@ -1,5 +1,8 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/IMPERADOR DOS PÂES4.png</file>
+    <file>icons/IMPERADOR DOS PÂES (1).png</file>
+    <file>icons/IMPERADOR DOS PÂES3.png</file>
     <file>icons/QtDesigner.png</file>
     <file>icons/Sobre.png</file>
     <file>icons/Funcionario.png</file>

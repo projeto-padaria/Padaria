@@ -165,6 +165,7 @@ class Ui_MainWindowLogin(object):
         font2 = QFont()
         font2.setPointSize(12)
         self.btnSair.setFont(font2)
+        self.btnSair.setCursor(QCursor(Qt.PointingHandCursor))
         self.btnSair.setStyleSheet(u"QPushButton{\n"
 "color: white;\n"
 "background-color: rgb(0, 0, 0);\n"
@@ -216,6 +217,9 @@ class Ui_MainWindowLogin(object):
         MainWindowLogin.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindowLogin)
+
+        self.btnLogin.setDefault(False)
+
 
         QMetaObject.connectSlotsByName(MainWindowLogin)
     # setupUi

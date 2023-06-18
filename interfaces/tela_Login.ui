@@ -323,6 +323,9 @@ background-color:rgb(49, 49, 49)
               <pointsize>12</pointsize>
              </font>
             </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton{
 color: white;
@@ -378,6 +381,9 @@ border-radius:5px;
             </property>
             <property name="text">
              <string>LOGIN</string>
+            </property>
+            <property name="default">
+             <bool>false</bool>
             </property>
            </widget>
           </item>

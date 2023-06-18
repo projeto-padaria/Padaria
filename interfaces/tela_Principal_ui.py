@@ -27,7 +27,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1147, 670)
+        MainWindow.resize(1147, 662)
         MainWindow.setStyleSheet(u"background-color: rgb(0, 0, 0);\n"
 "")
         self.centralwidget = QWidget(MainWindow)
@@ -109,7 +109,7 @@ class Ui_MainWindow(object):
 "")
         self.page = QWidget()
         self.page.setObjectName(u"page")
-        self.page.setGeometry(QRect(0, 0, 180, 553))
+        self.page.setGeometry(QRect(0, 0, 180, 545))
         self.page.setCursor(QCursor(Qt.ArrowCursor))
         self.verticalLayout_3 = QVBoxLayout(self.page)
         self.verticalLayout_3.setSpacing(6)
@@ -170,7 +170,7 @@ class Ui_MainWindow(object):
         self.toolBox.addItem(self.page, u"MENU")
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
-        self.page_2.setGeometry(QRect(0, 0, 180, 553))
+        self.page_2.setGeometry(QRect(0, 0, 180, 545))
         self.page_2.setCursor(QCursor(Qt.ArrowCursor))
         self.verticalLayout_13 = QVBoxLayout(self.page_2)
         self.verticalLayout_13.setSpacing(0)
@@ -253,6 +253,7 @@ class Ui_MainWindow(object):
         self.btnSair.setObjectName(u"btnSair")
         self.btnSair.setMinimumSize(QSize(80, 15))
         self.btnSair.setMaximumSize(QSize(80, 30))
+        self.btnSair.setFont(font1)
         self.btnSair.setCursor(QCursor(Qt.PointingHandCursor))
         self.btnSair.setStyleSheet(u"QPushButton{\n"
 "background-color: rgb(71,71,71);\n"
