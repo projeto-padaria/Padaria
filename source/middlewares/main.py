@@ -32,9 +32,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btnVenda.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgVenda))
         self.btnCadastrar.clicked.connect(self.pgCadastro)
         self.btnSobre.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgSobre))
-        self.btnContatos.clicked.connect(
-            lambda: self.Pages.setCurrentWidget(self.pgContatos)
-        )
+        self.btnContatos.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgContatos))
         self.btnCadastrarFun.clicked.connect(self.employeeRegistration)
         self.btnAtualizar.clicked.connect(self.refreshTable)
         self.btnAlterar.clicked.connect(self.updateTable)
@@ -164,6 +162,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.refreshTable()
             
         except Exception as error:
+            if error.args[0] == "42S22":
+                QMessageBox.warning(
+                    None,
+                    "ALERTA",
+                    "Preencha os Campos Obrigatórios Adequadamente!",
+                )
             debug.printError(error)
 
     def refreshTable(self):
