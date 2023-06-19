@@ -49,6 +49,7 @@ class Ui_MainWindow(object):
         self.leftContainer = QFrame(self.centralwidget)
         self.leftContainer.setObjectName(u"leftContainer")
         self.leftContainer.setMaximumSize(QSize(9, 16777215))
+        self.leftContainer.setStyleSheet(u"")
         self.leftContainer.setFrameShape(QFrame.StyledPanel)
         self.leftContainer.setFrameShadow(QFrame.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.leftContainer)
@@ -57,6 +58,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setContentsMargins(-1, -1, 0, -1)
         self.frame = QFrame(self.leftContainer)
         self.frame.setObjectName(u"frame")
+        self.frame.setStyleSheet(u"")
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_4 = QHBoxLayout(self.frame)
@@ -216,6 +218,7 @@ class Ui_MainWindow(object):
 
         self.mainContainer = QFrame(self.centralwidget)
         self.mainContainer.setObjectName(u"mainContainer")
+        self.mainContainer.setStyleSheet(u"")
         self.mainContainer.setFrameShape(QFrame.StyledPanel)
         self.mainContainer.setFrameShadow(QFrame.Raised)
         self.verticalLayout = QVBoxLayout(self.mainContainer)
@@ -279,8 +282,10 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.mainFrame.sizePolicy().hasHeightForWidth())
         self.mainFrame.setSizePolicy(sizePolicy)
-        self.mainFrame.setStyleSheet(u"background-color: rgb(71, 71, 71);\n"
+        self.mainFrame.setStyleSheet(u"QFrame{\n"
+"background-color: rgb(71, 71, 71);\n"
 "border-radius: 15px;\n"
+"}\n"
 "\n"
 "")
         self.mainFrame.setFrameShape(QFrame.StyledPanel)
@@ -290,7 +295,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.setContentsMargins(9, 9, 9, -1)
         self.Pages = QStackedWidget(self.mainFrame)
         self.Pages.setObjectName(u"Pages")
-        self.Pages.setStyleSheet(u"")
+        self.Pages.setStyleSheet(u"background-color: rgb(71, 71, 71);\n"
+"border-radius: 0px;\n"
+"\n"
+"\n"
+"")
         self.Pages.setLineWidth(1)
         self.pgHome = QWidget()
         self.pgHome.setObjectName(u"pgHome")
@@ -434,11 +443,11 @@ class Ui_MainWindow(object):
 "\n"
 "QTabBar::tab:selected {background-color:rgb(49, 49, 49); color:white }\n"
 "\n"
-"QTabWidget{background-color: black; border: none}")
+"QTabWidget{background-color: black;}")
         self.tabWidget.setUsesScrollButtons(True)
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
-        self.tab.setStyleSheet(u"")
+        self.tab.setStyleSheet(u"border-radius:15px")
         self.verticalLayout_9 = QVBoxLayout(self.tab)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.frame_4 = QFrame(self.tab)
@@ -448,8 +457,12 @@ class Ui_MainWindow(object):
 "color: white;\n"
 "background-color: rgb(0, 0, 0);\n"
 "font: 10pt \"MS SHel Dlg 2\";\n"
-"\n"
+"padding: 0px 10px;\n"
 "}\n"
+"\n"
+"QLabel{\n"
+"border-radius:15px}\n"
+"\n"
 "\n"
 "QFrame{\n"
 "background-color:rgb(49, 49, 49);\n"
@@ -770,6 +783,7 @@ class Ui_MainWindow(object):
 
         self.footerFrame = QFrame(self.mainContainer)
         self.footerFrame.setObjectName(u"footerFrame")
+        self.footerFrame.setStyleSheet(u"")
         self.footerFrame.setFrameShape(QFrame.StyledPanel)
         self.footerFrame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_3 = QHBoxLayout(self.footerFrame)
@@ -861,6 +875,7 @@ class Ui_MainWindow(object):
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt; font-weight:600; vertical-align:super;\">CADASTRAR FUNCION\u00c1RIO</span><br /></p>\n"
 "<p align=\"center\" style=\" margin-top:12px; marg"
                         "in-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
+        self.txtCPF.setText("")
         self.txtCPF.setPlaceholderText(QCoreApplication.translate("MainWindow", u"CPF*", None))
         self.txtNumero.setPlaceholderText(QCoreApplication.translate("MainWindow", u"N\u00daMERO", None))
         self.txtLogradouro.setText("")

@@ -51,6 +51,9 @@ color:White;
         <height>16777215</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -66,6 +69,9 @@ color:White;
        </property>
        <item>
         <widget class="QFrame" name="frame">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -439,6 +445,9 @@ p, li { white-space: pre-wrap; }
     </item>
     <item>
      <widget class="QFrame" name="mainContainer">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -564,8 +573,10 @@ background-color:red;
           </sizepolicy>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(71, 71, 71);
+          <string notr="true">QFrame{
+background-color: rgb(71, 71, 71);
 border-radius: 15px;
+}
 
 </string>
          </property>
@@ -588,7 +599,11 @@ border-radius: 15px;
           <item>
            <widget class="QStackedWidget" name="Pages">
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">background-color: rgb(71, 71, 71);
+border-radius: 0px;
+
+
+</string>
             </property>
             <property name="lineWidth">
              <number>1</number>
@@ -864,7 +879,7 @@ QTabBar::tab { background-color: white; }
 
 QTabBar::tab:selected {background-color:rgb(49, 49, 49); color:white }
 
-QTabWidget{background-color: black; border: none}</string>
+QTabWidget{background-color: black;}</string>
                 </property>
                 <property name="currentIndex">
                  <number>0</number>
@@ -874,7 +889,7 @@ QTabWidget{background-color: black; border: none}</string>
                 </property>
                 <widget class="QWidget" name="tab">
                  <property name="styleSheet">
-                  <string notr="true"/>
+                  <string notr="true">border-radius:15px</string>
                  </property>
                  <attribute name="title">
                   <string>Realizar Cadastro </string>
@@ -893,8 +908,12 @@ QTabWidget{background-color: black; border: none}</string>
 color: white;
 background-color: rgb(0, 0, 0);
 font: 10pt &quot;MS SHel Dlg 2&quot;;
-
+padding: 0px 10px;
 }
+
+QLabel{
+border-radius:15px}
+
 
 QFrame{
 background-color:rgb(49, 49, 49);
@@ -992,6 +1011,9 @@ p, li { white-space: pre-wrap; }
                          <width>0</width>
                          <height>40</height>
                         </size>
+                       </property>
+                       <property name="text">
+                        <string/>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignCenter</set>
@@ -1534,6 +1556,9 @@ p, li { white-space: pre-wrap; }
        </item>
        <item>
         <widget class="QFrame" name="footerFrame">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
