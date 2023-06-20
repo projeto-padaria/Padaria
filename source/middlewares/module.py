@@ -31,7 +31,7 @@ class Connect:
             f"DRIVER={self.driver};SERVER={self.server};UID={self.username};PWD={self.password};DATABASE={self.database}"
         ).cursor()
         debug.printSuccess("Conexão com o Banco de Dados Estabelecida!")
-
+        
     def closeConnection(self):
         self.cursor.close()
         debug.printSuccess("Conexão com o Banco de Dados Fechada!")
