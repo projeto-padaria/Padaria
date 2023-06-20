@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1324</width>
-    <height>713</height>
+    <height>711</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -173,7 +173,7 @@ border-radius: 15px;
                <x>0</x>
                <y>0</y>
                <width>180</width>
-               <height>596</height>
+               <height>594</height>
               </rect>
              </property>
              <property name="cursor">
@@ -328,8 +328,8 @@ border-radius: 15px;
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>180</width>
-               <height>596</height>
+               <width>138</width>
+               <height>218</height>
               </rect>
              </property>
              <property name="cursor">
@@ -617,7 +617,7 @@ border-radius: 0px;
              <number>1</number>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="pgHome">
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -814,7 +814,7 @@ QTabBar::tab:selected {background-color:rgb(49, 49, 49); color:white }
 QTabWidget{background-color: black;}</string>
                 </property>
                 <property name="currentIndex">
-                 <number>0</number>
+                 <number>1</number>
                 </property>
                 <property name="usesScrollButtons">
                  <bool>true</bool>
