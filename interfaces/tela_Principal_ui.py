@@ -27,7 +27,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1147, 662)
+        MainWindow.resize(1227, 662)
         MainWindow.setStyleSheet(u"background-color: rgb(0, 0, 0);\n"
 "")
         self.centralwidget = QWidget(MainWindow)
@@ -315,37 +315,12 @@ class Ui_MainWindow(object):
         self.frame_main.setObjectName(u"frame_main")
         self.frame_main.setFrameShape(QFrame.StyledPanel)
         self.frame_main.setFrameShadow(QFrame.Raised)
-        self.frame_carrinho = QFrame(self.frame_main)
-        self.frame_carrinho.setObjectName(u"frame_carrinho")
-        self.frame_carrinho.setGeometry(QRect(640, 20, 431, 491))
-        self.frame_carrinho.setMinimumSize(QSize(431, 491))
-        font3 = QFont()
-        font3.setPointSize(25)
-        font3.setBold(True)
-        self.frame_carrinho.setFont(font3)
-        self.frame_carrinho.setFrameShape(QFrame.StyledPanel)
-        self.frame_carrinho.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_14 = QVBoxLayout(self.frame_carrinho)
-        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
-        self.label_carrinho = QLabel(self.frame_carrinho)
-        self.label_carrinho.setObjectName(u"label_carrinho")
-        self.label_carrinho.setMinimumSize(QSize(413, 44))
-        self.label_carrinho.setMaximumSize(QSize(1069, 44))
-        self.label_carrinho.setFont(font3)
-
-        self.verticalLayout_14.addWidget(self.label_carrinho, 0, Qt.AlignHCenter)
-
-        self.treeWidget_carrinho = QTreeWidget(self.frame_carrinho)
-        self.treeWidget_carrinho.setObjectName(u"treeWidget_carrinho")
-        self.treeWidget_carrinho.setMinimumSize(QSize(413, 423))
-        self.treeWidget_carrinho.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
-"border-radius: 0px;")
-
-        self.verticalLayout_14.addWidget(self.treeWidget_carrinho, 0, Qt.AlignHCenter|Qt.AlignVCenter)
-
+        self.horizontalLayout_9 = QHBoxLayout(self.frame_main)
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
         self.frame_pesquisa = QFrame(self.frame_main)
         self.frame_pesquisa.setObjectName(u"frame_pesquisa")
-        self.frame_pesquisa.setGeometry(QRect(9, 19, 621, 491))
+        self.frame_pesquisa.setMinimumSize(QSize(0, 0))
+        self.frame_pesquisa.setMaximumSize(QSize(560, 16777215))
         self.frame_pesquisa.setFrameShape(QFrame.StyledPanel)
         self.frame_pesquisa.setFrameShadow(QFrame.Raised)
         self.gridLayout_2 = QGridLayout(self.frame_pesquisa)
@@ -410,34 +385,68 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.treeWidget, 1, 0, 1, 1)
 
-        self.frame_6 = QFrame(self.frame_pesquisa)
-        self.frame_6.setObjectName(u"frame_6")
-        self.frame_6.setFrameShape(QFrame.StyledPanel)
-        self.frame_6.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_8 = QHBoxLayout(self.frame_6)
+        self.frame_btn = QFrame(self.frame_pesquisa)
+        self.frame_btn.setObjectName(u"frame_btn")
+        self.frame_btn.setFrameShape(QFrame.StyledPanel)
+        self.frame_btn.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_8 = QHBoxLayout(self.frame_btn)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
-        self.pushButton = QPushButton(self.frame_6)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setMinimumSize(QSize(100, 23))
-        self.pushButton.setMaximumSize(QSize(100, 500))
-        self.pushButton.setStyleSheet(u"background-color: rgb(255, 35, 35);\n"
+        self.btn_cancelar_venda = QPushButton(self.frame_btn)
+        self.btn_cancelar_venda.setObjectName(u"btn_cancelar_venda")
+        self.btn_cancelar_venda.setMinimumSize(QSize(100, 23))
+        self.btn_cancelar_venda.setMaximumSize(QSize(100, 500))
+        self.btn_cancelar_venda.setStyleSheet(u"background-color: rgb(255, 35, 35);\n"
 "color:white;\n"
 "border-radius: 4px;")
 
-        self.horizontalLayout_8.addWidget(self.pushButton)
+        self.horizontalLayout_8.addWidget(self.btn_cancelar_venda)
 
-        self.pushButton_2 = QPushButton(self.frame_6)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setMinimumSize(QSize(100, 23))
-        self.pushButton_2.setMaximumSize(QSize(100, 500))
-        self.pushButton_2.setStyleSheet(u"background-color: rgb(0, 182, 42);\n"
+        self.btn_confirmar_venda = QPushButton(self.frame_btn)
+        self.btn_confirmar_venda.setObjectName(u"btn_confirmar_venda")
+        self.btn_confirmar_venda.setMinimumSize(QSize(100, 23))
+        self.btn_confirmar_venda.setMaximumSize(QSize(100, 500))
+        self.btn_confirmar_venda.setStyleSheet(u"background-color: rgb(0, 182, 42);\n"
 "color:white;\n"
 "border-radius: 4px;")
 
-        self.horizontalLayout_8.addWidget(self.pushButton_2)
+        self.horizontalLayout_8.addWidget(self.btn_confirmar_venda)
 
 
-        self.gridLayout_2.addWidget(self.frame_6, 2, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.frame_btn, 2, 0, 1, 1)
+
+
+        self.horizontalLayout_9.addWidget(self.frame_pesquisa)
+
+        self.frame_carrinho = QFrame(self.frame_main)
+        self.frame_carrinho.setObjectName(u"frame_carrinho")
+        self.frame_carrinho.setMinimumSize(QSize(431, 491))
+        font3 = QFont()
+        font3.setPointSize(25)
+        font3.setBold(True)
+        self.frame_carrinho.setFont(font3)
+        self.frame_carrinho.setFrameShape(QFrame.StyledPanel)
+        self.frame_carrinho.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_14 = QVBoxLayout(self.frame_carrinho)
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.label_carrinho = QLabel(self.frame_carrinho)
+        self.label_carrinho.setObjectName(u"label_carrinho")
+        self.label_carrinho.setMinimumSize(QSize(413, 44))
+        self.label_carrinho.setMaximumSize(QSize(1069, 44))
+        self.label_carrinho.setFont(font3)
+
+        self.verticalLayout_14.addWidget(self.label_carrinho, 0, Qt.AlignHCenter)
+
+        self.treeWidget_carrinho = QTreeWidget(self.frame_carrinho)
+        self.treeWidget_carrinho.setObjectName(u"treeWidget_carrinho")
+        self.treeWidget_carrinho.setMinimumSize(QSize(600, 400))
+        self.treeWidget_carrinho.setMaximumSize(QSize(600, 600))
+        self.treeWidget_carrinho.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"border-radius: 0px;")
+
+        self.verticalLayout_14.addWidget(self.treeWidget_carrinho, 0, Qt.AlignHCenter|Qt.AlignVCenter)
+
+
+        self.horizontalLayout_9.addWidget(self.frame_carrinho)
 
 
         self.verticalLayout_16.addWidget(self.frame_main)
@@ -825,9 +834,9 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.toolBox.setCurrentIndex(0)
-        self.Pages.setCurrentIndex(1)
-        self.tabWidget.setCurrentIndex(0)
+        self.toolBox.setCurrentIndex(1)
+        self.Pages.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -872,25 +881,25 @@ class Ui_MainWindow(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/icons/icons/IMPERADOR DOS P\u00c2ES.png\" /></p></body></html>", None))
-        self.label_carrinho.setText(QCoreApplication.translate("MainWindow", u"Carrinho de Compras", None))
-        ___qtreewidgetitem = self.treeWidget_carrinho.headerItem()
-        ___qtreewidgetitem.setText(4, QCoreApplication.translate("MainWindow", u"Quantidade", None));
-        ___qtreewidgetitem.setText(3, QCoreApplication.translate("MainWindow", u"Valor do Produto", None));
-        ___qtreewidgetitem.setText(2, QCoreApplication.translate("MainWindow", u"Marca do Produto", None));
-        ___qtreewidgetitem.setText(1, QCoreApplication.translate("MainWindow", u"Nome do Produto", None));
-        ___qtreewidgetitem.setText(0, QCoreApplication.translate("MainWindow", u"idVenda", None));
         self.lineEdit_pesquisa.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Pesquisa aqui...", None))
         self.btn_Adicionar.setText(QCoreApplication.translate("MainWindow", u"Adicionar", None))
         self.btn_pesquisar.setText(QCoreApplication.translate("MainWindow", u"Pesquisar", None))
         self.btn_excluir.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
-        ___qtreewidgetitem1 = self.treeWidget.headerItem()
-        ___qtreewidgetitem1.setText(4, QCoreApplication.translate("MainWindow", u"Data de Validade", None));
-        ___qtreewidgetitem1.setText(3, QCoreApplication.translate("MainWindow", u"Estoque", None));
-        ___qtreewidgetitem1.setText(2, QCoreApplication.translate("MainWindow", u"Nome da Marca", None));
+        ___qtreewidgetitem = self.treeWidget.headerItem()
+        ___qtreewidgetitem.setText(4, QCoreApplication.translate("MainWindow", u"Data de Validade", None));
+        ___qtreewidgetitem.setText(3, QCoreApplication.translate("MainWindow", u"Estoque", None));
+        ___qtreewidgetitem.setText(2, QCoreApplication.translate("MainWindow", u"Nome da Marca", None));
+        ___qtreewidgetitem.setText(1, QCoreApplication.translate("MainWindow", u"Nome do Produto", None));
+        ___qtreewidgetitem.setText(0, QCoreApplication.translate("MainWindow", u"idVenda", None));
+        self.btn_cancelar_venda.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
+        self.btn_confirmar_venda.setText(QCoreApplication.translate("MainWindow", u"Confirmar", None))
+        self.label_carrinho.setText(QCoreApplication.translate("MainWindow", u"Carrinho de Compras", None))
+        ___qtreewidgetitem1 = self.treeWidget_carrinho.headerItem()
+        ___qtreewidgetitem1.setText(4, QCoreApplication.translate("MainWindow", u"Quantidade", None));
+        ___qtreewidgetitem1.setText(3, QCoreApplication.translate("MainWindow", u"Valor do Produto", None));
+        ___qtreewidgetitem1.setText(2, QCoreApplication.translate("MainWindow", u"Marca do Produto", None));
         ___qtreewidgetitem1.setText(1, QCoreApplication.translate("MainWindow", u"Nome do Produto", None));
         ___qtreewidgetitem1.setText(0, QCoreApplication.translate("MainWindow", u"idVenda", None));
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Confirmar", None))
         self.txtNome.setText("")
         self.txtNome.setPlaceholderText(QCoreApplication.translate("MainWindow", u"NOME*", None))
         self.txtSobrenome.setPlaceholderText(QCoreApplication.translate("MainWindow", u"SOBRENOME*", None))

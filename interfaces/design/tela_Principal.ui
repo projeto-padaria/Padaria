@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1147</width>
+    <width>1227</width>
     <height>662</height>
    </rect>
   </property>
@@ -165,7 +165,7 @@ border-radius: 15px;
 </string>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="page">
              <property name="geometry">
@@ -599,7 +599,7 @@ border-radius: 15px;
              <number>1</number>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="pgHome">
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -626,342 +626,350 @@ p, li { white-space: pre-wrap; }
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <widget class="QFrame" name="frame_carrinho">
-                 <property name="geometry">
-                  <rect>
-                   <x>640</x>
-                   <y>20</y>
-                   <width>431</width>
-                   <height>491</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>431</width>
-                   <height>491</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <pointsize>25</pointsize>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_14">
-                  <item alignment="Qt::AlignHCenter">
-                   <widget class="QLabel" name="label_carrinho">
-                    <property name="minimumSize">
-                     <size>
-                      <width>413</width>
-                      <height>44</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>1069</width>
-                      <height>44</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>25</pointsize>
-                      <bold>true</bold>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>Carrinho de Compras</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-                   <widget class="QTreeWidget" name="treeWidget_carrinho">
-                    <property name="minimumSize">
-                     <size>
-                      <width>413</width>
-                      <height>423</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">background-color: rgb(255, 255, 255);
-border-radius: 0px;</string>
-                    </property>
-                    <column>
-                     <property name="text">
-                      <string>idVenda</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>Nome do Produto</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>Marca do Produto</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>Valor do Produto</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>Quantidade</string>
-                     </property>
-                    </column>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-                <widget class="QFrame" name="frame_pesquisa">
-                 <property name="geometry">
-                  <rect>
-                   <x>9</x>
-                   <y>19</y>
-                   <width>621</width>
-                   <height>491</height>
-                  </rect>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <layout class="QGridLayout" name="gridLayout_2">
-                  <item row="0" column="0">
-                   <widget class="QFrame" name="frame_edit_pesquisa">
-                    <property name="minimumSize">
-                     <size>
-                      <width>543</width>
-                      <height>50</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>16777215</width>
-                      <height>50</height>
-                     </size>
-                    </property>
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QHBoxLayout" name="horizontalLayout_7">
-                     <item>
-                      <widget class="QLineEdit" name="lineEdit_pesquisa">
-                       <property name="maximumSize">
-                        <size>
-                         <width>500</width>
-                         <height>500</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(255, 255, 255);
+                <layout class="QHBoxLayout" name="horizontalLayout_9">
+                 <item>
+                  <widget class="QFrame" name="frame_pesquisa">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>560</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_2">
+                    <item row="0" column="0">
+                     <widget class="QFrame" name="frame_edit_pesquisa">
+                      <property name="minimumSize">
+                       <size>
+                        <width>543</width>
+                        <height>50</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>50</height>
+                       </size>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_7">
+                       <item>
+                        <widget class="QLineEdit" name="lineEdit_pesquisa">
+                         <property name="maximumSize">
+                          <size>
+                           <width>500</width>
+                           <height>500</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(255, 255, 255);
 border-radius:4px;</string>
-                       </property>
-                       <property name="placeholderText">
-                        <string>Pesquisa aqui...</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QPushButton" name="btn_Adicionar">
-                       <property name="sizePolicy">
-                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                         <horstretch>0</horstretch>
-                         <verstretch>0</verstretch>
-                        </sizepolicy>
-                       </property>
-                       <property name="minimumSize">
-                        <size>
-                         <width>0</width>
-                         <height>0</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>70</width>
-                         <height>25</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(255, 255, 255);</string>
-                       </property>
-                       <property name="text">
-                        <string>Adicionar</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QPushButton" name="btn_pesquisar">
-                       <property name="sizePolicy">
-                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                         <horstretch>0</horstretch>
-                         <verstretch>0</verstretch>
-                        </sizepolicy>
-                       </property>
-                       <property name="minimumSize">
-                        <size>
-                         <width>0</width>
-                         <height>0</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>70</width>
-                         <height>25</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(255, 255, 255);</string>
-                       </property>
-                       <property name="text">
-                        <string>Pesquisar</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QPushButton" name="btn_excluir">
-                       <property name="sizePolicy">
-                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                         <horstretch>0</horstretch>
-                         <verstretch>0</verstretch>
-                        </sizepolicy>
-                       </property>
-                       <property name="minimumSize">
-                        <size>
-                         <width>0</width>
-                         <height>0</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>70</width>
-                         <height>25</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(255, 255, 255);</string>
-                       </property>
-                       <property name="text">
-                        <string>Excluir</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                  <item row="1" column="0">
-                   <widget class="QTreeWidget" name="treeWidget">
-                    <property name="minimumSize">
-                     <size>
-                      <width>543</width>
-                      <height>300</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">background-color: rgb(255, 255, 255);
+                         </property>
+                         <property name="placeholderText">
+                          <string>Pesquisa aqui...</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="btn_Adicionar">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>70</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(255, 255, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string>Adicionar</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="btn_pesquisar">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>70</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(255, 255, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string>Pesquisar</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="btn_excluir">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>70</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(255, 255, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string>Excluir</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="QTreeWidget" name="treeWidget">
+                      <property name="minimumSize">
+                       <size>
+                        <width>543</width>
+                        <height>300</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 255, 255);
 border-radius: 0px;</string>
-                    </property>
-                    <column>
-                     <property name="text">
-                      <string>idVenda</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>Nome do Produto</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>Nome da Marca</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>Estoque</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>Data de Validade</string>
-                     </property>
-                    </column>
-                   </widget>
-                  </item>
-                  <item row="2" column="0">
-                   <widget class="QFrame" name="frame_6">
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QHBoxLayout" name="horizontalLayout_8">
-                     <item>
-                      <widget class="QPushButton" name="pushButton">
-                       <property name="minimumSize">
-                        <size>
-                         <width>100</width>
-                         <height>23</height>
-                        </size>
+                      </property>
+                      <column>
+                       <property name="text">
+                        <string>idVenda</string>
                        </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>100</width>
-                         <height>500</height>
-                        </size>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Nome do Produto</string>
                        </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(255, 35, 35);
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Nome da Marca</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Estoque</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Data de Validade</string>
+                       </property>
+                      </column>
+                     </widget>
+                    </item>
+                    <item row="2" column="0">
+                     <widget class="QFrame" name="frame_btn">
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_8">
+                       <item>
+                        <widget class="QPushButton" name="btn_cancelar_venda">
+                         <property name="minimumSize">
+                          <size>
+                           <width>100</width>
+                           <height>23</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>100</width>
+                           <height>500</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(255, 35, 35);
 color:white;
 border-radius: 4px;</string>
-                       </property>
-                       <property name="text">
-                        <string>Cancelar</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QPushButton" name="pushButton_2">
-                       <property name="minimumSize">
-                        <size>
-                         <width>100</width>
-                         <height>23</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>100</width>
-                         <height>500</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(0, 182, 42);
+                         </property>
+                         <property name="text">
+                          <string>Cancelar</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="btn_confirmar_venda">
+                         <property name="minimumSize">
+                          <size>
+                           <width>100</width>
+                           <height>23</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>100</width>
+                           <height>500</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(0, 182, 42);
 color:white;
 border-radius: 4px;</string>
-                       </property>
+                         </property>
+                         <property name="text">
+                          <string>Confirmar</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frame_carrinho">
+                   <property name="minimumSize">
+                    <size>
+                     <width>431</width>
+                     <height>491</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>25</pointsize>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_14">
+                    <item alignment="Qt::AlignHCenter">
+                     <widget class="QLabel" name="label_carrinho">
+                      <property name="minimumSize">
+                       <size>
+                        <width>413</width>
+                        <height>44</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>1069</width>
+                        <height>44</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>25</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Carrinho de Compras</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                     <widget class="QTreeWidget" name="treeWidget_carrinho">
+                      <property name="minimumSize">
+                       <size>
+                        <width>600</width>
+                        <height>400</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>600</width>
+                        <height>600</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 0px;</string>
+                      </property>
+                      <column>
                        <property name="text">
-                        <string>Confirmar</string>
+                        <string>idVenda</string>
                        </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Nome do Produto</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Marca do Produto</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Valor do Produto</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Quantidade</string>
+                       </property>
+                      </column>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
              </layout>
@@ -1016,7 +1024,7 @@ QTabBar::tab:selected {background-color:rgb(49, 49, 49); color:white }
 QTabWidget{background-color: black; border: none}</string>
                 </property>
                 <property name="currentIndex">
-                 <number>0</number>
+                 <number>1</number>
                 </property>
                 <property name="usesScrollButtons">
                  <bool>true</bool>
