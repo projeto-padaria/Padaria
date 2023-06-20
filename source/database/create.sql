@@ -16,7 +16,7 @@ create table padaria.endereco
 );
 
 
-create table padaria.fornecedor
+create table  padaria.fornecedor
 (
     idFornecedor int identity(1,1),
 
@@ -31,7 +31,7 @@ create table padaria.fornecedor
     FOREIGN KEY (idEndereco) REFERENCES padaria.endereco(idEndereco) on update CASCADE
 );
 
-create table padaria.cliente
+create table  padaria.cliente
 (
     idCliente int identity(1,1),
 
@@ -45,7 +45,7 @@ create table padaria.cliente
     FOREIGN KEY (idEndereco) REFERENCES padaria.endereco(idEndereco) on update CASCADE
 );
 
-create table padaria.funcionario
+create table  padaria.funcionario
 (
     idFuncionario int identity(1,1),
 
@@ -64,7 +64,7 @@ create table padaria.funcionario
     FOREIGN KEY (idEndereco) REFERENCES padaria.endereco(idEndereco) on update CASCADE
 );
 
-create table padaria.produto
+create table  padaria.produto
 (
     idProduto int identity(1,1),
     idFornecedor int ,
@@ -82,7 +82,7 @@ create table padaria.produto
     FOREIGN KEY (idFornecedor) REFERENCES padaria.fornecedor(idFornecedor) on update CASCADE
 );
 
-create table padaria.venda
+create table  padaria.venda
 (
     idVenda int identity(1,1),
     idCliente int,
