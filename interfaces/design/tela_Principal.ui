@@ -65,6 +65,13 @@ color:White;
         <number>0</number>
        </property>
        <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>GroupBox</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QFrame" name="frame">
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -140,7 +147,6 @@ text-align:left;
             </property>
             <property name="font">
              <font>
-              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -167,7 +173,7 @@ border-radius: 15px;
                <x>0</x>
                <y>0</y>
                <width>180</width>
-               <height>545</height>
+               <height>521</height>
               </rect>
              </property>
              <property name="cursor">
@@ -224,7 +230,6 @@ border-radius: 15px;
                 <property name="font">
                  <font>
                   <pointsize>11</pointsize>
-                  <weight>50</weight>
                   <bold>false</bold>
                   <underline>false</underline>
                   <strikeout>false</strikeout>
@@ -323,7 +328,7 @@ border-radius: 15px;
                <x>0</x>
                <y>0</y>
                <width>180</width>
-               <height>545</height>
+               <height>521</height>
               </rect>
              </property>
              <property name="cursor">
@@ -464,7 +469,7 @@ p, li { white-space: pre-wrap; }
              <string>PushButton</string>
             </property>
             <property name="icon">
-             <iconset resource="icons_.qrc">
+             <iconset>
               <normaloff>:/icons/icons/menu2.png</normaloff>:/icons/icons/menu2.png</iconset>
             </property>
             <property name="iconSize">
@@ -594,7 +599,7 @@ border-radius: 15px;
              <number>1</number>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="pgHome">
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -621,198 +626,115 @@ p, li { white-space: pre-wrap; }
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <layout class="QVBoxLayout" name="verticalLayout_26">
-                 <item>
-                  <widget class="QFrame" name="frame_pesquisa">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="minimumSize">
-                    <size>
-                     <width>0</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>800</width>
-                     <height>800</height>
-                    </size>
-                   </property>
-                   <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                   </property>
-                   <layout class="QVBoxLayout" name="verticalLayout_25">
-                    <item>
-                     <widget class="Line" name="line_2">
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QGroupBox" name="gb_pesquisa_2">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>800</width>
-                        <height>600</height>
-                       </size>
-                      </property>
-                      <property name="title">
-                       <string>VENDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</string>
-                      </property>
-                      <layout class="QHBoxLayout" name="horizontalLayout_15">
-                       <item>
-                        <widget class="QFrame" name="frame_15">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
-                         </property>
-                         <layout class="QHBoxLayout" name="horizontalLayout_16">
-                          <item>
-                           <widget class="QLabel" name="l_title_2">
-                            <property name="minimumSize">
-                             <size>
-                              <width>66</width>
-                              <height>22</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>66</width>
-                              <height>22</height>
-                             </size>
-                            </property>
-                            <property name="font">
-                             <font>
-                              <pointsize>13</pointsize>
-                             </font>
-                            </property>
-                            <property name="text">
-                             <string>Produto:</string>
-                            </property>
-                           </widget>
-                          </item>
-                         </layout>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QFrame" name="frame_carinhoCompra">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                   </property>
-                   <layout class="QVBoxLayout" name="verticalLayout_24">
-                    <item>
-                     <widget class="QGroupBox" name="gb_carrinhoCompra_2">
-                      <property name="title">
-                       <string>Carrinho de compra</string>
-                      </property>
-                      <layout class="QHBoxLayout" name="horizontalLayout_13">
-                       <item>
-                        <widget class="QTreeWidget" name="treeWidget_2">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>0</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>16777215</width>
-                           <height>300</height>
-                          </size>
-                         </property>
-                         <column>
-                          <property name="text">
-                           <string>idVenda</string>
-                          </property>
-                         </column>
-                         <column>
-                          <property name="text">
-                           <string>Nome do Produto</string>
-                          </property>
-                         </column>
-                         <column>
-                          <property name="text">
-                           <string>Marca do Produto</string>
-                          </property>
-                         </column>
-                         <column>
-                          <property name="text">
-                           <string>Valor do Produto</string>
-                          </property>
-                         </column>
-                         <column>
-                          <property name="text">
-                           <string>Quantidade</string>
-                          </property>
-                         </column>
-                         <column>
-                          <property name="text">
-                           <string>Data de Emissão</string>
-                          </property>
-                         </column>
-                         <column>
-                          <property name="text">
-                           <string>Data de Validade</string>
-                          </property>
-                         </column>
-                         <column>
-                          <property name="text">
-                           <string/>
-                          </property>
-                         </column>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item>
-               <widget class="Line" name="line">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
+                <widget class="QFrame" name="frame_7">
+                 <property name="geometry">
+                  <rect>
+                   <x>30</x>
+                   <y>410</y>
+                   <width>111</width>
+                   <height>101</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <widget class="QLabel" name="label_8">
+                  <property name="geometry">
+                   <rect>
+                    <x>20</x>
+                    <y>0</y>
+                    <width>71</width>
+                    <height>20</height>
+                   </rect>
+                  </property>
+                  <property name="text">
+                   <string>Pagamento</string>
+                  </property>
+                 </widget>
+                 <widget class="QPushButton" name="pushButton">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>30</y>
+                    <width>75</width>
+                    <height>24</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
+	background-color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+	border-radius: 7px
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>Confirmar</string>
+                  </property>
+                 </widget>
+                 <widget class="QPushButton" name="pushButton_2">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>60</y>
+                    <width>75</width>
+                    <height>24</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
+	background-color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+	border-radius: 7px
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>Comprar</string>
+                  </property>
+                 </widget>
+                </widget>
+                <widget class="QLineEdit" name="le_produto">
+                 <property name="geometry">
+                  <rect>
+                   <x>230</x>
+                   <y>70</y>
+                   <width>350</width>
+                   <height>22</height>
+                  </rect>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>350</width>
+                   <height>22</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>350</width>
+                   <height>22</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit{
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px
+}</string>
+                 </property>
+                 <property name="placeholderText">
+                  <string>  Pesquisar produto...</string>
+                 </property>
+                </widget>
                </widget>
               </item>
              </layout>
