@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1147</width>
-    <height>662</height>
+    <width>1165</width>
+    <height>708</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -173,7 +173,7 @@ border-radius: 15px;
                <x>0</x>
                <y>0</y>
                <width>180</width>
-               <height>521</height>
+               <height>567</height>
               </rect>
              </property>
              <property name="cursor">
@@ -619,436 +619,419 @@ p, li { white-space: pre-wrap; }
             <widget class="QWidget" name="pgVenda">
              <layout class="QVBoxLayout" name="verticalLayout_16">
               <item>
-               <widget class="QFrame" name="frame_6">
+               <widget class="QFrame" name="frame_venda">
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <widget class="QFrame" name="frame_7">
-                 <property name="geometry">
-                  <rect>
-                   <x>30</x>
-                   <y>390</y>
-                   <width>131</width>
-                   <height>121</height>
-                  </rect>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <widget class="QLabel" name="label_8">
-                  <property name="geometry">
-                   <rect>
-                    <x>20</x>
-                    <y>0</y>
-                    <width>71</width>
-                    <height>21</height>
-                   </rect>
-                  </property>
-                  <property name="text">
-                   <string>Pagamento</string>
-                  </property>
-                 </widget>
-                 <widget class="QPushButton" name="pushButton">
-                  <property name="geometry">
-                   <rect>
-                    <x>10</x>
-                    <y>30</y>
-                    <width>101</width>
-                    <height>31</height>
-                   </rect>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton{
-	background-color: rgb(0, 0, 0);
-	color: rgb(255, 255, 255);
-	border-radius: 7px
-}</string>
-                  </property>
-                  <property name="text">
-                   <string>Confirmar</string>
-                  </property>
-                 </widget>
-                 <widget class="QPushButton" name="pushButton_2">
-                  <property name="geometry">
-                   <rect>
-                    <x>10</x>
-                    <y>70</y>
-                    <width>101</width>
-                    <height>31</height>
-                   </rect>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton{
-	background-color: rgb(0, 0, 0);
-	color: rgb(255, 255, 255);
-	border-radius: 7px
-}</string>
-                  </property>
-                  <property name="text">
-                   <string>Comprar</string>
-                  </property>
-                 </widget>
-                </widget>
-                <widget class="QTreeWidget" name="treeWidget">
-                 <property name="geometry">
-                  <rect>
-                   <x>550</x>
-                   <y>80</y>
-                   <width>501</width>
-                   <height>441</height>
-                  </rect>
-                 </property>
-                 <column>
-                  <property name="text">
-                   <string>idVenda</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>Nome do Produto</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>Marca do Produto</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>Valor do Produto</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>Quantidade</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>Data de Emissão</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>Data de Validade</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </column>
-                </widget>
-                <widget class="QFrame" name="frame_pesquisa">
-                 <property name="geometry">
-                  <rect>
-                   <x>10</x>
-                   <y>-10</y>
-                   <width>531</width>
-                   <height>201</height>
-                  </rect>
-                 </property>
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>0</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>800</width>
-                   <height>800</height>
-                  </size>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_14">
-                  <item>
-                   <widget class="Line" name="line">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QFrame" name="frame_9">
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QHBoxLayout" name="horizontalLayout_7">
-                     <item>
-                      <widget class="QLabel" name="l_F3Key">
-                       <property name="font">
-                        <font>
-                         <pointsize>8</pointsize>
-                        </font>
-                       </property>
+                <layout class="QGridLayout" name="gridLayout_3">
+                 <item row="0" column="2">
+                  <widget class="QFrame" name="frame_carinho">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_14">
+                    <item>
+                     <widget class="QLabel" name="label_carrinho">
+                      <property name="minimumSize">
+                       <size>
+                        <width>301</width>
+                        <height>44</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50000</width>
+                        <height>5000</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>25</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Carrinho de compras</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QTreeWidget" name="tree_carrinho">
+                      <property name="minimumSize">
+                       <size>
+                        <width>567</width>
+                        <height>479</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>567</width>
+                        <height>479</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 4px;</string>
+                      </property>
+                      <column>
                        <property name="text">
-                        <string> F3 - Quantidade</string>
+                        <string>idVenda</string>
                        </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="l_F2Key">
-                       <property name="font">
-                        <font>
-                         <pointsize>8</pointsize>
-                        </font>
-                       </property>
+                      </column>
+                      <column>
                        <property name="text">
-                        <string> F2 - Pesquisa Produto</string>
+                        <string>Nome do Produto</string>
                        </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QGroupBox" name="gb_pesquisa">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>800</width>
-                      <height>600</height>
-                     </size>
-                    </property>
-                    <property name="title">
-                     <string>Pesquisa de Produto</string>
-                    </property>
-                    <layout class="QHBoxLayout" name="horizontalLayout_8">
-                     <item>
-                      <widget class="QFrame" name="frame_10">
-                       <property name="sizePolicy">
-                        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                         <horstretch>0</horstretch>
-                         <verstretch>0</verstretch>
-                        </sizepolicy>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Marca do Produto</string>
                        </property>
-                       <property name="styleSheet">
-                        <string notr="true"/>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Valor do Produto</string>
                        </property>
-                       <property name="frameShape">
-                        <enum>QFrame::StyledPanel</enum>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Quantidade</string>
                        </property>
-                       <property name="frameShadow">
-                        <enum>QFrame::Raised</enum>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Data de Emissão</string>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_9">
-                        <item>
-                         <widget class="QLabel" name="l_title">
-                          <property name="minimumSize">
-                           <size>
-                            <width>66</width>
-                            <height>22</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>66</width>
-                            <height>22</height>
-                           </size>
-                          </property>
-                          <property name="font">
-                           <font>
-                            <pointsize>13</pointsize>
-                           </font>
-                          </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Data de Validade</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </column>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="0" column="1" rowspan="2">
+                  <widget class="QFrame" name="frame_pesquisa">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>496</width>
+                     <height>501</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>496</width>
+                     <height>501</height>
+                    </size>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_4">
+                    <item row="1" column="1">
+                     <widget class="QFrame" name="gb_pesquisa">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>800</width>
+                        <height>600</height>
+                       </size>
+                      </property>
+                      <layout class="QGridLayout" name="gridLayout_5">
+                       <item row="2" column="2" colspan="2">
+                        <widget class="QTreeWidget" name="treeWidget_2">
+                         <property name="minimumSize">
+                          <size>
+                           <width>460</width>
+                           <height>311</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:0px;</string>
+                         </property>
+                         <column>
                           <property name="text">
-                           <string>Produto:</string>
+                           <string>idVenda</string>
                           </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <widget class="QLineEdit" name="le_produto">
-                          <property name="sizePolicy">
-                           <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                           </sizepolicy>
+                         </column>
+                         <column>
+                          <property name="text">
+                           <string>Nome do Produto</string>
                           </property>
-                          <property name="minimumSize">
-                           <size>
-                            <width>350</width>
-                            <height>22</height>
-                           </size>
+                         </column>
+                         <column>
+                          <property name="text">
+                           <string>Marca do Produto</string>
                           </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>350</width>
-                            <height>22</height>
-                           </size>
-                          </property>
-                          <property name="styleSheet">
-                           <string notr="true">QLineEdit{
+                         </column>
+                        </widget>
+                       </item>
+                       <item row="1" column="2" colspan="2" alignment="Qt::AlignHCenter|Qt::AlignTop">
+                        <widget class="QFrame" name="frame_lineEdit_pesquisa">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>434</width>
+                           <height>40</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true"/>
+                         </property>
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <layout class="QHBoxLayout" name="horizontalLayout_8">
+                          <item>
+                           <widget class="QLineEdit" name="le_produto">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="minimumSize">
+                             <size>
+                              <width>215</width>
+                              <height>22</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>5000</width>
+                              <height>5000</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">QLineEdit{
 	background-color: rgb(255, 255, 255);
-	border-radius: 10px;
+	border-radius: 4px;
 }</string>
-                          </property>
-                          <property name="placeholderText">
-                           <string>  Pesquisar produto...</string>
-                          </property>
-                         </widget>
-                        </item>
-                       </layout>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QToolButton" name="toolButton">
-                       <property name="sizePolicy">
-                        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                         <horstretch>0</horstretch>
-                         <verstretch>0</verstretch>
-                        </sizepolicy>
-                       </property>
-                       <property name="minimumSize">
-                        <size>
-                         <width>50</width>
-                         <height>22</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>22</width>
-                         <height>22</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">QToolButton{
+                            </property>
+                            <property name="placeholderText">
+                             <string>  Pesquisar produto...</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="btn_pesquisa">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="minimumSize">
+                             <size>
+                              <width>60</width>
+                              <height>22</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>60</width>
+                              <height>22</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">
 	background-color: rgb(255, 255, 255);
-	border-radius: 10px;
-}</string>
-                       </property>
-                       <property name="text">
-                        <string>?</string>
-                       </property>
-                       <property name="popupMode">
-                        <enum>QToolButton::InstantPopup</enum>
-                       </property>
-                       <property name="toolButtonStyle">
-                        <enum>Qt::ToolButtonIconOnly</enum>
-                       </property>
-                       <property name="autoRaise">
-                        <bool>false</bool>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-                <widget class="QLabel" name="label_14">
-                 <property name="geometry">
-                  <rect>
-                   <x>570</x>
-                   <y>40</y>
-                   <width>121</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="text">
-                  <string>Carrinho de compras</string>
-                 </property>
-                </widget>
-                <widget class="QFrame" name="frame_12">
-                 <property name="geometry">
-                  <rect>
-                   <x>300</x>
-                   <y>310</y>
-                   <width>131</width>
-                   <height>121</height>
-                  </rect>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <widget class="QLabel" name="label_15">
-                  <property name="geometry">
-                   <rect>
-                    <x>20</x>
-                    <y>0</y>
-                    <width>71</width>
-                    <height>21</height>
-                   </rect>
-                  </property>
-                  <property name="text">
-                   <string>Pagamento</string>
-                  </property>
-                 </widget>
-                 <widget class="QPushButton" name="pushButton_7">
-                  <property name="geometry">
-                   <rect>
-                    <x>10</x>
-                    <y>30</y>
-                    <width>101</width>
-                    <height>31</height>
-                   </rect>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton{
-	background-color: rgb(0, 0, 0);
+	border-radius:4px;</string>
+                            </property>
+                            <property name="text">
+                             <string>Pesquisar</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="btn_adicionar">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="minimumSize">
+                             <size>
+                              <width>60</width>
+                              <height>22</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>60</width>
+                              <height>22</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">
+	background-color: rgb(255, 255, 255);
+	border-radius:4px;</string>
+                            </property>
+                            <property name="text">
+                             <string>Adicionar</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="btn_excluir">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="minimumSize">
+                             <size>
+                              <width>60</width>
+                              <height>22</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>60</width>
+                              <height>22</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">
+	background-color: rgb(255, 255, 255);
+	border-radius:4px;</string>
+                            </property>
+                            <property name="text">
+                             <string>Excluir</string>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                       <item row="3" column="2" colspan="2">
+                        <widget class="QFrame" name="frame_btn_compra">
+                         <property name="maximumSize">
+                          <size>
+                           <width>460</width>
+                           <height>49</height>
+                          </size>
+                         </property>
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <layout class="QHBoxLayout" name="horizontalLayout_7">
+                          <item>
+                           <widget class="QPushButton" name="btn_no">
+                            <property name="minimumSize">
+                             <size>
+                              <width>101</width>
+                              <height>31</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>101</width>
+                              <height>31</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <pointsize>12</pointsize>
+                              <bold>true</bold>
+                             </font>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">QPushButton{
+	background-color: rgb(255, 39, 39);
 	color: rgb(255, 255, 255);
 	border-radius: 7px
 }</string>
-                  </property>
-                  <property name="text">
-                   <string>Confirmar</string>
-                  </property>
-                 </widget>
-                 <widget class="QPushButton" name="pushButton_8">
-                  <property name="geometry">
-                   <rect>
-                    <x>10</x>
-                    <y>70</y>
-                    <width>101</width>
-                    <height>31</height>
-                   </rect>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton{
-	background-color: rgb(0, 0, 0);
+                            </property>
+                            <property name="text">
+                             <string>Cancelar</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="btn_yes">
+                            <property name="minimumSize">
+                             <size>
+                              <width>101</width>
+                              <height>31</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>101</width>
+                              <height>31</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <pointsize>12</pointsize>
+                              <bold>true</bold>
+                             </font>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">QPushButton{
+	background-color: rgb(88, 255, 58);
 	color: rgb(255, 255, 255);
 	border-radius: 7px
 }</string>
-                  </property>
-                  <property name="text">
-                   <string>Comprar</string>
-                  </property>
-                 </widget>
-                </widget>
+                            </property>
+                            <property name="text">
+                             <string>Confirmar</string>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
              </layout>
