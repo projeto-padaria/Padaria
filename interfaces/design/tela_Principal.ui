@@ -626,78 +626,6 @@ p, li { white-space: pre-wrap; }
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <widget class="QFrame" name="frame_7">
-                 <property name="geometry">
-                  <rect>
-                   <x>30</x>
-                   <y>390</y>
-                   <width>131</width>
-                   <height>121</height>
-                  </rect>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <widget class="QLabel" name="label_8">
-                  <property name="geometry">
-                   <rect>
-                    <x>20</x>
-                    <y>0</y>
-                    <width>71</width>
-                    <height>21</height>
-                   </rect>
-                  </property>
-                  <property name="text">
-                   <string>Pagamento</string>
-                  </property>
-                 </widget>
-                 <widget class="QPushButton" name="pushButton">
-                  <property name="geometry">
-                   <rect>
-                    <x>10</x>
-                    <y>30</y>
-                    <width>101</width>
-                    <height>31</height>
-                   </rect>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton{
-	background-color: rgb(0, 0, 0);
-	color: rgb(255, 255, 255);
-	border-radius: 7px
-}</string>
-                  </property>
-                  <property name="text">
-                   <string>Confirmar</string>
-                  </property>
-                 </widget>
-                 <widget class="QPushButton" name="pushButton_2">
-                  <property name="geometry">
-                   <rect>
-                    <x>10</x>
-                    <y>70</y>
-                    <width>101</width>
-                    <height>31</height>
-                   </rect>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton{
-	background-color: rgb(0, 0, 0);
-	color: rgb(255, 255, 255);
-	border-radius: 7px
-}</string>
-                  </property>
-                  <property name="text">
-                   <string>Comprar</string>
-                  </property>
-                 </widget>
-                </widget>
                 <widget class="QTreeWidget" name="treeWidget">
                  <property name="geometry">
                   <rect>
@@ -980,10 +908,10 @@ p, li { white-space: pre-wrap; }
                 <widget class="QFrame" name="frame_12">
                  <property name="geometry">
                   <rect>
-                   <x>300</x>
-                   <y>310</y>
-                   <width>131</width>
-                   <height>121</height>
+                   <x>20</x>
+                   <y>220</y>
+                   <width>511</width>
+                   <height>301</height>
                   </rect>
                  </property>
                  <property name="styleSheet">
@@ -999,10 +927,15 @@ p, li { white-space: pre-wrap; }
                   <property name="geometry">
                    <rect>
                     <x>20</x>
-                    <y>0</y>
-                    <width>71</width>
-                    <height>21</height>
+                    <y>20</y>
+                    <width>131</width>
+                    <height>41</height>
                    </rect>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>18</pointsize>
+                   </font>
                   </property>
                   <property name="text">
                    <string>Pagamento</string>
@@ -1011,41 +944,51 @@ p, li { white-space: pre-wrap; }
                  <widget class="QPushButton" name="pushButton_7">
                   <property name="geometry">
                    <rect>
-                    <x>10</x>
-                    <y>30</y>
-                    <width>101</width>
-                    <height>31</height>
+                    <x>250</x>
+                    <y>130</y>
+                    <width>231</width>
+                    <height>81</height>
                    </rect>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>25</pointsize>
+                   </font>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton{
-	background-color: rgb(0, 0, 0);
+	background-color: rgb(208, 6, 9);
 	color: rgb(255, 255, 255);
-	border-radius: 7px
+	border-radius: 20px
 }</string>
                   </property>
                   <property name="text">
-                   <string>Confirmar</string>
+                   <string>Cancelar</string>
                   </property>
                  </widget>
                  <widget class="QPushButton" name="pushButton_8">
                   <property name="geometry">
                    <rect>
-                    <x>10</x>
-                    <y>70</y>
-                    <width>101</width>
-                    <height>31</height>
+                    <x>20</x>
+                    <y>130</y>
+                    <width>201</width>
+                    <height>81</height>
                    </rect>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>25</pointsize>
+                   </font>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton{
-	background-color: rgb(0, 0, 0);
+	background-color: rgb(46, 184, 31);
 	color: rgb(255, 255, 255);
-	border-radius: 7px
+	border-radius: 20px
 }</string>
                   </property>
                   <property name="text">
-                   <string>Comprar</string>
+                   <string>Confirmar</string>
                   </property>
                  </widget>
                 </widget>

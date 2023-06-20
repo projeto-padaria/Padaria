@@ -315,31 +315,6 @@ class Ui_MainWindow(object):
         self.frame_6.setObjectName(u"frame_6")
         self.frame_6.setFrameShape(QFrame.StyledPanel)
         self.frame_6.setFrameShadow(QFrame.Raised)
-        self.frame_7 = QFrame(self.frame_6)
-        self.frame_7.setObjectName(u"frame_7")
-        self.frame_7.setGeometry(QRect(30, 390, 131, 121))
-        self.frame_7.setStyleSheet(u"")
-        self.frame_7.setFrameShape(QFrame.StyledPanel)
-        self.frame_7.setFrameShadow(QFrame.Raised)
-        self.label_8 = QLabel(self.frame_7)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setGeometry(QRect(20, 0, 71, 21))
-        self.pushButton = QPushButton(self.frame_7)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(10, 30, 101, 31))
-        self.pushButton.setStyleSheet(u"QPushButton{\n"
-"	background-color: rgb(0, 0, 0);\n"
-"	color: rgb(255, 255, 255);\n"
-"	border-radius: 7px\n"
-"}")
-        self.pushButton_2 = QPushButton(self.frame_7)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setGeometry(QRect(10, 70, 101, 31))
-        self.pushButton_2.setStyleSheet(u"QPushButton{\n"
-"	background-color: rgb(0, 0, 0);\n"
-"	color: rgb(255, 255, 255);\n"
-"	border-radius: 7px\n"
-"}")
         self.treeWidget = QTreeWidget(self.frame_6)
         self.treeWidget.headerItem().setText(7, "")
         self.treeWidget.setObjectName(u"treeWidget")
@@ -457,28 +432,35 @@ class Ui_MainWindow(object):
         self.label_14.setGeometry(QRect(570, 40, 121, 16))
         self.frame_12 = QFrame(self.frame_6)
         self.frame_12.setObjectName(u"frame_12")
-        self.frame_12.setGeometry(QRect(300, 310, 131, 121))
+        self.frame_12.setGeometry(QRect(20, 220, 511, 301))
         self.frame_12.setStyleSheet(u"")
         self.frame_12.setFrameShape(QFrame.StyledPanel)
         self.frame_12.setFrameShadow(QFrame.Raised)
         self.label_15 = QLabel(self.frame_12)
         self.label_15.setObjectName(u"label_15")
-        self.label_15.setGeometry(QRect(20, 0, 71, 21))
+        self.label_15.setGeometry(QRect(20, 20, 131, 41))
+        font5 = QFont()
+        font5.setPointSize(18)
+        self.label_15.setFont(font5)
         self.pushButton_7 = QPushButton(self.frame_12)
         self.pushButton_7.setObjectName(u"pushButton_7")
-        self.pushButton_7.setGeometry(QRect(10, 30, 101, 31))
+        self.pushButton_7.setGeometry(QRect(250, 130, 231, 81))
+        font6 = QFont()
+        font6.setPointSize(25)
+        self.pushButton_7.setFont(font6)
         self.pushButton_7.setStyleSheet(u"QPushButton{\n"
-"	background-color: rgb(0, 0, 0);\n"
+"	background-color: rgb(208, 6, 9);\n"
 "	color: rgb(255, 255, 255);\n"
-"	border-radius: 7px\n"
+"	border-radius: 20px\n"
 "}")
         self.pushButton_8 = QPushButton(self.frame_12)
         self.pushButton_8.setObjectName(u"pushButton_8")
-        self.pushButton_8.setGeometry(QRect(10, 70, 101, 31))
+        self.pushButton_8.setGeometry(QRect(20, 130, 201, 81))
+        self.pushButton_8.setFont(font6)
         self.pushButton_8.setStyleSheet(u"QPushButton{\n"
-"	background-color: rgb(0, 0, 0);\n"
+"	background-color: rgb(46, 184, 31);\n"
 "	color: rgb(255, 255, 255);\n"
-"	border-radius: 7px\n"
+"	border-radius: 20px\n"
 "}")
 
         self.verticalLayout_16.addWidget(self.frame_6)
@@ -498,10 +480,10 @@ class Ui_MainWindow(object):
         sizePolicy3.setHeightForWidth(self.tabWidget.sizePolicy().hasHeightForWidth())
         self.tabWidget.setSizePolicy(sizePolicy3)
         self.tabWidget.setMinimumSize(QSize(0, 40))
-        font5 = QFont()
-        font5.setKerning(True)
-        font5.setStyleStrategy(QFont.PreferDefault)
-        self.tabWidget.setFont(font5)
+        font7 = QFont()
+        font7.setKerning(True)
+        font7.setStyleStrategy(QFont.PreferDefault)
+        self.tabWidget.setFont(font7)
         self.tabWidget.setFocusPolicy(Qt.TabFocus)
         self.tabWidget.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.tabWidget.setLayoutDirection(Qt.LeftToRight)
@@ -642,9 +624,9 @@ class Ui_MainWindow(object):
         self.btnCadastrarFun = QPushButton(self.tab)
         self.btnCadastrarFun.setObjectName(u"btnCadastrarFun")
         self.btnCadastrarFun.setMinimumSize(QSize(160, 30))
-        font6 = QFont()
-        font6.setPointSize(10)
-        self.btnCadastrarFun.setFont(font6)
+        font8 = QFont()
+        font8.setPointSize(10)
+        self.btnCadastrarFun.setFont(font8)
         self.btnCadastrarFun.setCursor(QCursor(Qt.PointingHandCursor))
         self.btnCadastrarFun.setStyleSheet(u"QPushButton:hover{\n"
 "background-color: rgb(0, 129, 0);\n"
@@ -831,9 +813,9 @@ class Ui_MainWindow(object):
         self.label_11 = QLabel(self.pgSobre)
         self.label_11.setObjectName(u"label_11")
         self.label_11.setMinimumSize(QSize(0, 200))
-        font7 = QFont()
-        font7.setFamilies([u"Arial"])
-        self.label_11.setFont(font7)
+        font9 = QFont()
+        font9.setFamilies([u"Arial"])
+        self.label_11.setFont(font9)
         self.label_11.setStyleSheet(u"padding: 20px;")
         self.label_11.setWordWrap(True)
 
@@ -916,9 +898,6 @@ class Ui_MainWindow(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/icons/icons/IMPERADOR DOS P\u00c2ES.png\" /></p></body></html>", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Pagamento", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Confirmar", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Comprar", None))
         ___qtreewidgetitem = self.treeWidget.headerItem()
         ___qtreewidgetitem.setText(6, QCoreApplication.translate("MainWindow", u"Data de Validade", None));
         ___qtreewidgetitem.setText(5, QCoreApplication.translate("MainWindow", u"Data de Emiss\u00e3o", None));
@@ -935,8 +914,8 @@ class Ui_MainWindow(object):
         self.toolButton.setText(QCoreApplication.translate("MainWindow", u"?", None))
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"Carrinho de compras", None))
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"Pagamento", None))
-        self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"Confirmar", None))
-        self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"Comprar", None))
+        self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
+        self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"Confirmar", None))
         self.txtNome.setText("")
         self.txtNome.setPlaceholderText(QCoreApplication.translate("MainWindow", u"NOME*", None))
         self.txtSobrenome.setPlaceholderText(QCoreApplication.translate("MainWindow", u"SOBRENOME*", None))
