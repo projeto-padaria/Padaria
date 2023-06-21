@@ -22,12 +22,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.setWindowTitle("Imperador dos Pães - Sistema de Gestão")
         
-        #Conexão ao Banco de Dados
+        # Conexão ao Banco de Dados
         self.db = Connect('BD23333','BD23333')
         self.db.Login()
-        # TOGGLE BUTTON
+        # Toggle button:
         self.btinToggle.clicked.connect(self.left_Container)
-        # Paginas do Sistema
+        # Botões e Paginas do Sistema:
         self.btnHome.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgHome))
         self.btnVenda.clicked.connect(self.connectDatabase)
         self.btnCadastrar.clicked.connect(self.connectDatabase)
@@ -38,6 +38,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btnAlterar.clicked.connect(self.updateTableFun)
         self.btnExcluir.clicked.connect(self.deleteFun)
         self.btnSair.clicked.connect(self.closeWindow)
+        self.btn_Pesquisar.clicked.connect(self.search)
+        self.btn_AddProduto.clicked.connect(self.addProduct)
+
+    def search(self,table):
+        palavra = self.txtPesquisa.text()
+        self.db.search(self.tableProduct,palavra)
 
     def left_Container(self):
         width = self.leftContainer.width()
@@ -58,10 +64,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.sender1 = self.sender()
         try:
             if self.sender1 == self.btnVenda:
-                self.db.showTable(self.tableProduct,True)
+                self.refreshTable()
                 self.Pages.setCurrentWidget(self.pgVenda)
             elif self.sender1 == self.btnCadastrar:
-                self.db.showTable(self.tableWidget,False)
+                self.refreshTable()
                 self.Pages.setCurrentWidget(self.pgCadastrar)
         except Exception as error:
             debug.printError(error)
@@ -117,6 +123,22 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             QMessageBox.warning(
                 None, "ALERTA", "Preencha os Campos Obrigatórios Adequadamente!"
             )
+    
+    def addProduct(self):
+        try:
+            idProduto = (
+                self.tableProduct.selectionModel()
+                .currentIndex()
+                .siblingAtColumn(0)
+                .data()
+            )
+            self.db.addProduct(idProduto)
+            self.refreshTable()
+            
+            debug.printSuccess("Adicionado com Sucesso!!")
+        except Exception as error:
+            debug.printError(error)
+
 
     def deleteFun(self):
         msg = QMessageBox()
@@ -169,6 +191,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def refreshTable(self):
         self.db.showTable(self.tableProduct,True)
         self.db.showTable(self.tableWidget,False)
+        self.db.showTable(self.tableVenda)
 
     def closeWindow(self):
         self.db.closeConnection()

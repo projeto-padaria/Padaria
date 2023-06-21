@@ -22,11 +22,11 @@ select * from padaria.endereco;
 
 insert into padaria.funcionario values
 ('admin', 'Rafael', 'Moreira Cavalcante de Souza', 'admin', 'Desenvolvedor', 0, '19984586252', NULL),
-('34567890123', 'Pedro', 'Ferreira', 'senha789', 'Desenvolvedor', 4000.00, '3456789012', NULL),
+('3456789012', 'Pedro', 'Ferreira', 'senha789', 'Desenvolvedor', 4000.00, '3456789012', NULL),
 ('45678901234', 'Ana', 'Oliveira', 'senhaabc', 'Secretária', 2500.00, '4567890123', NULL),
 ('56789012345', 'Carlos', 'Souza', 'senhaxyz', 'Vendedor', 3000.00, '5678901234', NULL);
 
-SELECT cpf,senha from padaria.funcionario
+SELECT * from padaria.funcionario
 
 -- Fornecedor
 insert into padaria.fornecedor VALUES
@@ -62,7 +62,18 @@ insert into padaria.produto VALUES
 
 -- Venda
 
--- insert into padaria.venda VALUES
+select * from padaria.venda
+"SELECT * FROM padaria.venda V, padaria.produto P WHERE V.idProduto = P.idProduto;"
+
+SELECT V.idVenda,Fu.nome,F.nome,C.nome,V.idProduto, P.nome, P.marca, P.preco, P.datadevalidade, V.data 
+FROM
+padaria.funcionario Fu,
+padaria.venda V,
+padaria.fornecedor F,
+padaria.produto P,
+padaria.cliente C
+WHERE V.idProduto = P.idProduto and P.idFornecedor = F.idFornecedor and V.idFuncionario = Fu.idFuncionario and V.idCliente = C.idCliente
+-- INSERT INTO padaria.venda VALUES (1,1,1,convert(date, getdate(), 103))"
 
 
 

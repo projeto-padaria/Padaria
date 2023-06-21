@@ -92,6 +92,43 @@ class Connect:
             debug.printSuccess("Funcionário cadastrado com sucesso!!")
         else:
             raise Exception("Prencha os campos Obrigatórios Adequadamente!!")
+    
+    def addProduct(self,id):
+        parameters = [1,1,id,2]
+        self.cursor.execute("INSERT INTO padaria.venda VALUES (?,?,?,?,convert(date, getdate(), 29))",parameters)
+        self.cursor.commit()
+
+    def deleteProduct(self):
+        pass
+
+
+    def search(self,table, where):
+        try:
+            if where:
+                parameters = ['%' + where + '%', '%' + where + '%']
+                self.cursor.execute('SELECT * FROM padaria.produto WHERE idProduto LIKE ? OR nome LIKE ?', parameters)
+                dados_lidos = self.cursor.fetchall()
+
+                try:
+                    table.setRowCount(len(dados_lidos))
+                    table.setColumnCount(8)
+                    for i in range(0, len(dados_lidos)):
+                        for j in range(0, 8):
+                            table.setItem(i, j, QTableWidgetItem(str(dados_lidos[i][j])))
+                except Exception as error:
+                    debug.printError(error)
+
+            elif where == "":
+                self.showTable(table,True)
+            
+        except Exception as error:
+            print(error)
+            # message = QMessageBox(self)
+            # message.setWindowTitle("Sistema de Apoio ao Ensino")
+            # message.setText(error.args[0])
+            # message.setIcon(QMessageBox.Critical)
+            # message.exec()
+
 
     def showTable(self, tableWidget,sender = None):
         if sender == True:
@@ -108,8 +145,8 @@ class Connect:
                         table.setItem(i, j, QTableWidgetItem(str(dados_lidos[i][j])))
             except Exception as error:
                 debug.printError(error)
-                
-        elif self.sender == False:
+
+        elif sender == False:
             self.cursor.execute(
                 "SELECT F.cpf,F.nome,F.sobrenome,F.senha,F.cargo,F.salario,F.telefone,E.bairro,E.rua,E.numero,E.cidade,E.UF,E.cep FROM padaria.funcionario F,padaria.endereco E WHERE F.idEndereco = E.idEndereco;"
             )
@@ -123,6 +160,27 @@ class Connect:
                         table.setItem(i, j, QTableWidgetItem(str(dados_lidos[i][j])))
             except Exception as error:
                 debug.printError(error)
+        else:
+            self.cursor.execute(
+                """SELECT V.idVenda,Fu.nome,F.nome,C.nome,V.idProduto, P.nome, P.marca, P.preco, P.datadevalidade, V.data FROM
+                padaria.funcionario Fu,
+                padaria.venda V,
+                padaria.fornecedor F,
+                padaria.produto P,
+                padaria.cliente C
+                WHERE 
+                V.idProduto = P.idProduto and P.idFornecedor = F.idFornecedor and V.idFuncionario = Fu.idFuncionario and V.idCliente = C.idCliente""")
+            dados_lidos = self.cursor.fetchall()
+            table = tableWidget
+            try:
+                table.setRowCount(len(dados_lidos))
+                table.setColumnCount(10)
+                for i in range(0, len(dados_lidos)):
+                    for j in range(0, 10):
+                        table.setItem(i, j, QTableWidgetItem(str(dados_lidos[i][j])))
+            except Exception as error:
+                debug.printError(error)
+
 
     def deleteFun(self, cpf):
         self.cursor.execute(f"DELETE FROM padaria.funcionario WHERE cpf = '{cpf}' ")
