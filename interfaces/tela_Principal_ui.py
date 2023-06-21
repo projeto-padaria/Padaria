@@ -126,6 +126,9 @@ class Ui_MainWindow(object):
         font1.setPointSize(11)
         self.btnHome.setFont(font1)
         self.btnHome.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnHome.setStyleSheet(u"QPushButton:pressed{\n"
+"background-color: rgb(0, 0, 0);\n"
+"}")
 
         self.verticalLayout_3.addWidget(self.btnHome)
 
@@ -140,6 +143,9 @@ class Ui_MainWindow(object):
         font2.setKerning(True)
         self.btnVenda.setFont(font2)
         self.btnVenda.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnVenda.setStyleSheet(u"QPushButton:pressed{\n"
+"background-color: rgb(0, 0, 0);\n"
+"}")
 
         self.verticalLayout_3.addWidget(self.btnVenda)
 
@@ -148,6 +154,9 @@ class Ui_MainWindow(object):
         self.btnCadastrar.setMinimumSize(QSize(0, 30))
         self.btnCadastrar.setFont(font1)
         self.btnCadastrar.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnCadastrar.setStyleSheet(u"QPushButton:pressed{\n"
+"background-color: rgb(0, 0, 0);\n"
+"}")
 
         self.verticalLayout_3.addWidget(self.btnCadastrar)
 
@@ -156,6 +165,9 @@ class Ui_MainWindow(object):
         self.btnContatos.setMinimumSize(QSize(0, 30))
         self.btnContatos.setFont(font1)
         self.btnContatos.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnContatos.setStyleSheet(u"QPushButton:pressed{\n"
+"background-color: rgb(0, 0, 0);\n"
+"}")
 
         self.verticalLayout_3.addWidget(self.btnContatos)
 
@@ -164,6 +176,9 @@ class Ui_MainWindow(object):
         self.btnSobre.setMinimumSize(QSize(0, 30))
         self.btnSobre.setFont(font1)
         self.btnSobre.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnSobre.setStyleSheet(u"QPushButton:pressed{\n"
+"background-color: rgb(0, 0, 0);\n"
+"}")
 
         self.verticalLayout_3.addWidget(self.btnSobre)
 
@@ -406,21 +421,21 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_7.addWidget(self.btn_AdicionarProduto)
 
-        self.btn_excluir = QPushButton(self.frame_edit_pesquisa)
-        self.btn_excluir.setObjectName(u"btn_excluir")
-        sizePolicy1.setHeightForWidth(self.btn_excluir.sizePolicy().hasHeightForWidth())
-        self.btn_excluir.setSizePolicy(sizePolicy1)
-        self.btn_excluir.setMinimumSize(QSize(50, 20))
-        self.btn_excluir.setMaximumSize(QSize(16777215, 16777215))
-        self.btn_excluir.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_excluir.setStyleSheet(u"QPushButton{\n"
+        self.btn_ExcluirProduto = QPushButton(self.frame_edit_pesquisa)
+        self.btn_ExcluirProduto.setObjectName(u"btn_ExcluirProduto")
+        sizePolicy1.setHeightForWidth(self.btn_ExcluirProduto.sizePolicy().hasHeightForWidth())
+        self.btn_ExcluirProduto.setSizePolicy(sizePolicy1)
+        self.btn_ExcluirProduto.setMinimumSize(QSize(50, 20))
+        self.btn_ExcluirProduto.setMaximumSize(QSize(16777215, 16777215))
+        self.btn_ExcluirProduto.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_ExcluirProduto.setStyleSheet(u"QPushButton{\n"
 "background-color: rgb(255, 255, 255);}\n"
 "\n"
 "QPushButton:pressed{\n"
 "background-color: rgb(213, 213, 213);\n"
 "}")
 
-        self.horizontalLayout_7.addWidget(self.btn_excluir)
+        self.horizontalLayout_7.addWidget(self.btn_ExcluirProduto)
 
 
         self.gridLayout_2.addWidget(self.frame_edit_pesquisa, 0, 0, 1, 1)
@@ -1062,7 +1077,7 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(whatsthis)
         self.btn_pesquisar.setText("")
         self.btn_AdicionarProduto.setText(QCoreApplication.translate("MainWindow", u"Adicionar", None))
-        self.btn_excluir.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
+        self.btn_ExcluirProduto.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Confirmar", None))
         ___qtablewidgetitem = self.tableProduct.horizontalHeaderItem(0)

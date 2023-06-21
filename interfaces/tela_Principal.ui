@@ -215,6 +215,11 @@ border-radius: 15px;
                 <property name="cursor">
                  <cursorShape>PointingHandCursor</cursorShape>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton:pressed{
+background-color: rgb(0, 0, 0);
+}</string>
+                </property>
                 <property name="text">
                  <string>Home</string>
                 </property>
@@ -241,6 +246,11 @@ border-radius: 15px;
                 <property name="cursor">
                  <cursorShape>PointingHandCursor</cursorShape>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton:pressed{
+background-color: rgb(0, 0, 0);
+}</string>
+                </property>
                 <property name="text">
                  <string>Venda</string>
                 </property>
@@ -261,6 +271,11 @@ border-radius: 15px;
                 </property>
                 <property name="cursor">
                  <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton:pressed{
+background-color: rgb(0, 0, 0);
+}</string>
                 </property>
                 <property name="text">
                  <string>Cadastrar Funcionário</string>
@@ -283,6 +298,11 @@ border-radius: 15px;
                 <property name="cursor">
                  <cursorShape>PointingHandCursor</cursorShape>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton:pressed{
+background-color: rgb(0, 0, 0);
+}</string>
+                </property>
                 <property name="text">
                  <string>Contato</string>
                 </property>
@@ -303,6 +323,11 @@ border-radius: 15px;
                 </property>
                 <property name="cursor">
                  <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton:pressed{
+background-color: rgb(0, 0, 0);
+}</string>
                 </property>
                 <property name="text">
                  <string>Sobre</string>
@@ -832,7 +857,7 @@ background-color: rgb(213, 213, 213);
                         </widget>
                        </item>
                        <item>
-                        <widget class="QPushButton" name="btn_excluir">
+                        <widget class="QPushButton" name="btn_ExcluirProduto">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                            <horstretch>0</horstretch>

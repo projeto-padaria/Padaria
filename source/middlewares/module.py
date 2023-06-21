@@ -31,7 +31,7 @@ class Connect:
             f"DRIVER={self.driver};SERVER={self.server};UID={self.username};PWD={self.password};DATABASE={self.database}"
         ).cursor()
         debug.printSuccess("Conexão com o Banco de Dados Estabelecida!")
-        
+
     def closeConnection(self):
         self.cursor.close()
         debug.printSuccess("Conexão com o Banco de Dados Fechada!")
@@ -86,63 +86,82 @@ class Connect:
                     valores[4],
                     valores[5],
                     valores[6],
-                )
+                ),
             )
             self.cursor.commit()
             debug.printSuccess("Funcionário cadastrado com sucesso!!")
         else:
             raise Exception("Prencha os campos Obrigatórios Adequadamente!!")
 
-    def showTableFun(self, tableWidget):
-        self.cursor.execute(
-            "SELECT F.cpf,F.nome,F.sobrenome,F.senha,F.cargo,F.salario,F.telefone,E.bairro,E.rua,E.numero,E.cidade,E.UF,E.cep FROM padaria.funcionario F,padaria.endereco E WHERE F.idEndereco = E.idEndereco;"
-        )
-        dados_lidos = self.cursor.fetchall()
-        table = tableWidget
-        try:
-            table.setRowCount(len(dados_lidos))
-            table.setColumnCount(13)
-            for i in range(0, len(dados_lidos)):
-                for j in range(0, 13):
-                    table.setItem(i, j, QTableWidgetItem(str(dados_lidos[i][j])))
-        except Exception as error:
-            debug.printError(error)
+    def showTable(self, tableWidget,sender = None):
+        if sender == True:
+            self.cursor.execute(
+                "SELECT P.idProduto, P.nome, P.marca, P.preco, P.quantidade, P.datadeemissao, P.datadevalidade FROM padaria.produto P;"
+            )
+            dados_lidos = self.cursor.fetchall()
+            table = tableWidget
+            try:
+                table.setRowCount(len(dados_lidos))
+                table.setColumnCount(7)
+                for i in range(0, len(dados_lidos)):
+                    for j in range(0, 7):
+                        table.setItem(i, j, QTableWidgetItem(str(dados_lidos[i][j])))
+            except Exception as error:
+                debug.printError(error)
+                
+        elif self.sender == False:
+            self.cursor.execute(
+                "SELECT F.cpf,F.nome,F.sobrenome,F.senha,F.cargo,F.salario,F.telefone,E.bairro,E.rua,E.numero,E.cidade,E.UF,E.cep FROM padaria.funcionario F,padaria.endereco E WHERE F.idEndereco = E.idEndereco;"
+            )
+            dados_lidos = self.cursor.fetchall()
+            table = tableWidget
+            try:
+                table.setRowCount(len(dados_lidos))
+                table.setColumnCount(13)
+                for i in range(0, len(dados_lidos)):
+                    for j in range(0, 13):
+                        table.setItem(i, j, QTableWidgetItem(str(dados_lidos[i][j])))
+            except Exception as error:
+                debug.printError(error)
 
     def deleteFun(self, cpf):
         self.cursor.execute(f"DELETE FROM padaria.funcionario WHERE cpf = '{cpf}' ")
         self.cursor.commit()
 
-    def updateTable(self, fullDataSet):
-        # for i,v in enumerate(fullDataSet):
-        #     if valor == "None":
-        #         valores.pop(indice)
-        #         valores.insert(indice, None)
-        print(fullDataSet[4])
+    def updateTableFun(self, fullDataSet):
+        for indice, valor in enumerate(fullDataSet):
+            if valor == "None" or valor == "":
+                fullDataSet.pop(indice)
+                fullDataSet.insert(indice, None)
         self.cursor.execute(
             f"""
         UPDATE padaria.endereco 
-        SET
-            bairro = ?,
-            rua = ?,
-            numero = ?,
-            cidade = ?,
-            uf = ?,
-            cep = ?
+        SET bairro = ?,rua = ?,numero = ?,cidade = ?,uf = ?,cep = ?
         FROM padaria.endereco AS E
         INNER JOIN padaria.funcionario AS F ON E.idEndereco = F.idEndereco
-        WHERE F.cpf = '{fullDataSet[0]}'""",(fullDataSet[7],fullDataSet[8],fullDataSet[9],fullDataSet[10],fullDataSet[11],fullDataSet[12])
+        WHERE F.cpf = ? """,
+            (
+                fullDataSet[7],
+                fullDataSet[8],
+                fullDataSet[9],
+                fullDataSet[10],
+                fullDataSet[11],
+                fullDataSet[12],
+                fullDataSet[0],
+            ),
         )
         self.cursor.execute(
-            f""" UPDATE padaria.funcionario SET
-
-            cpf = '{fullDataSet[0]}',
-            nome = '{fullDataSet[1]}',
-            sobrenome = '{fullDataSet[2]}',
-            senha = '{fullDataSet[3]}',
-            cargo = '{fullDataSet[4]}',
-            salario = {fullDataSet[5]},
-            telefone = {fullDataSet[6]}
-            WHERE cpf = '{fullDataSet[0]}'"""
+            f""" UPDATE padaria.funcionario SET cpf = ?, nome = ?, sobrenome = ?, senha = ?, cargo = ?, salario = ?,telefone = ? WHERE cpf = ?""",
+            (
+                fullDataSet[0],
+                fullDataSet[1],
+                fullDataSet[2],
+                fullDataSet[3],
+                fullDataSet[4],
+                fullDataSet[5],
+                fullDataSet[6],
+                fullDataSet[0],
+            ),
         )
         self.cursor.commit()
 

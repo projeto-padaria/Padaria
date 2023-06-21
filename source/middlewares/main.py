@@ -29,24 +29,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btinToggle.clicked.connect(self.left_Container)
         # Paginas do Sistema
         self.btnHome.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgHome))
-        self.btnVenda.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgVenda))
-        self.btnCadastrar.clicked.connect(self.pgCadastro)
+        self.btnVenda.clicked.connect(self.connectDatabase)
+        self.btnCadastrar.clicked.connect(self.connectDatabase)
         self.btnSobre.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgSobre))
         self.btnContatos.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgContatos))
         self.btnCadastrarFun.clicked.connect(self.employeeRegistration)
         self.btnAtualizar.clicked.connect(self.refreshTable)
-        self.btnAlterar.clicked.connect(self.updateTable)
+        self.btnAlterar.clicked.connect(self.updateTableFun)
         self.btnExcluir.clicked.connect(self.deleteFun)
         self.btnSair.clicked.connect(self.closeWindow)
-
-    def pgCadastro(self):
-        self.refreshTable()
-        self.Pages.setCurrentWidget(self.pgCadastrar)
-
-    def pgVenda(self):
-        #dar refresh nas primeira tabela
-
-
 
     def left_Container(self):
         width = self.leftContainer.width()
@@ -67,9 +58,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.sender1 = self.sender()
         try:
             if self.sender1 == self.btnVenda:
+                self.db.showTable(self.tableProduct,True)
                 self.Pages.setCurrentWidget(self.pgVenda)
             elif self.sender1 == self.btnCadastrar:
-                self.db.showTableFun(self.tableWidget)
+                self.db.showTable(self.tableWidget,False)
                 self.Pages.setCurrentWidget(self.pgCadastrar)
         except Exception as error:
             debug.printError(error)
@@ -147,7 +139,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             except Exception as error:
                 debug.printError(error)
 
-    def updateTable(self):
+    def updateTableFun(self):
         dados = []
         update_dados = []
 
@@ -159,7 +151,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         try:
             for dados in update_dados:
-                self.db.updateTable(tuple(dados))
+                self.db.updateTableFun(list(dados))
             QMessageBox.about(
                 None, "Alteração de Dados", "Dados alterados com sucesso!"
             )
@@ -175,7 +167,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             debug.printError(error)
 
     def refreshTable(self):
-        self.db.showTableFun(self.tableWidget)
+        self.db.showTable(self.tableProduct,True)
+        self.db.showTable(self.tableWidget,False)
 
     def closeWindow(self):
         self.db.closeConnection()
