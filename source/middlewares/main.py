@@ -43,6 +43,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.refreshTable()
         self.Pages.setCurrentWidget(self.pgCadastrar)
 
+    def pgVenda(self):
+        #dar refresh nas primeira tabela
+
+
 
     def left_Container(self):
         width = self.leftContainer.width()

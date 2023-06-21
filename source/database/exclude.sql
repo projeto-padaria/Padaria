@@ -5,7 +5,6 @@ ALTER TABLE padaria.funcionario NOCHECK CONSTRAINT ALL;
 ALTER TABLE padaria.cliente NOCHECK CONSTRAINT ALL;
 ALTER TABLE padaria.fornecedor NOCHECK CONSTRAINT ALL;
 ALTER TABLE padaria.endereco NOCHECK CONSTRAINT ALL;
-
 -- Exclusão dos dados da tabela padaria.venda
 DELETE FROM padaria.venda;
 

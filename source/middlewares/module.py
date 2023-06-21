@@ -61,7 +61,7 @@ class Connect:
             if indice in (0, 1, 2, 3, 4, 5, 6) and valor == "":
                 aux += 1
             else:
-                if valor == "":
+                if valor == "" or valor == "None":
                     valores.pop(indice)
                     valores.insert(indice, None)
         if aux == 0:
@@ -86,7 +86,7 @@ class Connect:
                     valores[4],
                     valores[5],
                     valores[6],
-                ),
+                )
             )
             self.cursor.commit()
             debug.printSuccess("Funcionário cadastrado com sucesso!!")
@@ -113,19 +113,24 @@ class Connect:
         self.cursor.commit()
 
     def updateTable(self, fullDataSet):
+        # for i,v in enumerate(fullDataSet):
+        #     if valor == "None":
+        #         valores.pop(indice)
+        #         valores.insert(indice, None)
+        print(fullDataSet[4])
         self.cursor.execute(
             f"""
         UPDATE padaria.endereco 
         SET
-            bairro = '{fullDataSet[7]}',
-            rua = '{fullDataSet[8]}',
-            numero = {fullDataSet[9]},
-            cidade = '{fullDataSet[10]}',
-            uf ='{fullDataSet[11]}',
-            cep = '{fullDataSet[12]}'
+            bairro = ?,
+            rua = ?,
+            numero = ?,
+            cidade = ?,
+            uf = ?,
+            cep = ?
         FROM padaria.endereco AS E
         INNER JOIN padaria.funcionario AS F ON E.idEndereco = F.idEndereco
-        WHERE F.cpf = '{fullDataSet[0]}'"""
+        WHERE F.cpf = '{fullDataSet[0]}'""",(fullDataSet[7],fullDataSet[8],fullDataSet[9],fullDataSet[10],fullDataSet[11],fullDataSet[12])
         )
         self.cursor.execute(
             f""" UPDATE padaria.funcionario SET

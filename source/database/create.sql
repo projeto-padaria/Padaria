@@ -75,7 +75,7 @@ create table  padaria.produto
     quantidade int,
     datadeemissao date,
     datadevalidade date,
-    UNIQUE(marca),
+    UNIQUE(nome),
 
     PRIMARY KEY (idProduto),
 
