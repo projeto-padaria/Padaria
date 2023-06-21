@@ -95,7 +95,7 @@ class Connect:
     
     def addProduct(self,id):
         parameters = [1,1,id,2]
-        self.cursor.execute("INSERT INTO padaria.venda VALUES (?,?,?,?,convert(date, getdate(), 103))",parameters)
+        self.cursor.execute("INSERT INTO padaria.venda VALUES (?,?,?,?,convert(datetime, getdate(), 103))",parameters)
         self.cursor.commit()
 
     def deleteProduct(self):
