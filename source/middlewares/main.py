@@ -137,6 +137,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             
             debug.printSuccess("Adicionado com Sucesso!!")
         except Exception as error:
+            if error.args[0] == '23000':
+                QMessageBox.warning(None,"ALERTA","Produto já adicionado")
+                debug.printWarning("Produto já adicionado")
+                return
             debug.printError(error)
 
 
