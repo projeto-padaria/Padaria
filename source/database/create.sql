@@ -93,7 +93,7 @@ create table  padaria.venda
     -- forma_pagamento varchar(50),
     -- valor_total decimal(10,2),
 
-    PRIMARY KEY (idVenda, idCliente, idFuncionario, idProduto),
+    PRIMARY KEY (idVenda, idCliente, idFuncionario, idProduto,data),
 
     FOREIGN KEY (idCliente) REFERENCES padaria.cliente(idCliente) on update CASCADE,
 
