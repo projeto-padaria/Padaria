@@ -6,8 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
+<<<<<<< HEAD:interfaces/tela_Principal.ui
     <width>1089</width>
     <height>661</height>
+=======
+    <width>1227</width>
+    <height>662</height>
+>>>>>>> a607250586055cf3807ad4d6cb1d3801afb5026a:interfaces/design/tela_Principal.ui
    </rect>
   </property>
   <property name="windowTitle">
@@ -166,15 +171,20 @@ border-radius: 15px;
 </string>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="page">
              <property name="geometry">
               <rect>
                <x>0</x>
                <y>0</y>
+<<<<<<< HEAD:interfaces/tela_Principal.ui
                <width>180</width>
                <height>531</height>
+=======
+               <width>144</width>
+               <height>180</height>
+>>>>>>> a607250586055cf3807ad4d6cb1d3801afb5026a:interfaces/design/tela_Principal.ui
               </rect>
              </property>
              <property name="cursor">
@@ -622,14 +632,40 @@ p, li { white-space: pre-wrap; }
              </layout>
             </widget>
             <widget class="QWidget" name="pgVenda">
+             <property name="minimumSize">
+              <size>
+               <width>1185</width>
+               <height>537</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>1185</width>
+               <height>537</height>
+              </size>
+             </property>
              <layout class="QVBoxLayout" name="verticalLayout_16">
               <item>
                <widget class="QFrame" name="frame_main">
+<<<<<<< HEAD:interfaces/tela_Principal.ui
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
+=======
+                <property name="minimumSize">
+                 <size>
+                  <width>1167</width>
+                  <height>460</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>1167</width>
+                  <height>460</height>
+                 </size>
+>>>>>>> a607250586055cf3807ad4d6cb1d3801afb5026a:interfaces/design/tela_Principal.ui
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -637,6 +673,7 @@ p, li { white-space: pre-wrap; }
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
+<<<<<<< HEAD:interfaces/tela_Principal.ui
                 <layout class="QHBoxLayout" name="horizontalLayout_11">
                  <property name="spacing">
                   <number>30</number>
@@ -658,6 +695,122 @@ border:None;
 
 QPushButton{
 border-radius: 4px;}</string>
+=======
+                <layout class="QGridLayout" name="gridLayout_3">
+                 <item row="0" column="2">
+                  <widget class="QFrame" name="frame_carrinho">
+                   <property name="minimumSize">
+                    <size>
+                     <width>431</width>
+                     <height>491</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>25</pointsize>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_14">
+                    <item alignment="Qt::AlignHCenter">
+                     <widget class="QLabel" name="label_carrinho">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>327</width>
+                        <height>44</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>800</width>
+                        <height>800</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>25</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Carrinho de Compras</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                     <widget class="QTreeWidget" name="treeWidget_carrinho">
+                      <property name="minimumSize">
+                       <size>
+                        <width>600</width>
+                        <height>400</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>600</width>
+                        <height>600</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 0px;</string>
+                      </property>
+                      <column>
+                       <property name="text">
+                        <string>idVenda</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Nome do Produto</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Marca do Produto</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Valor do Produto</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Quantidade</string>
+                       </property>
+                      </column>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QFrame" name="frame_pesquisa">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>560</width>
+                     <height>442</height>
+                    </size>
+>>>>>>> a607250586055cf3807ad4d6cb1d3801afb5026a:interfaces/design/tela_Principal.ui
                    </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
@@ -666,18 +819,31 @@ border-radius: 4px;}</string>
                     <enum>QFrame::Raised</enum>
                    </property>
                    <layout class="QGridLayout" name="gridLayout_2">
+<<<<<<< HEAD:interfaces/tela_Principal.ui
                     <item row="0" column="0">
                      <widget class="QFrame" name="frame_edit_pesquisa">
                       <property name="minimumSize">
                        <size>
                         <width>540</width>
                         <height>20</height>
+=======
+                    <item row="1" column="0">
+                     <widget class="QFrame" name="frame_edit_pesquisa">
+                      <property name="minimumSize">
+                       <size>
+                        <width>543</width>
+                        <height>50</height>
+>>>>>>> a607250586055cf3807ad4d6cb1d3801afb5026a:interfaces/design/tela_Principal.ui
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
                         <width>16777215</width>
+<<<<<<< HEAD:interfaces/tela_Principal.ui
                         <height>16777215</height>
+=======
+                        <height>50</height>
+>>>>>>> a607250586055cf3807ad4d6cb1d3801afb5026a:interfaces/design/tela_Principal.ui
                        </size>
                       </property>
                       <property name="frameShape">
@@ -688,6 +854,7 @@ border-radius: 4px;}</string>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_7">
                        <item>
+<<<<<<< HEAD:interfaces/tela_Principal.ui
                         <widget class="QFrame" name="frame_9">
                          <property name="minimumSize">
                           <size>
@@ -799,32 +966,68 @@ background-color: rgb(213, 213, 213);
                         <widget class="QPushButton" name="btn_AdicionarProduto">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+=======
+                        <widget class="QLineEdit" name="lineEdit_pesquisa">
+                         <property name="maximumSize">
+                          <size>
+                           <width>500</width>
+                           <height>500</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:4px;</string>
+                         </property>
+                         <property name="placeholderText">
+                          <string>Pesquisa aqui...</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="btn_Adicionar">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+>>>>>>> a607250586055cf3807ad4d6cb1d3801afb5026a:interfaces/design/tela_Principal.ui
                            <horstretch>0</horstretch>
                            <verstretch>0</verstretch>
                           </sizepolicy>
                          </property>
                          <property name="minimumSize">
                           <size>
+<<<<<<< HEAD:interfaces/tela_Principal.ui
                            <width>30</width>
                            <height>20</height>
+=======
+                           <width>0</width>
+                           <height>0</height>
+>>>>>>> a607250586055cf3807ad4d6cb1d3801afb5026a:interfaces/design/tela_Principal.ui
                           </size>
                          </property>
                          <property name="maximumSize">
                           <size>
+<<<<<<< HEAD:interfaces/tela_Principal.ui
                            <width>16777215</width>
                            <height>16777215</height>
+=======
+                           <width>70</width>
+                           <height>25</height>
+>>>>>>> a607250586055cf3807ad4d6cb1d3801afb5026a:interfaces/design/tela_Principal.ui
                           </size>
                          </property>
                          <property name="cursor">
                           <cursorShape>PointingHandCursor</cursorShape>
                          </property>
                          <property name="styleSheet">
+<<<<<<< HEAD:interfaces/tela_Principal.ui
                           <string notr="true">QPushButton{
 background-color: rgb(255, 255, 255);}
 
 QPushButton:pressed{
 background-color: rgb(213, 213, 213);
 }</string>
+=======
+                          <string notr="true">background-color: rgb(255, 255, 255);</string>
+>>>>>>> a607250586055cf3807ad4d6cb1d3801afb5026a:interfaces/design/tela_Principal.ui
                          </property>
                          <property name="text">
                           <string>Adicionar</string>
@@ -832,35 +1035,86 @@ background-color: rgb(213, 213, 213);
                         </widget>
                        </item>
                        <item>
+<<<<<<< HEAD:interfaces/tela_Principal.ui
                         <widget class="QPushButton" name="btn_excluir">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+=======
+                        <widget class="QPushButton" name="btn_pesquisar">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+>>>>>>> a607250586055cf3807ad4d6cb1d3801afb5026a:interfaces/design/tela_Principal.ui
                            <horstretch>0</horstretch>
                            <verstretch>0</verstretch>
                           </sizepolicy>
                          </property>
                          <property name="minimumSize">
                           <size>
+<<<<<<< HEAD:interfaces/tela_Principal.ui
                            <width>50</width>
                            <height>20</height>
+=======
+                           <width>0</width>
+                           <height>0</height>
+>>>>>>> a607250586055cf3807ad4d6cb1d3801afb5026a:interfaces/design/tela_Principal.ui
                           </size>
                          </property>
                          <property name="maximumSize">
                           <size>
+<<<<<<< HEAD:interfaces/tela_Principal.ui
                            <width>16777215</width>
                            <height>16777215</height>
+=======
+                           <width>70</width>
+                           <height>25</height>
+>>>>>>> a607250586055cf3807ad4d6cb1d3801afb5026a:interfaces/design/tela_Principal.ui
                           </size>
                          </property>
                          <property name="cursor">
                           <cursorShape>PointingHandCursor</cursorShape>
                          </property>
                          <property name="styleSheet">
+<<<<<<< HEAD:interfaces/tela_Principal.ui
                           <string notr="true">QPushButton{
 background-color: rgb(255, 255, 255);}
 
 QPushButton:pressed{
 background-color: rgb(213, 213, 213);
 }</string>
+=======
+                          <string notr="true">background-color: rgb(255, 255, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string>Pesquisar</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="btn_excluir">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>70</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="cursor">
+                          <cursorShape>PointingHandCursor</cursorShape>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(255, 255, 255);</string>
+>>>>>>> a607250586055cf3807ad4d6cb1d3801afb5026a:interfaces/design/tela_Principal.ui
                          </property>
                          <property name="text">
                           <string>Excluir</string>
@@ -871,6 +1125,7 @@ background-color: rgb(213, 213, 213);
                      </widget>
                     </item>
                     <item row="2" column="0">
+<<<<<<< HEAD:interfaces/tela_Principal.ui
                      <widget class="QFrame" name="frame_6">
                       <property name="frameShape">
                        <enum>QFrame::StyledPanel</enum>
@@ -1176,6 +1431,144 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
                      </widget>
                     </item>
                    </layout>
+=======
+                     <widget class="QTreeWidget" name="treeWidget">
+                      <property name="minimumSize">
+                       <size>
+                        <width>543</width>
+                        <height>300</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 0px;</string>
+                      </property>
+                      <column>
+                       <property name="text">
+                        <string>idVenda</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Nome do Produto</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Nome da Marca</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Estoque</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Data de Validade</string>
+                       </property>
+                      </column>
+                     </widget>
+                    </item>
+                    <item row="0" column="0" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                     <widget class="QLabel" name="label_8">
+                      <property name="minimumSize">
+                       <size>
+                        <width>294</width>
+                        <height>44</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>25</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Página de Pesquisa</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QFrame" name="frame_btn">
+                <property name="minimumSize">
+                 <size>
+                  <width>1167</width>
+                  <height>53</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>1167</width>
+                  <height>53</height>
+                 </size>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_8">
+                 <item>
+                  <widget class="QPushButton" name="btn_cancelar_venda">
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>35</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>500</height>
+                    </size>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 35, 35);
+color:white;
+border-radius: 4px;</string>
+                   </property>
+                   <property name="text">
+                    <string>Cancelar</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btn_confirmar_venda">
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>35</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>500</height>
+                    </size>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(0, 182, 42);
+color:white;
+border-radius: 4px;</string>
+                   </property>
+                   <property name="text">
+                    <string>Confirmar</string>
+                   </property>
+>>>>>>> a607250586055cf3807ad4d6cb1d3801afb5026a:interfaces/design/tela_Principal.ui
                   </widget>
                  </item>
                 </layout>
