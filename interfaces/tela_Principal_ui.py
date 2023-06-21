@@ -108,7 +108,7 @@ class Ui_MainWindow(object):
 "")
         self.page = QWidget()
         self.page.setObjectName(u"page")
-        self.page.setGeometry(QRect(0, 0, 180, 526))
+        self.page.setGeometry(QRect(0, 0, 180, 518))
         self.page.setCursor(QCursor(Qt.ArrowCursor))
         self.verticalLayout_3 = QVBoxLayout(self.page)
         self.verticalLayout_3.setSpacing(6)
@@ -184,7 +184,7 @@ class Ui_MainWindow(object):
         self.toolBox.addItem(self.page, u"MENU")
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
-        self.page_2.setGeometry(QRect(0, 0, 180, 526))
+        self.page_2.setGeometry(QRect(0, 0, 137, 218))
         self.page_2.setCursor(QCursor(Qt.ArrowCursor))
         self.verticalLayout_13 = QVBoxLayout(self.page_2)
         self.verticalLayout_13.setSpacing(0)
@@ -1250,13 +1250,13 @@ class Ui_MainWindow(object):
         self.label_carrinho.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:20pt;\">Carrinho de Compras</span></p></body></html>", None))
         self.btn_ExcluirProduto.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
         ___qtablewidgetitem7 = self.tableCarrinho.horizontalHeaderItem(0)
-        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"idVenda", None));
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"idProduto", None));
         ___qtablewidgetitem8 = self.tableCarrinho.horizontalHeaderItem(1)
-        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"idProduto", None));
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
         ___qtablewidgetitem9 = self.tableCarrinho.horizontalHeaderItem(2)
-        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
+        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"Pre\u00e7o", None));
         ___qtablewidgetitem10 = self.tableCarrinho.horizontalHeaderItem(3)
-        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Pre\u00e7o", None));
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Quantidade", None));
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:18pt; font-weight:600;\">TOTAL:</span></p></body></html>", None))
         self.label_9.setText("")
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"Realizar Venda", None))

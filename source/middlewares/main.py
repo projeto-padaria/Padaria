@@ -2,7 +2,7 @@ import sys
 sys.path.append("interfaces")
 
 # Importação de libs
-from PySide6.QtWidgets import QApplication,QMainWindow, QMessageBox
+from PySide6.QtWidgets import QApplication,QMainWindow, QMessageBox, QTableWidgetItem, QTableWidget
 from PySide6 import QtCore
 
 # Importação da Interface de Cadastro
@@ -125,23 +125,31 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             )
     
     def addProduct(self):
-        try:
-            idProduto = (
-                self.tableProduct.selectionModel()
-                .currentIndex()
-                .siblingAtColumn(0)
-                .data()
-            )
-            self.db.addProduct(idProduto)
-            self.refreshTable()
-            
-            debug.printSuccess("Adicionado com Sucesso!!")
-        except Exception as error:
-            if error.args[0] == '23000':
-                QMessageBox.warning(None,"ALERTA","Produto já adicionado")
-                debug.printWarning("Produto já adicionado")
-                return
-            debug.printError(error)
+        if self.tableCarrinho.rowCount() > self.tableCarrinho.rowCount() - 1 and self.tableProduct.selectionModel().hasSelection():
+            try:
+                self.tableCarrinho.setRowCount(self.tableCarrinho.rowCount() + 1)
+                idProduto = self.tableProduct.selectionModel().currentIndex().siblingAtColumn(0).data()
+                nomeProduto = self.tableProduct.selectionModel().currentIndex().siblingAtColumn(1).data()
+                precoProduto = float((self.tableProduct.selectionModel().currentIndex().siblingAtColumn(3).data()))
+
+                foundItems = self.tableCarrinho.findItems(idProduto, QtCore.Qt.MatchExactly)
+                if foundItems:
+                    row = foundItems[0].row()
+                    currentQuantity = int(self.tableCarrinho.item(row, 2))
+                    newQuantity = currentQuantity + 1
+                    self.tableCarrinho.setItem(row, 2, QTableWidgetItem(str(newQuantity)))
+                else:
+                    # Add a new row for the product
+                    self.tableCarrinho.setItem(self.tableCarrinho.rowCount() - 1, 0, QTableWidgetItem(idProduto))
+                    self.tableCarrinho.setItem(self.tableCarrinho.rowCount() - 1, 1, QTableWidgetItem(nomeProduto))
+                    self.tableCarrinho.setItem(self.tableCarrinho.rowCount() - 1, 2, QTableWidgetItem(str(precoProduto)))
+
+            except Exception as error:
+                if error.args[0] == '23000':
+                    QMessageBox.warning(None, "ALERTA", "Produto já adicionado")
+                    return debug.printWarning("Produto já adicionado")
+                debug.printError(error)
+
 
 
     def deleteFun(self):

@@ -95,7 +95,7 @@ class Connect:
     
     def addProduct(self,id):
         parameters = [1,1,id,2]
-        self.cursor.execute("INSERT INTO padaria.venda VALUES (?,?,?,?,convert(date, getdate(), 29))",parameters)
+        self.cursor.execute("INSERT INTO padaria.venda VALUES (?,?,?,?,convert(date, getdate(), 103))",parameters)
         self.cursor.commit()
 
     def deleteProduct(self):
@@ -180,7 +180,6 @@ class Connect:
                         table.setItem(i, j, QTableWidgetItem(str(dados_lidos[i][j])))
             except Exception as error:
                 debug.printError(error)
-
 
     def deleteFun(self, cpf):
         self.cursor.execute(f"DELETE FROM padaria.funcionario WHERE cpf = '{cpf}' ")

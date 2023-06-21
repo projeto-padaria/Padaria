@@ -140,7 +140,6 @@ text-align:left;
             </property>
             <property name="font">
              <font>
-              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -167,7 +166,7 @@ border-radius: 15px;
                <x>0</x>
                <y>0</y>
                <width>180</width>
-               <height>526</height>
+               <height>518</height>
               </rect>
              </property>
              <property name="cursor">
@@ -229,7 +228,6 @@ background-color: rgb(0, 0, 0);
                 <property name="font">
                  <font>
                   <pointsize>11</pointsize>
-                  <weight>50</weight>
                   <bold>false</bold>
                   <underline>false</underline>
                   <strikeout>false</strikeout>
@@ -347,8 +345,8 @@ background-color: rgb(0, 0, 0);
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>180</width>
-               <height>526</height>
+               <width>137</width>
+               <height>218</height>
               </rect>
              </property>
              <property name="cursor">
@@ -866,7 +864,6 @@ background-color: rgb(213, 213, 213);
                              <property name="font">
                               <font>
                                <pointsize>10</pointsize>
-                               <weight>50</weight>
                                <bold>false</bold>
                               </font>
                              </property>
@@ -921,7 +918,6 @@ background-color: rgb(213, 213, 213);
                              <property name="font">
                               <font>
                                <pointsize>10</pointsize>
-                               <weight>75</weight>
                                <bold>true</bold>
                               </font>
                              </property>
@@ -961,7 +957,6 @@ background-color: rgb(202, 0, 0);
                              <property name="font">
                               <font>
                                <pointsize>10</pointsize>
-                               <weight>75</weight>
                                <bold>true</bold>
                               </font>
                              </property>
@@ -1062,7 +1057,6 @@ color: white;
                        <property name="font">
                         <font>
                          <pointsize>25</pointsize>
-                         <weight>75</weight>
                          <bold>true</bold>
                         </font>
                        </property>
@@ -1120,7 +1114,6 @@ border:None;
                              <property name="font">
                               <font>
                                <pointsize>25</pointsize>
-                               <weight>75</weight>
                                <bold>true</bold>
                               </font>
                              </property>
@@ -1205,11 +1198,6 @@ color: white;
                           </property>
                           <column>
                            <property name="text">
-                            <string>idVenda</string>
-                           </property>
-                          </column>
-                          <column>
-                           <property name="text">
                             <string>idProduto</string>
                            </property>
                           </column>
@@ -1221,6 +1209,11 @@ color: white;
                           <column>
                            <property name="text">
                             <string>Preço</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>Quantidade</string>
                            </property>
                           </column>
                          </widget>
