@@ -5,7 +5,6 @@ from os import system as clearTerminal
 
 # Importação da Classe debug
 from debug import libDebug
-
 debug = libDebug()
 
 
@@ -92,8 +91,8 @@ class Connect:
             debug.printSuccess("Funcionário cadastrado com sucesso!!")
         else:
             raise Exception("Prencha os campos Obrigatórios Adequadamente!!")
-    
-    def addProduct(self,insert):
+
+    def addProduct(self, insert):
         try:
             newid = 1
             self.cursor.execute("select distinct idVenda from padaria.venda")
@@ -106,19 +105,25 @@ class Connect:
                         newid += 1
             for data in insert:
                 list(data)
-                self.cursor.execute("INSERT INTO padaria.venda VALUES (?,?,?,?,?,convert(datetime, getdate(), 103))",(newid,1,int(data[0]),1,int(data[3])))
+                self.cursor.execute(
+                    "INSERT INTO padaria.venda VALUES (?,?,?,?,?,convert(datetime, getdate(), 103))",
+                    (newid, 1, int(data[0]), 1, int(data[3])),
+                )
                 self.cursor.commit()
         except Exception as error:
             debug.printError(error)
 
-    def search(self,table,palavra, where = None):
+    def search(self, table, palavra, where=None):
         try:
             if where == True:
                 if palavra == "":
-                    self.showTable(table,True)
+                    self.showTable(table, True)
                 else:
-                    parameters = ['%' + palavra + '%', '%' + palavra + '%']
-                    self.cursor.execute('SELECT P.idProduto, P.nome, P.marca, P.preco, P.quantidade, P.datadeemissao, P.datadevalidade FROM padaria.produto P WHERE idProduto LIKE ? OR nome LIKE ?', parameters)
+                    parameters = ["%" + palavra + "%", "%" + palavra + "%"]
+                    self.cursor.execute(
+                        "SELECT P.idProduto, P.nome, P.marca, P.preco, P.quantidade, P.datadeemissao, P.datadevalidade FROM padaria.produto P WHERE idProduto LIKE ? OR nome LIKE ?",
+                        parameters,
+                    )
                     dados_lidos = self.cursor.fetchall()
 
                     try:
@@ -126,36 +131,42 @@ class Connect:
                         table.setColumnCount(7)
                         for i in range(0, len(dados_lidos)):
                             for j in range(0, 7):
-                                table.setItem(i, j, QTableWidgetItem(str(dados_lidos[i][j])))
+                                table.setItem(
+                                    i, j, QTableWidgetItem(str(dados_lidos[i][j]))
+                                )
                     except Exception as error:
                         debug.printError(error)
             elif where == False:
                 if palavra == "":
                     self.showTable(table)
                 else:
-                    parameters = ['%' + palavra + '%']
-                    self.cursor.execute('''SELECT V.idVenda,Fu.nome,F.nome,C.nome,V.idProduto, P.nome, P.marca, P.preco, P.datadevalidade, V.data FROM
+                    parameters = ["%" + palavra + "%"]
+                    self.cursor.execute(
+                        """SELECT V.idVenda,Fu.nome,F.nome,C.nome,V.idProduto, P.nome, P.marca, P.preco, P.datadevalidade, V.data FROM
                     padaria.funcionario Fu,
                     padaria.venda V,
                     padaria.fornecedor F,
                     padaria.produto P,
                     padaria.cliente C
                     WHERE 
-                    V.idProduto = P.idProduto and P.idFornecedor = F.idFornecedor and V.idFuncionario = Fu.idFuncionario and V.idCliente = C.idCliente and V.idVenda LIKE ?''', parameters)
+                    V.idProduto = P.idProduto and P.idFornecedor = F.idFornecedor and V.idFuncionario = Fu.idFuncionario and V.idCliente = C.idCliente and V.idVenda LIKE ?""",
+                        parameters,
+                    )
                     dados_lidos = self.cursor.fetchall()
                     try:
                         table.setRowCount(len(dados_lidos))
                         table.setColumnCount(10)
                         for i in range(0, len(dados_lidos)):
                             for j in range(0, 10):
-                                table.setItem(i, j, QTableWidgetItem(str(dados_lidos[i][j])))
+                                table.setItem(
+                                    i, j, QTableWidgetItem(str(dados_lidos[i][j]))
+                                )
                     except Exception as error:
                         debug.printError(error)
         except Exception as error:
             print(error)
 
-
-    def showTable(self, tableWidget,sender = None):
+    def showTable(self, tableWidget, sender=None):
         if sender == True:
             self.cursor.execute(
                 "SELECT P.idProduto, P.nome, P.marca, P.preco, P.quantidade, P.datadeemissao, P.datadevalidade FROM padaria.produto P;"
@@ -194,7 +205,8 @@ class Connect:
                 padaria.produto P,
                 padaria.cliente C
                 WHERE 
-                V.idProduto = P.idProduto and P.idFornecedor = F.idFornecedor and V.idFuncionario = Fu.idFuncionario and V.idCliente = C.idCliente""")
+                V.idProduto = P.idProduto and P.idFornecedor = F.idFornecedor and V.idFuncionario = Fu.idFuncionario and V.idCliente = C.idCliente"""
+            )
             dados_lidos = self.cursor.fetchall()
             table = tableWidget
             try:

@@ -1,5 +1,4 @@
 -- Está em ordem de criação das tabelas e relacionamentos
--- Caso algum cabaço faça merda. NÃO ALTERE A ORDEM DAS TABELAS
 
 create schema padaria;
 
@@ -102,7 +101,8 @@ create table  padaria.venda
 
 )
 
--- Sempre que um valor for adicionado na Tabela funcionario, o seu endereço será linkado com o último endereço registrado na tabela endereço. Dever ser criado após a criação das outras tabelas.
+--  >Dever ser criado após a criação das outras tabelas<
+-- Sempre que um valor for adicionado na Tabela funcionario, o seu endereço será linkado com o último endereço registrado na tabela endereço.
 CREATE TRIGGER padaria.AtualizarUltimoValorEndereco ON padaria.funcionario
 AFTER INSERT
 AS

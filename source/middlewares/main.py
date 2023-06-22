@@ -1,5 +1,4 @@
 import sys
-
 sys.path.append("interfaces")
 
 # Importação de libs
@@ -21,7 +20,6 @@ from module import Connect
 
 # Importação da Classe debug e Criação da Instância
 from debug import libDebug
-
 debug = libDebug()
 
 
@@ -105,7 +103,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         else:
             debug.printWarning("Selecione uma linha para excluir")
             QMessageBox.warning(None, "Atenção", "Selecione uma linha para excluir")
-    
+
     def search(self, table):
         sender = self.sender()
         if sender == self.btn_Pesquisar:
@@ -147,8 +145,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 except Exception as error:
                     debug.printError(error)
         else:
-            return  
-        
+            return
+
     def cancelSale(self):
         valor = QMessageBox.question(
             None,
