@@ -902,7 +902,7 @@ background-color: rgb(213, 213, 213);
                           </property>
                           <layout class="QHBoxLayout" name="horizontalLayout_8">
                            <item>
-                            <widget class="QPushButton" name="pushButton">
+                            <widget class="QPushButton" name="btn_cancelar_pesquisa">
                              <property name="minimumSize">
                               <size>
                                <width>0</width>
@@ -941,7 +941,7 @@ background-color: rgb(202, 0, 0);
                             </widget>
                            </item>
                            <item>
-                            <widget class="QPushButton" name="pushButton_2">
+                            <widget class="QPushButton" name="btn_confirmar_pesquisa">
                              <property name="minimumSize">
                               <size>
                                <width>0</width>
@@ -1234,14 +1234,14 @@ color: white;
                           </property>
                           <layout class="QHBoxLayout" name="horizontalLayout_9">
                            <item>
-                            <widget class="QLabel" name="label_8">
+                            <widget class="QLabel" name="titulo_total">
                              <property name="text">
                               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;TOTAL:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                              </property>
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_9">
+                            <widget class="QLabel" name="valor_total">
                              <property name="sizePolicy">
                               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                                <horstretch>0</horstretch>

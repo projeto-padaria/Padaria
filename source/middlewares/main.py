@@ -34,6 +34,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btnCadastrar.clicked.connect(self.connectDatabase)
         self.btnSobre.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgSobre))
         self.btnContatos.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgContatos))
+        self.btn_confirmar_pesquisa.clicked.connect(lambda: debug.printSuccess("Pesquisa realizada com sucesso!"))
+        self.btn_cancelar_pesquisa.clicked.connect(self.cancelSale)
         self.btn_ExcluirProduto.clicked.connect(self.deleteRows)
         self.btnCadastrarFun.clicked.connect(self.employeeRegistration)
         self.btnAtualizar.clicked.connect(self.refreshTable)
@@ -90,6 +92,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         else:
             debug.printWarning("Selecione uma linha para excluir")
             QMessageBox.warning(None, "Atenção", "Selecione uma linha para excluir")
+
+    def cancelSale(self):
+        valor = QMessageBox.question(None, "Atenção", "Deseja cancelar a venda?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+        if valor == QMessageBox.Yes:
+            self.tableCarrinho.setRowCount(0)
+            self.calculeTotal()
+        else:
+            return
 
     def employeeRegistration(self):
         self.cpf = self.txtCPF.text()
@@ -173,7 +183,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             quantidade = int(self.tableCarrinho.item(row, 3).text())
             total += preco * quantidade
 
-        self.label_9.setText(str(f'R$ {total:.2f}'))
+        self.valor_total.setText(str(f'R$ {total:.2f}'))
 
     def deleteFun(self):
         msg = QMessageBox()

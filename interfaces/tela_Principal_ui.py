@@ -449,16 +449,16 @@ class Ui_MainWindow(object):
         self.frame_6.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_8 = QHBoxLayout(self.frame_6)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
-        self.pushButton = QPushButton(self.frame_6)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setMinimumSize(QSize(0, 30))
-        self.pushButton.setMaximumSize(QSize(100, 500))
+        self.btn_cancelar_pesquisa = QPushButton(self.frame_6)
+        self.btn_cancelar_pesquisa.setObjectName(u"btn_cancelar_pesquisa")
+        self.btn_cancelar_pesquisa.setMinimumSize(QSize(0, 30))
+        self.btn_cancelar_pesquisa.setMaximumSize(QSize(100, 500))
         font4 = QFont()
         font4.setPointSize(10)
         font4.setBold(True)
-        self.pushButton.setFont(font4)
-        self.pushButton.setCursor(QCursor(Qt.PointingHandCursor))
-        self.pushButton.setStyleSheet(u"\n"
+        self.btn_cancelar_pesquisa.setFont(font4)
+        self.btn_cancelar_pesquisa.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_cancelar_pesquisa.setStyleSheet(u"\n"
 "QPushButton{\n"
 "background-color: rgb(255, 0, 0);\n"
 "color:white;\n"
@@ -468,15 +468,15 @@ class Ui_MainWindow(object):
 "background-color: rgb(202, 0, 0);\n"
 "}")
 
-        self.horizontalLayout_8.addWidget(self.pushButton)
+        self.horizontalLayout_8.addWidget(self.btn_cancelar_pesquisa)
 
-        self.pushButton_2 = QPushButton(self.frame_6)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setMinimumSize(QSize(0, 30))
-        self.pushButton_2.setMaximumSize(QSize(100, 500))
-        self.pushButton_2.setFont(font4)
-        self.pushButton_2.setCursor(QCursor(Qt.PointingHandCursor))
-        self.pushButton_2.setStyleSheet(u"\n"
+        self.btn_confirmar_pesquisa = QPushButton(self.frame_6)
+        self.btn_confirmar_pesquisa.setObjectName(u"btn_confirmar_pesquisa")
+        self.btn_confirmar_pesquisa.setMinimumSize(QSize(0, 30))
+        self.btn_confirmar_pesquisa.setMaximumSize(QSize(100, 500))
+        self.btn_confirmar_pesquisa.setFont(font4)
+        self.btn_confirmar_pesquisa.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_confirmar_pesquisa.setStyleSheet(u"\n"
 "QPushButton{\n"
 "background-color: rgb(0, 182, 42);\n"
 "color:white;\n"
@@ -486,7 +486,7 @@ class Ui_MainWindow(object):
 "background-color: rgb(0, 200, 0);\n"
 "}")
 
-        self.horizontalLayout_8.addWidget(self.pushButton_2)
+        self.horizontalLayout_8.addWidget(self.btn_confirmar_pesquisa)
 
 
         self.gridLayout_2.addWidget(self.frame_6, 2, 0, 1, 1)
@@ -630,25 +630,25 @@ class Ui_MainWindow(object):
         self.frame_7.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_9 = QHBoxLayout(self.frame_7)
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
-        self.label_8 = QLabel(self.frame_7)
-        self.label_8.setObjectName(u"label_8")
+        self.titulo_total = QLabel(self.frame_7)
+        self.titulo_total.setObjectName(u"titulo_total")
 
-        self.horizontalLayout_9.addWidget(self.label_8)
+        self.horizontalLayout_9.addWidget(self.titulo_total)
 
-        self.label_9 = QLabel(self.frame_7)
-        self.label_9.setObjectName(u"label_9")
+        self.valor_total = QLabel(self.frame_7)
+        self.valor_total.setObjectName(u"valor_total")
         sizePolicy2 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
         sizePolicy2.setHorizontalStretch(0)
         sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.label_9.sizePolicy().hasHeightForWidth())
-        self.label_9.setSizePolicy(sizePolicy2)
-        self.label_9.setStyleSheet(u"padding: 0px 10px;\n"
+        sizePolicy2.setHeightForWidth(self.valor_total.sizePolicy().hasHeightForWidth())
+        self.valor_total.setSizePolicy(sizePolicy2)
+        self.valor_total.setStyleSheet(u"padding: 0px 10px;\n"
 "background-color: rgb(71, 71, 71);\n"
 "border: solid rgb(71, 71, 71);\n"
 "color: white;\n"
 "font: 14pt \"MS Shell Dlg 2\";")
 
-        self.horizontalLayout_9.addWidget(self.label_9)
+        self.horizontalLayout_9.addWidget(self.valor_total)
 
 
         self.verticalLayout_14.addWidget(self.frame_7)
@@ -1231,8 +1231,8 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(whatsthis)
         self.btn_Pesquisar.setText("")
         self.btn_AddProduto.setText(QCoreApplication.translate("MainWindow", u"Adicionar", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Confirmar", None))
+        self.btn_cancelar_pesquisa.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
+        self.btn_confirmar_pesquisa.setText(QCoreApplication.translate("MainWindow", u"Confirmar", None))
         ___qtablewidgetitem = self.tableProduct.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"idProduto", None));
         ___qtablewidgetitem1 = self.tableProduct.horizontalHeaderItem(1)
@@ -1257,8 +1257,8 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"Pre\u00e7o", None));
         ___qtablewidgetitem10 = self.tableCarrinho.horizontalHeaderItem(3)
         ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Quantidade", None));
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:18pt; font-weight:600;\">TOTAL:</span></p></body></html>", None))
-        self.label_9.setText("")
+        self.titulo_total.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:18pt; font-weight:600;\">TOTAL:</span></p></body></html>", None))
+        self.valor_total.setText("")
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"Realizar Venda", None))
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:18pt; font-weight:600;\">VENDAS REALIZADAS</span></p></body></html>", None))
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Pesquise aqui por ID...", None))
