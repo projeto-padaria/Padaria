@@ -62,6 +62,9 @@ insert into padaria.produto VALUES
 
 -- Venda
 
+DELETE from padaria.venda
+
+
 select * from padaria.venda
 "SELECT * FROM padaria.venda V, padaria.produto P WHERE V.idProduto = P.idProduto;"
 
@@ -73,7 +76,7 @@ padaria.fornecedor F,
 padaria.produto P,
 padaria.cliente C
 WHERE V.idProduto = P.idProduto and P.idFornecedor = F.idFornecedor and V.idFuncionario = Fu.idFuncionario and V.idCliente = C.idCliente
--- INSERT INTO padaria.venda VALUES (1,1,1,convert(date, getdate(), 103))"
+INSERT INTO padaria.venda VALUES (1,1,2,1,20,convert(date, getdate(), 103))
 
 
 

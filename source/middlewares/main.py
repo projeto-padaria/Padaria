@@ -34,7 +34,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btnCadastrar.clicked.connect(self.connectDatabase)
         self.btnSobre.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgSobre))
         self.btnContatos.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgContatos))
-        self.btn_confirmar_pesquisa.clicked.connect(lambda: debug.printSuccess("Pesquisa realizada com sucesso!"))
+        self.btn_Confirmar.clicked.connect(self.confirmSale)
         self.btn_cancelar_pesquisa.clicked.connect(self.cancelSale)
         self.btn_ExcluirProduto.clicked.connect(self.deleteRows)
         self.btnCadastrarFun.clicked.connect(self.employeeRegistration)
@@ -44,6 +44,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btnSair.clicked.connect(self.closeWindow)
         self.btn_Pesquisar.clicked.connect(self.search)
         self.btn_AddProduto.clicked.connect(self.addProduct)
+        self.btnPesquisarVenda.clicked.connect(self.search)
         # Definindo restrições:
         self.tableCarrinho.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.tableCarrinho.setFocusPolicy(Qt.NoFocus)
@@ -51,8 +52,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.tableProduct.setFocusPolicy(Qt.NoFocus)
 
     def search(self,table):
-        palavra = self.txtPesquisa.text()
-        self.db.search(self.tableProduct,palavra)
+        sender = self.sender()
+        if sender == self.btn_Pesquisar:
+            palavra = self.txtPesquisa.text()
+            self.db.search(self.tableProduct,palavra,True)
+        elif sender == self.btnPesquisarVenda:
+            palavra = self.txtPesquisarVenda.text()
+            self.db.search(self.tableVenda,palavra,False)
+        
 
     def left_Container(self):
         width = self.leftContainer.width()
@@ -92,6 +99,36 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         else:
             debug.printWarning("Selecione uma linha para excluir")
             QMessageBox.warning(None, "Atenção", "Selecione uma linha para excluir")
+
+    def confirmSale(self):
+        valor = QMessageBox.question(None, "Atenção", "Deseja confirmar a venda?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+        if valor == QMessageBox.Yes:
+            dados = []
+            update_dados = []
+
+            for row in range(self.tableCarrinho.rowCount()):
+                for column in range(self.tableCarrinho.columnCount()):
+                    dados.append(self.tableCarrinho.item(row, column).text())
+                update_dados.append(dados)
+                dados = []
+            print(update_dados)
+            if update_dados == []:
+                QMessageBox.warning(
+                    None, "Realização de Venda", "Nenhum Produto Adicionado!!"
+                )
+            else:
+                try:
+                    self.db.addProduct(update_dados)
+                    self.tableCarrinho.setRowCount(0)
+                    self.calculeTotal()
+                    QMessageBox.about(
+                        None, "Realização de Venda", "Venda realizada!!"
+                    )
+                    self.refreshTable()
+                except Exception as error:
+                    debug.printError(error)
+        else:
+            pass
 
     def cancelSale(self):
         valor = QMessageBox.question(None, "Atenção", "Deseja cancelar a venda?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)

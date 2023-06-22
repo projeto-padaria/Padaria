@@ -89,9 +89,8 @@ create table  padaria.venda
     idProduto int,
     idFuncionario int,
 
-    data datetime,
-    -- forma_pagamento varchar(50),
-    -- valor_total decimal(10,2),
+    quantidade int,
+    data datetime,  
 
     PRIMARY KEY (idVenda, idCliente, idFuncionario, idProduto,data),
 

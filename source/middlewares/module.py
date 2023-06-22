@@ -93,41 +93,66 @@ class Connect:
         else:
             raise Exception("Prencha os campos Obrigatórios Adequadamente!!")
     
-    def addProduct(self,id):
-        parameters = [1,1,id,2]
-        self.cursor.execute("INSERT INTO padaria.venda VALUES (?,?,?,?,convert(datetime, getdate(), 103))",parameters)
-        self.cursor.commit()
-
-    def deleteProduct(self):
-        pass
-
-
-    def search(self,table, where):
+    def addProduct(self,insert):
         try:
-            if where:
-                parameters = ['%' + where + '%', '%' + where + '%']
-                self.cursor.execute('SELECT * FROM padaria.produto WHERE idProduto LIKE ? OR nome LIKE ?', parameters)
-                dados_lidos = self.cursor.fetchall()
+            newid = 1
+            self.cursor.execute("select distinct idVenda from padaria.venda")
+            id = self.cursor.fetchall()
+            if id == []:
+                pass
+            else:
+                for i in id:
+                    for j in i:
+                        newid += 1
+            for data in insert:
+                list(data)
+                self.cursor.execute("INSERT INTO padaria.venda VALUES (?,?,?,?,?,convert(datetime, getdate(), 103))",(newid,1,int(data[0]),1,int(data[3])))
+                self.cursor.commit()
+        except Exception as error:
+            debug.printError(error)
 
-                try:
-                    table.setRowCount(len(dados_lidos))
-                    table.setColumnCount(8)
-                    for i in range(0, len(dados_lidos)):
-                        for j in range(0, 8):
-                            table.setItem(i, j, QTableWidgetItem(str(dados_lidos[i][j])))
-                except Exception as error:
-                    debug.printError(error)
+    def search(self,table,palavra, where = None):
+        try:
+            if where == True:
+                if palavra == "":
+                    self.showTable(table,True)
+                else:
+                    parameters = ['%' + palavra + '%', '%' + palavra + '%']
+                    self.cursor.execute('SELECT P.idProduto, P.nome, P.marca, P.preco, P.quantidade, P.datadeemissao, P.datadevalidade FROM padaria.produto P WHERE idProduto LIKE ? OR nome LIKE ?', parameters)
+                    dados_lidos = self.cursor.fetchall()
 
-            elif where == "":
-                self.showTable(table,True)
-            
+                    try:
+                        table.setRowCount(len(dados_lidos))
+                        table.setColumnCount(7)
+                        for i in range(0, len(dados_lidos)):
+                            for j in range(0, 7):
+                                table.setItem(i, j, QTableWidgetItem(str(dados_lidos[i][j])))
+                    except Exception as error:
+                        debug.printError(error)
+            elif where == False:
+                if palavra == "":
+                    self.showTable(table)
+                else:
+                    parameters = ['%' + palavra + '%']
+                    self.cursor.execute('''SELECT V.idVenda,Fu.nome,F.nome,C.nome,V.idProduto, P.nome, P.marca, P.preco, P.datadevalidade, V.data FROM
+                    padaria.funcionario Fu,
+                    padaria.venda V,
+                    padaria.fornecedor F,
+                    padaria.produto P,
+                    padaria.cliente C
+                    WHERE 
+                    V.idProduto = P.idProduto and P.idFornecedor = F.idFornecedor and V.idFuncionario = Fu.idFuncionario and V.idCliente = C.idCliente and V.idVenda LIKE ?''', parameters)
+                    dados_lidos = self.cursor.fetchall()
+                    try:
+                        table.setRowCount(len(dados_lidos))
+                        table.setColumnCount(10)
+                        for i in range(0, len(dados_lidos)):
+                            for j in range(0, 10):
+                                table.setItem(i, j, QTableWidgetItem(str(dados_lidos[i][j])))
+                    except Exception as error:
+                        debug.printError(error)
         except Exception as error:
             print(error)
-            # message = QMessageBox(self)
-            # message.setWindowTitle("Sistema de Apoio ao Ensino")
-            # message.setText(error.args[0])
-            # message.setIcon(QMessageBox.Critical)
-            # message.exec()
 
 
     def showTable(self, tableWidget,sender = None):
@@ -226,3 +251,4 @@ class Connect:
 # if __name__ == "__main__":
 #     a = Connect("BD23333", "BD23333")
 #     a.Login()
+#     a.addProduct(None)
