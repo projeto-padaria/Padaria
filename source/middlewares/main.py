@@ -2,7 +2,8 @@ import sys
 sys.path.append("interfaces")
 
 # Importação de libs
-from PySide6.QtWidgets import QApplication,QMainWindow, QMessageBox, QTableWidgetItem, QTableWidget
+from PySide6.QtWidgets import QApplication,QMainWindow, QMessageBox, QTableWidgetItem,QAbstractItemView
+from PySide6.QtCore import Qt
 from PySide6 import QtCore
 
 # Importação da Interface de Cadastro
@@ -33,6 +34,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btnCadastrar.clicked.connect(self.connectDatabase)
         self.btnSobre.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgSobre))
         self.btnContatos.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgContatos))
+        self.btn_ExcluirProduto.clicked.connect(self.deleteRows)
         self.btnCadastrarFun.clicked.connect(self.employeeRegistration)
         self.btnAtualizar.clicked.connect(self.refreshTable)
         self.btnAlterar.clicked.connect(self.updateTableFun)
@@ -40,6 +42,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btnSair.clicked.connect(self.closeWindow)
         self.btn_Pesquisar.clicked.connect(self.search)
         self.btn_AddProduto.clicked.connect(self.addProduct)
+        # Definindo restrições:
+        self.tableCarrinho.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.tableCarrinho.setFocusPolicy(Qt.NoFocus)
+        self.tableProduct.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.tableProduct.setFocusPolicy(Qt.NoFocus)
 
     def search(self,table):
         palavra = self.txtPesquisa.text()
@@ -71,7 +78,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.Pages.setCurrentWidget(self.pgCadastrar)
         except Exception as error:
             debug.printError(error)
-            
+
+    def deleteRows(self):
+        if self.tableCarrinho.selectionModel().hasSelection():
+            quantidade = int(self.tableCarrinho.item(self.tableCarrinho.currentRow(), 3).text())
+            if quantidade <= 1:
+                self.tableCarrinho.removeRow(self.tableCarrinho.currentRow())
+            else:
+                self.tableCarrinho.setItem(self.tableCarrinho.currentRow(), 3, QTableWidgetItem(str(quantidade - 1)))
+            self.calculeTotal()
+        else:
+            debug.printWarning("Selecione uma linha para excluir")
+            QMessageBox.warning(None, "Atenção", "Selecione uma linha para excluir")
 
     def employeeRegistration(self):
         self.cpf = self.txtCPF.text()
@@ -125,32 +143,37 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             )
     
     def addProduct(self):
+
         if self.tableCarrinho.rowCount() > self.tableCarrinho.rowCount() - 1 and self.tableProduct.selectionModel().hasSelection():
             try:
-                self.tableCarrinho.setRowCount(self.tableCarrinho.rowCount() + 1)
                 idProduto = self.tableProduct.selectionModel().currentIndex().siblingAtColumn(0).data()
                 nomeProduto = self.tableProduct.selectionModel().currentIndex().siblingAtColumn(1).data()
-                precoProduto = float((self.tableProduct.selectionModel().currentIndex().siblingAtColumn(3).data()))
+                precoProduto = float(self.tableProduct.selectionModel().currentIndex().siblingAtColumn(3).data())
 
-                foundItems = self.tableCarrinho.findItems(idProduto, QtCore.Qt.MatchExactly)
-                if foundItems:
-                    row = foundItems[0].row()
-                    currentQuantity = int(self.tableCarrinho.item(row, 2))
-                    newQuantity = currentQuantity + 1
-                    self.tableCarrinho.setItem(row, 2, QTableWidgetItem(str(newQuantity)))
+                for row in range(self.tableCarrinho.rowCount()):
+                    if self.tableCarrinho.item(row, 0).text() == idProduto:
+                        quantidade = int(self.tableCarrinho.item(row, 3).text()) + 1
+                        self.tableCarrinho.setItem(row, 3, QTableWidgetItem(str(quantidade)))
+                        break
                 else:
-                    # Add a new row for the product
+                    self.tableCarrinho.setRowCount(self.tableCarrinho.rowCount() + 1)
                     self.tableCarrinho.setItem(self.tableCarrinho.rowCount() - 1, 0, QTableWidgetItem(idProduto))
                     self.tableCarrinho.setItem(self.tableCarrinho.rowCount() - 1, 1, QTableWidgetItem(nomeProduto))
                     self.tableCarrinho.setItem(self.tableCarrinho.rowCount() - 1, 2, QTableWidgetItem(str(precoProduto)))
+                    self.tableCarrinho.setItem(self.tableCarrinho.rowCount() - 1, 3, QTableWidgetItem(str(1)))
 
+                self.calculeTotal()
             except Exception as error:
-                if error.args[0] == '23000':
-                    QMessageBox.warning(None, "ALERTA", "Produto já adicionado")
-                    return debug.printWarning("Produto já adicionado")
                 debug.printError(error)
 
+    def calculeTotal(self):
+        total = 0.0
+        for row in range(self.tableCarrinho.rowCount()):
+            preco = float(self.tableCarrinho.item(row, 2).text())
+            quantidade = int(self.tableCarrinho.item(row, 3).text())
+            total += preco * quantidade
 
+        self.label_9.setText(str(f'R$ {total:.2f}'))
 
     def deleteFun(self):
         msg = QMessageBox()
