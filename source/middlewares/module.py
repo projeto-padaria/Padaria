@@ -216,7 +216,7 @@ class Connect:
                 fullDataSet.pop(indice)
                 fullDataSet.insert(indice, None)
         self.cursor.execute(
-            f"""
+            """
         UPDATE padaria.endereco 
         SET bairro = ?,rua = ?,numero = ?,cidade = ?,uf = ?,cep = ?
         FROM padaria.endereco AS E
